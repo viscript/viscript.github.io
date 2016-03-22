@@ -63,11 +63,7 @@ Q:
 1.网信网服务器返回信息中，包含多个XFF标签
 2.XFF本身返回信息是否是客户端原始IP，非常混乱
 3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。
-
-
-A:
-##一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会">
+4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="X-REAL-IP">
 <meta property="og:url" content="http://www.ariesin.com/2016/03/22/X-REAL-IP/index.html">
@@ -78,12 +74,8 @@ Q:
 1.网信网服务器返回信息中，包含多个XFF标签
 2.XFF本身返回信息是否是客户端原始IP，非常混乱
 3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。
-
-
-A:
-##一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会">
-<meta property="og:updated_time" content="2016-03-22T02:51:33.061Z">
+4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
+<meta property="og:updated_time" content="2016-03-22T02:53:22.665Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="X-REAL-IP">
 <meta name="twitter:description" content="#XFF
@@ -92,11 +84,7 @@ Q:
 1.网信网服务器返回信息中，包含多个XFF标签
 2.XFF本身返回信息是否是客户端原始IP，非常混乱
 3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。
-
-
-A:
-##一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会">
+4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
 
 
 
@@ -292,8 +280,7 @@ A:
       
 
       
-        <a id="more"></a>
-<p>#XFF</p>
+        <p>#XFF</p>
 <p><strong>Q</strong>:</p>
 <blockquote>
 <p>1.网信网服务器返回信息中，包含多个XFF标签</p>
@@ -302,6 +289,7 @@ A:
 <p>4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。</p>
 </blockquote>
 <hr>
+<a id="more"></a>
 <p><strong>A</strong>:</p>
 <p>##<br>一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会把这次请求的来源IP追加在X-Forwarded-For中来自4.4.4.4的一个请求。</p>
 <p>##<br>header包含这样一行</p>
