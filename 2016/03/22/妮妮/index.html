@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="XFF," />
+  <meta name="keywords" content="Ariesin" />
 
 
 
@@ -57,34 +57,18 @@
 
 
 
-<meta name="description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
+<meta name="description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="X-REAL-IP">
-<meta property="og:url" content="http://www.ariesin.com/2016/03/22/X-REAL-IP/index.html">
+<meta property="og:title" content="妮妮大人第一篇">
+<meta property="og:url" content="http://www.ariesin.com/2016/03/22/妮妮/index.html">
 <meta property="og:site_name" content="Ariesin">
-<meta property="og:description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
-<meta property="og:updated_time" content="2016-03-22T02:53:22.665Z">
+<meta property="og:description">
+<meta property="og:image" content="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg">
+<meta property="og:updated_time" content="2016-03-22T04:49:22.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="X-REAL-IP">
-<meta name="twitter:description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
+<meta name="twitter:title" content="妮妮大人第一篇">
+<meta name="twitter:description">
+<meta name="twitter:image" content="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg">
 
 
 
@@ -102,7 +86,7 @@ Q:
   };
 </script>
 
-  <title> X-REAL-IP | Ariesin </title>
+  <title> 妮妮大人第一篇 | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +206,7 @@ Q:
             
             
               
-                X-REAL-IP
+                妮妮大人第一篇
               
             
           </h1>
@@ -234,7 +218,7 @@ Q:
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T10:18:06+08:00" content="2016-03-22">
+            <time itemprop="dateCreated" datetime="2016-03-22T12:21:42+08:00" content="2016-03-22">
               2016-03-22
             </time>
           </span>
@@ -248,8 +232,8 @@ Q:
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/SEC/" itemprop="url" rel="index">
-                    <span itemprop="name">SEC</span>
+                  <a href="/categories/妮妮/" itemprop="url" rel="index">
+                    <span itemprop="name">妮妮</span>
                   </a>
                 </span>
 
@@ -278,36 +262,25 @@ Q:
 
       
       
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg" rel="gallery_cim2xfpf30006bkqhosrz4ouc"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
 
       
-        <p>#XFF</p>
-<p><strong>Q</strong>:</p>
-<blockquote>
-<p>1.网信网服务器返回信息中，包含多个XFF标签</p>
-<p>2.XFF本身返回信息是否是客户端原始IP，非常混乱</p>
-<p>3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层</p>
-<p>4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。</p>
-</blockquote>
-<hr>
-<a id="more"></a>
-<p><strong>A</strong>:</p>
-<p>##<br>一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会把这次请求的来源IP追加在X-Forwarded-For中来自4.4.4.4的一个请求。</p>
-<p>##<br>header包含这样一行</p>
-<blockquote>
-<p>X-Forwarded-For: 1.1.1.1, 2.2.2.2, 3.3.3.3</p>
-</blockquote>
-<p><strong>代表</strong>：请求由1.1.1.1发出，经过三层代理，第一层是2.2.2.2，第二层是3.3.3.3，而本次请求的来源IP4.4.4.4是第三层代理<br>而X-Real-IP，一般只记录真实发出请求的客户端IP，上面的例子，如果配置了X-Read-IP，将会是<br>X-Real-IP: 1.1.1.1</p>
-<p>所以 ，如果只有一层代理，这两个头的值就是一样的</p>
-<p>X-Forwarded-For确实是一般的做法</p>
-<blockquote>
-<ol>
-<li>他在正向(如squid)反向(如nginx)代理中都是标准用法，而正向代理中是没有x-real-ip相关的标准的，也就是说，如果用户访问你的nginx反向代理之前，还经过了一层正向代理，你即使在nginx中配置了x-real-ip，取到的也只是正向代理的IP而不是客户端真实IP</li>
-<li>大部分nginx反向代理配置文章中都没有推荐加上x-real-ip ，而只有x-forwarded-for，因此更通用的做法自然是取x-forwarded-for</li>
-<li>多级代理很少见，只有一级代理的情况下二者是等效的</li>
-<li>如果有多级代理，x-forwarded-for效果是大于x-real-ip的，可以记录完整的代理链路</li>
-</ol>
-</blockquote>
-
+        
       
     </div>
 
@@ -319,28 +292,18 @@ Q:
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/XFF/" rel="tag">#XFF</a>
-          
-        </div>
-      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/21/SQL-injection-cheat-sheet/" rel="next" title="SQL injection cheat sheet">
-                <i class="fa fa-chevron-left"></i> SQL injection cheat sheet
+              <a href="/2016/03/22/X-REAL-IP/" rel="next" title="X-REAL-IP">
+                <i class="fa fa-chevron-left"></i> X-REAL-IP
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/22/妮妮/" rel="prev" title="妮妮大人第一篇">
-                妮妮大人第一篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
