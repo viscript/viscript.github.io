@@ -60,7 +60,7 @@
 <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Ariesin">
-<meta property="og:url" content="http://www.ariesin.com/index.html">
+<meta property="og:url" content="http://www.ariesin.com/tags/XFF/index.html">
 <meta property="og:site_name" content="Ariesin">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -83,7 +83,7 @@
   };
 </script>
 
-  <title> Ariesin - Ariesin -  </title>
+  <title> Tag: XFF | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -104,9 +104,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left  ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -183,253 +181,45 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/22/X-REAL-IP/" itemprop="url">
-                  X-REAL-IP
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T10:18:06+08:00" content="2016-03-22">
-              2016-03-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/SEC/" itemprop="url" rel="index">
-                    <span itemprop="name">SEC</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>#XFF</p>
-<p><strong>Q</strong>:</p>
-<blockquote>
-<p>1.网信网服务器返回信息中，包含多个XFF标签</p>
-<p>2.XFF本身返回信息是否是客户端原始IP，非常混乱</p>
-<p>3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层</p>
-<p>4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。</p>
-</blockquote>
-<hr>
-<p><strong>A</strong>:</p>
-<p>##<br>一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会把这次请求的来源IP追加在X-Forwarded-For中来自4.4.4.4的一个请求。</p>
-<p>##<br>header包含这样一行</p>
-<blockquote>
-<p>X-Forwarded-For: 1.1.1.1, 2.2.2.2, 3.3.3.3</p>
-</blockquote>
-<p><strong>代表</strong>：请求由1.1.1.1发出，经过三层代理，第一层是2.2.2.2，第二层是3.3.3.3，而本次请求的来源IP4.4.4.4是第三层代理<br>而X-Real-IP，一般只记录真实发出请求的客户端IP，上面的例子，如果配置了X-Read-IP，将会是<br>X-Real-IP: 1.1.1.1</p>
-<p>所以 ，如果只有一层代理，这两个头的值就是一样的</p>
-<p>X-Forwarded-For确实是一般的做法</p>
-<blockquote>
-<ol>
-<li>他在正向(如squid)反向(如nginx)代理中都是标准用法，而正向代理中是没有x-real-ip相关的标准的，也就是说，如果用户访问你的nginx反向代理之前，还经过了一层正向代理，你即使在nginx中配置了x-real-ip，取到的也只是正向代理的IP而不是客户端真实IP</li>
-<li>大部分nginx反向代理配置文章中都没有推荐加上x-real-ip ，而只有x-forwarded-for，因此更通用的做法自然是取x-forwarded-for</li>
-<li>多级代理很少见，只有一级代理的情况下二者是等效的</li>
-<li>如果有多级代理，x-forwarded-for效果是大于x-real-ip的，可以记录完整的代理链路</li>
-</ol>
-</blockquote>
-
-          
-        
-      
+  <div id="posts" class="posts-collapse">
+    <div class="collection-title">
+      <h2 >
+        XFF
+        <small>Tag</small>
+      </h2>
     </div>
 
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
     
       
 
-  
-  
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <h1 class="post-title">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
+            <a class="post-title-link" href="/2016/03/22/X-REAL-IP/" itemprop="url">
               
-                
-                <a class="post-title-link" href="/2016/03/21/SQL-injection-cheat-sheet/" itemprop="url">
-                  SQL injection cheat sheet
-                </a>
+                <span itemprop="name">X-REAL-IP</span>
               
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-03-21T16:04:11+08:00" content="2016-03-21">
-              2016-03-21
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/SQL/" itemprop="url" rel="index">
-                    <span itemprop="name">SQL</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>What is an SQL Injection Cheat Sheet?</p>
-<p>An SQL injection cheat sheet is a resource in which you can find detailed technical information about the many different variants of the SQL Injection vulnerability. This cheat sheet is of good reference to both seasoned penetration tester and also those who are just getting started in web application security.<br>About the SQL Injection Cheat Sheet<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/21/SQL-injection-cheat-sheet/#more" rel="contents">
-              Read more &raquo;
             </a>
-          </div>
         
-      
-    </div>
+      </h1>
 
-    <div>
-      
-    </div>
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-03-22T10:18:06+08:00"
+              content="2016-03-22" >
+          03-22
+        </time>
+      </div>
 
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
+    </header>
   </article>
 
 
     
-  </section>
+  </div>
 
   
 

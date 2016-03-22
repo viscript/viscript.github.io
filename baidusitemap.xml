@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/03/22/X-REAL-IP/</loc>
+    <lastmod>2016-03-22T02:49:29.454Z</lastmod>
+    <data>
+        <display>
+        <title>X-REAL-IP</title>
+        <pubTime>2016-03-22T02:18:06.000Z</pubTime>
+        
+        <tag>XFF</tag>
+         
+         
+           
+             
+              <breadCrumb title="SEC" url="http://www.ariesin.com/categories/SEC/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/03/21/SQL-injection-cheat-sheet/</loc>
+    <lastmod>2016-03-22T02:17:27.092Z</lastmod>
+    <data>
+        <display>
+        <title>SQL injection cheat sheet</title>
+        <pubTime>2016-03-21T08:04:11.000Z</pubTime>
+        
+        <tag>SQL</tag>
+         
+        <tag>injection</tag>
+         
+         
+           
+             
+              <breadCrumb title="SQL" url="http://www.ariesin.com/categories/SQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
