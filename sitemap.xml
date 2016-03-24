@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.ariesin.com/2016/03/24/SQLMap-tamper-%E7%BB%95%E8%BF%87WAF-code/</loc>
+    
+    <lastmod>2016-03-24T06:22:38.962Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.ariesin.com/2016/03/24/weakscan-code/</loc>
     
     <lastmod>2016-03-24T06:06:03.198Z</lastmod>

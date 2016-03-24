@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://www.ariesin.com/2016/03/24/SQLMap-tamper-%E7%BB%95%E8%BF%87WAF-code/</loc>
+    <lastmod>2016-03-24T06:22:38.962Z</lastmod>
+    <data>
+        <display>
+        <title>SQLMap-tamper-绕过WAF-code</title>
+        <pubTime>2016-03-24T06:08:56.000Z</pubTime>
+        
+        <tag>sqlmap</tag>
+         
+        <tag>tamper</tag>
+         
+        <tag>绕过</tag>
+         
+        <tag>WAF</tag>
+         
+         
+           
+             
+              <breadCrumb title="技术文章" url="http://www.ariesin.com/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.ariesin.com/2016/03/24/weakscan-code/</loc>
     <lastmod>2016-03-24T06:06:03.198Z</lastmod>
     <data>
