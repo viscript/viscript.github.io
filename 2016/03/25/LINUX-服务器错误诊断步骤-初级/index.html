@@ -65,7 +65,7 @@
 <meta property="og:site_name" content="Ariesin">
 <meta property="og:description" content="1. 压力测试ab -n 1000 -c 1000 http://www.sina.com.cn
   模拟1000个用户  进行1000次查询 。   （总共1000次，一个用户一次）">
-<meta property="og:updated_time" content="2016-03-25T07:56:01.590Z">
+<meta property="og:updated_time" content="2016-03-25T09:07:22.375Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LINUX 服务器错误诊断步骤-初级">
 <meta name="twitter:description" content="1. 压力测试ab -n 1000 -c 1000 http://www.sina.com.cn
@@ -267,11 +267,9 @@
       
         <h2 id="1-压力测试"><a href="#1-压力测试" class="headerlink" title="1. 压力测试"></a>1. 压力测试</h2><p>ab -n 1000 -c 1000 <a href="http://www.sina.com.cn" target="_blank" rel="external">http://www.sina.com.cn</a></p>
 <p>  模拟1000个用户  进行1000次查询 。   （总共1000次，一个用户一次）<br><a id="more"></a></p>
-<p>##2.traceroute www.xxxxx.com.cn   </p>
-<p>   查看服务器到新浪的所有节点以及每个节点的掉包率</p>
-<p>##3.mtr www.xxx.com.cn</p>
-<pre><code>实时查看通路和每个节点的掉包率。（常用）
-</code></pre><p>##4.OS system<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">top</span><br><span class="line"> </span><br><span class="line">vmstat</span><br><span class="line"></span><br><span class="line">netstat  -antup  能够看到监听的端口，都是listen状态。UDP不面向连接，没有状态。（没有握手过程）</span><br><span class="line"></span><br><span class="line">netstat -antup | wc -l  查看数量统计，数量特别大的话，一是用户访问确实多，二是有可能遭受攻击。</span><br><span class="line">          如果wc -l特别大，ESTABLISHED特别少，是syn-flood洪水攻击。</span><br></pre></td></tr></table></figure></p>
+<h2 id="2-traceroute-www-xxxxx-com-cn"><a href="#2-traceroute-www-xxxxx-com-cn" class="headerlink" title="2.traceroute www.xxxxx.com.cn"></a>2.traceroute www.xxxxx.com.cn</h2><p>   查看服务器到新浪的所有节点以及每个节点的掉包率</p>
+<h2 id="3-mtr-www-xxx-com-cn"><a href="#3-mtr-www-xxx-com-cn" class="headerlink" title="3.mtr www.xxx.com.cn"></a>3.mtr www.xxx.com.cn</h2><pre><code>实时查看通路和每个节点的掉包率。（常用）
+</code></pre><h2 id="4-OS-system"><a href="#4-OS-system" class="headerlink" title="4.OS system"></a>4.OS system</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">top</span><br><span class="line"> </span><br><span class="line">vmstat</span><br><span class="line"></span><br><span class="line">netstat  -antup  能够看到监听的端口，都是listen状态。UDP不面向连接，没有状态。（没有握手过程）</span><br><span class="line"></span><br><span class="line">netstat -antup | wc -l  查看数量统计，数量特别大的话，一是用户访问确实多，二是有可能遭受攻击。</span><br><span class="line">          如果wc -l特别大，ESTABLISHED特别少，是syn-flood洪水攻击。</span><br></pre></td></tr></table></figure>
 <p> 用户先经过路由，由多个路由流通，经过很多跳之后到达交换机。  交换机一般是大型路由器或者三层交换机。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ping </span><br><span class="line"> </span><br><span class="line">mtr</span><br><span class="line"></span><br><span class="line">          </span><br><span class="line">traceroute</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">telnet</span><br></pre></td></tr></table></figure></p>
 <p><strong>后经过交换机</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">arping</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> arp -s    解决问题</span><br></pre></td></tr></table></figure>
@@ -279,8 +277,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">top</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vmstat           和PS -efL连用</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">netstat</span><br></pre></td></tr></table></figure>
 <p><strong>服务器与交换机之间的防火墙</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">iptables -L   看里边的规则设置是否有不是自己设置的项目</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -t nat -L</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iptables -F  清除掉所有规则</span><br></pre></td></tr></table></figure>
-<p>##遭受ARP病毒攻击</p>
-<p>测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth1:1 192.168.xx.xx</span><br><span class="line">         arping 192.168.xx.xx</span><br></pre></td></tr></table></figure></p>
+<h2 id="5-遭受ARP病毒攻击"><a href="#5-遭受ARP病毒攻击" class="headerlink" title="5.遭受ARP病毒攻击"></a>5.遭受ARP病毒攻击</h2><p>测试：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ifconfig eth1:1 192.168.xx.xx</span><br><span class="line">         arping 192.168.xx.xx</span><br></pre></td></tr></table></figure></p>
 <p>遭受病毒攻击会发现两个MAC地址，可以把响应慢的机器设置成网关。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arp -s 192.168.xx.xx  00.0C.xx.xx.xx   先设置IP，再设置MAC</span><br></pre></td></tr></table></figure>
 <p>命令作用：访问此IP地址时，等同于访问这个MAC地址。</p>
@@ -292,8 +289,7 @@ tcpdump
 
 wireshark
 </code></pre></blockquote>
-<p>##内核参数调整</p>
-<p>参数都是在PLC文件系统下，虚拟的文件系统，里边都不是真正的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount -t proc none /aaa/</span><br><span class="line"></span><br><span class="line">ls /proc/</span><br></pre></td></tr></table></figure></p>
+<h2 id="6-内核参数调整"><a href="#6-内核参数调整" class="headerlink" title="6.内核参数调整"></a>6.内核参数调整</h2><p>参数都是在PLC文件系统下，虚拟的文件系统，里边都不是真正的文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mount -t proc none /aaa/</span><br><span class="line"></span><br><span class="line">ls /proc/</span><br></pre></td></tr></table></figure></p>
 <p>proc文件系统显示的都是内存当中实际存在的值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat /proc/mounts一共mount了多少资源</span><br><span class="line"></span><br><span class="line">cat /etc/mtab 也是mount的值，但是不准，因为这是个文件，更新太慢。</span><br></pre></td></tr></table></figure></p>
 <p>在proc里边有很多数字的文件夹，数字代表进程。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ls /proc/sys/    此目录下一般是可以改的。改里边的数值其实就是改内存里的值</span><br><span class="line"></span><br><span class="line">cat /proc/sys/net/ipv4/icmp_echo_ignore_all</span><br></pre></td></tr></table></figure></p>
 <p>值显示为0</p>
@@ -461,7 +457,7 @@ wireshark
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-压力测试"><span class="nav-number">1.</span> <span class="nav-text">1. 压力测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-压力测试"><span class="nav-number">1.</span> <span class="nav-text">1. 压力测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-traceroute-www-xxxxx-com-cn"><span class="nav-number">2.</span> <span class="nav-text">2.traceroute www.xxxxx.com.cn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-mtr-www-xxx-com-cn"><span class="nav-number">3.</span> <span class="nav-text">3.mtr www.xxx.com.cn</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-OS-system"><span class="nav-number">4.</span> <span class="nav-text">4.OS system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-遭受ARP病毒攻击"><span class="nav-number">5.</span> <span class="nav-text">5.遭受ARP病毒攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-内核参数调整"><span class="nav-number">6.</span> <span class="nav-text">6.内核参数调整</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
