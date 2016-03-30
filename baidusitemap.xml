@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>http://www.ariesin.com/2016/03/30/python-project-1/</loc>
+    <lastmod>2016-03-30T09:04:29.357Z</lastmod>
+    <data>
+        <display>
+        <title>python-project-1</title>
+        <pubTime>2016-03-30T02:40:03.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+        <tag>project</tag>
+         
+         
+           
+             
+              <breadCrumb title="Python" url="http://www.ariesin.com/categories/Python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.ariesin.com/2016/03/30/python-project-2/</loc>
-    <lastmod>2016-03-30T08:02:14.887Z</lastmod>
+    <lastmod>2016-03-30T09:04:17.446Z</lastmod>
     <data>
         <display>
         <title>python-project-2</title>
@@ -21,28 +43,6 @@
            
              
               <breadCrumb title="python" url="http://www.ariesin.com/categories/python/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://www.ariesin.com/2016/03/30/python-project-1/</loc>
-    <lastmod>2016-03-30T02:57:55.498Z</lastmod>
-    <data>
-        <display>
-        <title>python-project-1</title>
-        <pubTime>2016-03-30T02:40:03.000Z</pubTime>
-        
-        <tag>python</tag>
-         
-        <tag>project</tag>
-         
-         
-           
-             
-              <breadCrumb title="Python" url="http://www.ariesin.com/categories/Python/"/>
           
         </display>
     </data>
