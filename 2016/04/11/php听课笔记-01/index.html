@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="XFF," />
+  <meta name="keywords" content="php,html,听课," />
 
 
 
@@ -57,34 +57,16 @@
 
 
 
-<meta name="description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
+<meta name="description" content="在此记录一下PHP学习历程，当作笔记独自反省。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="X-REAL-IP">
-<meta property="og:url" content="http://www.ariesin.com/2016/03/22/X-REAL-IP/index.html">
+<meta property="og:title" content="php听课笔记-01">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/11/php听课笔记-01/index.html">
 <meta property="og:site_name" content="Ariesin">
-<meta property="og:description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
-<meta property="og:updated_time" content="2016-03-22T05:20:57.282Z">
+<meta property="og:description" content="在此记录一下PHP学习历程，当作笔记独自反省。">
+<meta property="og:updated_time" content="2016-04-11T08:36:21.282Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="X-REAL-IP">
-<meta name="twitter:description" content="#XFF
-Q:
-
-1.网信网服务器返回信息中，包含多个XFF标签
-2.XFF本身返回信息是否是客户端原始IP，非常混乱
-3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层
-4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。">
+<meta name="twitter:title" content="php听课笔记-01">
+<meta name="twitter:description" content="在此记录一下PHP学习历程，当作笔记独自反省。">
 
 
 
@@ -102,7 +84,7 @@ Q:
   };
 </script>
 
-  <title> X-REAL-IP | Ariesin </title>
+  <title> php听课笔记-01 | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -222,7 +204,7 @@ Q:
             
             
               
-                X-REAL-IP
+                php听课笔记-01
               
             
           </h1>
@@ -234,8 +216,8 @@ Q:
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-03-22T10:18:06+08:00" content="2016-03-22">
-              2016-03-22
+            <time itemprop="dateCreated" datetime="2016-04-11T15:27:39+08:00" content="2016-04-11">
+              2016-04-11
             </time>
           </span>
 
@@ -248,8 +230,8 @@ Q:
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/技术文章/" itemprop="url" rel="index">
-                    <span itemprop="name">技术文章</span>
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
                   </a>
                 </span>
 
@@ -280,33 +262,33 @@ Q:
       
 
       
-        <p>#XFF</p>
-<p><strong>Q</strong>:</p>
+        <p>在此记录一下PHP学习历程，当作笔记独自反省。<br><a id="more"></a></p>
+<p>##HTML语法</p>
+<p>1.HTML就是由标签和元素组成的。<br>2.元素：是一个整体，是一个对象。</p>
 <blockquote>
-<p>1.网信网服务器返回信息中，包含多个XFF标签</p>
-<p>2.XFF本身返回信息是否是客户端原始IP，非常混乱</p>
-<p>3.NGINX做负载均衡是在应用层做的，利用反向代理。深信服是将负载均衡工作于TCP层</p>
-<p>4.是经过代理的方式还是F5的方式。经过代理，记录代理服务器IP。</p>
+<p>&lt;标记名&gt;&lt;/标记名&gt;成对标签。也成为：<strong>容器</strong>。<br><a href="www.baidu.com"><b>LAMP</b></a><br>这里边有<strong>两个</strong>元素。</p>
 </blockquote>
-<hr>
-<a id="more"></a>
-<p><strong>A</strong>:</p>
-<p>##<br>一般来说，X-Forwarded-For是用于记录代理信息的，每经过一级代理(匿名代理除外)，代理服务器都会把这次请求的来源IP追加在X-Forwarded-For中来自4.4.4.4的一个请求。</p>
-<p>##<br>header包含这样一行</p>
+<p>3.标记中可以嵌套其它的标签。</p>
+<p>4.还有一种标签是独立标签。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;br/&gt;</span><br><span class="line">&lt;hr/&gt;</span><br></pre></td></tr></table></figure></p>
+<p>##HTML语法2</p>
+<p>1.HTML中是有属性的。</p>
 <blockquote>
-<p>X-Forwarded-For: 1.1.1.1, 2.2.2.2, 3.3.3.3</p>
+<p><tag>content</tag></p>
+<p><tag>图例</tag></p>
+<p><tag pro="value" pro2="value2">带属性</tag></p>
 </blockquote>
-<p><strong>代表</strong>：请求由1.1.1.1发出，经过三层代理，第一层是2.2.2.2，第二层是3.3.3.3，而本次请求的来源IP4.4.4.4是第三层代理<br>而X-Real-IP，一般只记录真实发出请求的客户端IP，上面的例子，如果配置了X-Read-IP，将会是<br>X-Real-IP: 1.1.1.1</p>
-<p>所以 ，如果只有一层代理，这两个头的值就是一样的</p>
-<p>X-Forwarded-For确实是一般的做法</p>
+<p>2.属性之间，是通过在标记中使用[属性=属性值]的形式，多个属性使用空格分开。<br>3.属性的值使用单引号、双引号、不加引号(符合WEB标准的用双引号)。<br>4.属性是对标记功能的扩展或行为的修饰，每个属性几乎都是可选的。</p>
+<p>##HTML语法3</p>
+<p>1.HTML语法不区分大小写。<br>2.HTML文档注释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- ----------------- --&gt;</span><br><span class="line">&lt;!--      文件名：XX.html--&gt;</span><br><span class="line">&lt;!--      说明：         --&gt;</span><br><span class="line">&lt;!-- ----------------- --&gt;</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<ol>
-<li>他在正向(如squid)反向(如nginx)代理中都是标准用法，而正向代理中是没有x-real-ip相关的标准的，也就是说，如果用户访问你的nginx反向代理之前，还经过了一层正向代理，你即使在nginx中配置了x-real-ip，取到的也只是正向代理的IP而不是客户端真实IP</li>
-<li>大部分nginx反向代理配置文章中都没有推荐加上x-real-ip ，而只有x-forwarded-for，因此更通用的做法自然是取x-forwarded-for</li>
-<li>多级代理很少见，只有一级代理的情况下二者是等效的</li>
-<li>如果有多级代理，x-forwarded-for效果是大于x-real-ip的，可以记录完整的代理链路</li>
-</ol>
+<p>注释用法：<!--  注释内容 --><br>PS：<strong>但是，不能在注释中再包含注释。</strong><br>PS-2：<strong>注释不能在标记中使用。</strong><br>PS-3：<strong>标记之后，必须依然是完整的文档。</strong></p>
 </blockquote>
+<p>##HTML语法4<br>1.任何回车或者空格，在源代码中都是不起作用的。<br>2.格式用缩进，便于排错。</p>
+<p>##HTML语法5<br>1.HTML字符实体。一些字符在HTML中有特殊含义。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;demo&gt;</span><br><span class="line">直接写是显示不出来的。</span><br><span class="line">但是：</span><br><span class="line">&amp;lt;demo&amp;gt;</span><br><span class="line">结果在浏览器中就会直接显示&lt;demo&gt;了。</span><br></pre></td></tr></table></figure></p>
+<p>分三部分插入：<br>（1）以&amp;开头。<br>（2）一个实体名或使用#和一个实体的编号。<br>（3）以分号结束。<br>（4）eg：&lt;是&lt;或者&amp;#60   &gt;是&gt;或&amp;#62<br>（5）想把实体也打印出来，例如大于号小于号。可以输入&amp;lt;  那么，就在浏览器直接输出了&lt;因为，&amp;本身也是实体，且&amp;amp就是&amp;的意思。</p>
+<p>##常用实体<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;br&gt;</span><br><span class="line">&amp;amp;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;quot;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;apos;  单引号，IE不支持</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;cent;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;pound;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;yen;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;sect;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;copy;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;reg;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;times;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&amp;divide;</span><br></pre></td></tr></table></figure></p>
+<p>##HTML语法6</p>
+<p>HTML的颜色设置。<br>1.设置颜色时，可以是一个颜色的关键字或RGB的数字格式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#FF(0-255)</span><br><span class="line">每个256种颜色，第一位代表红色，第二位代表绿色，第三位代表蓝色。</span><br><span class="line">##FF00BB（rgb）red green blue</span><br><span class="line"></span><br><span class="line">共16777216种颜色。</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line"></span><br><span class="line">&lt;body bgcolor=&quot;#FF0000&quot; text=&quot;yellow&quot;&gt;</span><br><span class="line">content</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -321,7 +303,11 @@ Q:
       
         <div class="post-tags">
           
-            <a href="/tags/XFF/" rel="tag">#XFF</a>
+            <a href="/tags/php/" rel="tag">#php</a>
+          
+            <a href="/tags/html/" rel="tag">#html</a>
+          
+            <a href="/tags/听课/" rel="tag">#听课</a>
           
         </div>
       
@@ -330,17 +316,13 @@ Q:
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/03/21/SQL-injection-cheat-sheet/" rel="next" title="SQL injection cheat sheet">
-                <i class="fa fa-chevron-left"></i> SQL injection cheat sheet
+              <a href="/2016/04/05/域名：www和不带www区别/" rel="next" title="域名：www和不带www区别">
+                <i class="fa fa-chevron-left"></i> 域名：www和不带www区别
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/03/22/妮妮/" rel="prev" title="妮妮大人第一篇">
-                妮妮大人第一篇 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
