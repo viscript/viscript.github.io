@@ -1,0 +1,697 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,窗口分帧," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="主要讲述PHP窗口分帧。分帧不利于搜索引擎。后台的框架页面通常是分帧来做。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-05">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/13/PHP听课笔记-05/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="主要讲述PHP窗口分帧。分帧不利于搜索引擎。后台的框架页面通常是分帧来做。">
+<meta property="og:updated_time" content="2016-04-13T01:51:09.529Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-05">
+<meta name="twitter:description" content="主要讲述PHP窗口分帧。分帧不利于搜索引擎。后台的框架页面通常是分帧来做。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-05 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-05
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-13T08:55:09+08:00" content="2016-04-13">
+              2016-04-13
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>主要讲述PHP窗口分帧。分帧不利于搜索引擎。后台的框架页面通常是分帧来做。<br><a id="more"></a></p>
+<h3 id="分帧概述"><a href="#分帧概述" class="headerlink" title="分帧概述"></a>分帧概述</h3><p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;frameset rows=&quot;200,300,*&quot; rows=&quot;*,*,*&quot;&gt;</span><br><span class="line">	&lt;frame src=&quot;http://www.baidu.com&quot;&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line"></span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line"></span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">	&lt;frame&gt;</span><br><span class="line">&lt;/frameset&gt;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>行列的属性值：固定值、百分比或者 * 三种。<br>分成三个部分，但是必须要有frame，才能显示。<br>行：rows<br>列：rows<br>在窗体内直接输入src，可以在窗体内直接显示链接页面。</p>
+</blockquote>
+<p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">###主###</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;后台管理&lt;/title&gt;</span><br><span class="line">		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html charset=utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	&lt;frameset rows=&quot;80,*&quot; frameborder=1 border=&quot;20&quot;&gt;</span><br><span class="line">		&lt;frame src=&quot;header.html&quot; name=&quot;1&quot; noresize&gt;</span><br><span class="line">		&lt;frameset cols=&quot;180&quot;&gt;</span><br><span class="line">			&lt;frame src=&quot;menu.html&quot; name=&quot;2&quot; noresize&gt;</span><br><span class="line">			&lt;frame src=&quot;main.html&quot; name=&quot;3&quot; noresize&gt;</span><br><span class="line">		&lt;/frameset&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/frameset&gt;</span><br><span class="line">	&lt;noframeset&gt;</span><br><span class="line">		你使用的是不带分帧的浏览器，请使用有分帧浏览器，或不使用分帧页面访问。</span><br><span class="line">	&lt;/noframeset&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###header.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;后台管理页面头部&lt;h3&gt;&lt;/center&gt;</span><br><span class="line">&lt;a href=&quot;menu1.html&quot; target=&quot;2&quot;&gt;第一项&lt;/a&gt; ||</span><br><span class="line">&lt;a href=&quot;menu2.html&quot; target=&quot;2&quot;&gt;第二项&lt;/a&gt; ||</span><br><span class="line">&lt;a href=&quot;menu3.html&quot; target=&quot;2&quot;&gt;第三项&lt;/a&gt; ||</span><br><span class="line">&lt;a href=&quot;menu4.html&quot; target=&quot;2&quot;&gt;第四项&lt;/a&gt; ||</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###menu.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;菜单&lt;h3&gt;&lt;center&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第一页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第二页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第三页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第四页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第五页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第六页&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">###menu1.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;菜单1&lt;h3&gt;&lt;center&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第一页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第二页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第三页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第四页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第五页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第六页&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">###menu2.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;菜单2&lt;h3&gt;&lt;center&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第一页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第二页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第三页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第四页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第五页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第六页&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">###menu3.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;菜单3&lt;h3&gt;&lt;center&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第一页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第二页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第三页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第四页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第五页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第六页&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">###menu4.html###</span><br><span class="line">&lt;center&gt;&lt;h3&gt;菜单4&lt;h3&gt;&lt;center&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第一页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第二页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第三页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第四页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第五页&lt;/a&gt;&lt;br&gt;</span><br><span class="line">&lt;a href=&quot;&quot;&gt;第六页&lt;/a&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">###main.html###</span><br><span class="line">&lt;center&gt;主体内容&lt;center&gt;</span><br></pre></td></tr></table></figure></p>
+<p>分帧和body体内容不能混合，不能共存。是因为：分帧内部每个frame都是一个小的body体。而且在frameset内也不能有任何字符。</p>
+<p>frameset内属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">border边框宽度</span><br><span class="line">frameborder边框线宽度</span><br></pre></td></tr></table></figure></p>
+<p>frame内属性:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">src</span><br><span class="line">name</span><br><span class="line">noresize 布尔型的值，不需要赋值。用于是否可以调动边框。</span><br><span class="line">scrolling 是否出现滚动条</span><br></pre></td></tr></table></figure></p>
+<p>noframe是判断浏览器是否支持分帧，不支持则显示标签内输入内容。</p>
+<h2 id="iframe标签"><a href="#iframe标签" class="headerlink" title="iframe标签"></a>iframe标签</h2><p>用iframe标签实现画中画的效果。<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;xxx&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		xxx&lt;br&gt;</span><br><span class="line">		xxx&lt;br&gt;</span><br><span class="line">		&lt;a href=&quot;http://www.sohu.com&quot; target=&quot;view&quot;&gt;sohu&lt;/a&gt;&lt;br&gt;</span><br><span class="line">		&lt;a href=&quot;http://www.163.com&quot; target=&quot;view&quot;&gt;163&lt;/a&gt;&lt;br&gt;</span><br><span class="line">		&lt;iframe src=&quot;http://www.baidu.com&quot; name=&quot;view&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">		xxx&lt;br&gt;</span><br><span class="line">		xxx&lt;br&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>前台页面用iframe标签，因为可以和body体混合使用。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/窗口分帧/" rel="tag">#窗口分帧</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/12/PHP听课笔记-04/" rel="next" title="PHP听课笔记-04">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-04
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/13/PHP听课笔记-06/" rel="prev" title="PHP听课笔记-06">
+                PHP听课笔记-06 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">25</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">42</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#分帧概述"><span class="nav-number">1.</span> <span class="nav-text">分帧概述</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iframe标签"><span class="nav-number"></span> <span class="nav-text">iframe标签</span></a></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

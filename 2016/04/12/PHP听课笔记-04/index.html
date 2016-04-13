@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://www.ariesin.com/2016/04/12/PHP听课笔记-04/index.html">
 <meta property="og:site_name" content="Ariesin">
 <meta property="og:description" content="本部分主要深入了解多个标签的使用。123表格标签&amp;lt;table&amp;gt;行标签&amp;lt;tr&amp;gt;列标签&amp;lt;td&amp;gt;&amp;lt;th&amp;gt;">
-<meta property="og:updated_time" content="2016-04-12T03:31:36.660Z">
+<meta property="og:updated_time" content="2016-04-12T08:52:58.281Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP听课笔记-04">
 <meta name="twitter:description" content="本部分主要深入了解多个标签的使用。123表格标签&amp;lt;table&amp;gt;行标签&amp;lt;tr&amp;gt;列标签&amp;lt;td&amp;gt;&amp;lt;th&amp;gt;">
@@ -274,20 +274,9 @@
 <p>默认是黑体居中显示的。也可以通过<td>里的属性调整得到。<br>不仅可以横着用，也可以竖着用。</td></p>
 <h2 id="行标签"><a href="#行标签" class="headerlink" title="行标签"></a>行标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;tr&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="列标签"><a href="#列标签" class="headerlink" title="列标签"></a>列标签</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;td&gt;&lt;th&gt;</span><br></pre></td></tr></table></figure>
-<p><html><br>    <head><br>        <title>表格</title><br>    </head><br>    <body></body></html></p>
-<pre><code>    &lt;table border=&quot;1&quot; width=&quot;300&quot; align=&quot;center&quot; &gt;
-    &lt;caption&gt;&lt;h1&gt;表格标题&lt;/h1&gt;&lt;/caption&gt;
-        &lt;tr&gt;
-            &lt;td colspan=&quot;3&quot;&gt;1&lt;/td&gt;
-            &lt;td&gt;2&lt;/td&gt;
-        &lt;/tr&gt;
-        &lt;tr&gt;
-            &lt;td&gt;3&lt;/td&gt;
-            &lt;td&gt;4&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/table&gt;
-&lt;/body&gt;
-</code></pre><p><br>参数中，最重要的是：<br>1.colspan 一行的其中一个内容，占几列<br>2.rowspan 其中一个内容占几行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;表格&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line"></span><br><span class="line">		&lt;table &gt;</span><br><span class="line">		&lt;caption&gt;&lt;h1&gt;表格标题&lt;/h1&gt;&lt;/caption&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=&quot;3&quot;&gt;1&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;2&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td&gt;3&lt;/td&gt;</span><br><span class="line">				&lt;td&gt;4&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;thead&gt;</span><br><span class="line">				&lt;/thead&gt;</span><br><span class="line">				&lt;tbody&gt;</span><br><span class="line">				&lt;tbody&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>参数中，最重要的是：<br>1.colspan 一行的其中一个内容，占几列<br>2.rowspan 其中一个内容占几行</p>
+<p>PS：表格是可以嵌套的。在table里边添加table。</p>
 
       
     </div>
@@ -320,6 +309,10 @@
           </div>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/13/PHP听课笔记-05/" rel="prev" title="PHP听课笔记-05">
+                PHP听课笔记-05 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -387,7 +380,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">23</span>
+              <span class="site-state-item-count">25</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -404,7 +397,7 @@
           
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">40</span>
+                <span class="site-state-item-count">42</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
