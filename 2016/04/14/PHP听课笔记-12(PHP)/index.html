@@ -41,7 +41,7 @@
 <link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="PHP,表单," />
+  <meta name="keywords" content="PHP," />
 
 
 
@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="设计HTML表单。">
+<meta name="description" content="PHP是一门服务器语言。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP听课笔记-06">
-<meta property="og:url" content="http://www.ariesin.com/2016/04/13/PHP听课笔记-06-HTML/index.html">
+<meta property="og:title" content="PHP听课笔记-12-PHP">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/14/PHP听课笔记-12(PHP)/index.html">
 <meta property="og:site_name" content="Ariesin">
-<meta property="og:description" content="设计HTML表单。">
-<meta property="og:updated_time" content="2016-04-14T01:06:53.880Z">
+<meta property="og:description" content="PHP是一门服务器语言。">
+<meta property="og:updated_time" content="2016-04-14T06:15:27.001Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP听课笔记-06">
-<meta name="twitter:description" content="设计HTML表单。">
+<meta name="twitter:title" content="PHP听课笔记-12-PHP">
+<meta name="twitter:description" content="PHP是一门服务器语言。">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> PHP听课笔记-06 | Ariesin </title>
+  <title> PHP听课笔记-12-PHP | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +204,7 @@
             
             
               
-                PHP听课笔记-06
+                PHP听课笔记-12-PHP
               
             
           </h1>
@@ -216,8 +216,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T09:51:34+08:00" content="2016-04-13">
-              2016-04-13
+            <time itemprop="dateCreated" datetime="2016-04-14T10:52:14+08:00" content="2016-04-14">
+              2016-04-14
             </time>
           </span>
 
@@ -262,12 +262,15 @@
       
 
       
-        <p>设计HTML表单。<br><a id="more"></a></p>
-<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><p>收集用户数据和传送，都是要用到表单，然后利用PHP插入数据库。</p>
-<p>先做一个登录列表：<br>eg：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">###login.html###</span><br><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;表单应用&lt;/title&gt;</span><br><span class="line">		&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html charset=utf-8&quot;&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;table border=&quot;1&quot; width=&quot;500&quot; align=&quot;center&quot;&gt;</span><br><span class="line">		&lt;form name=&quot;frm&quot; action=&quot;login.php&quot; method=&quot;post&quot; target=&quot;_blank&quot; title=&quot;this is link&quot;&gt;</span><br><span class="line">			&lt;caption&gt;表单的应用&lt;/caption&gt;</span><br><span class="line"></span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;文本区域&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input type=&quot;text&quot; name=&quot;username&quot; maxlenth=&quot;10&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;密码区域&lt;th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input type=&quot;password&quot; name=&quot;pass&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;复选框&lt;th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					选择1&lt;input type=&quot;checkbox&quot; checked name=&quot;del[]&quot;&gt;</span><br><span class="line">					选择2&lt;input type=&quot;checkbox&quot; name=&quot;del[]&quot;&gt;</span><br><span class="line">					选择3&lt;input type=&quot;checkbox&quot; name=&quot;del[]&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;单选框&lt;th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input type=&quot;radio&quot; name=&quot;sex&quot; checked&gt;男</span><br><span class="line">					&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt;女</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;100&quot;&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;td colspan=&quot;2&quot; align=&quot;center&quot;&gt;</span><br><span class="line">					&lt;input type=&quot;submit&quot; name=&quot;sub&quot; value=&quot;提交&quot;&gt;</span><br><span class="line">					&lt;input type=&quot;reset&quot;&gt;</span><br><span class="line">					&lt;input type=&quot;button&quot; value=&quot;清空&quot; onclick=&quot;document.frm.user.value=&apos;&apos;&quot;&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;上传文件&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;input type=&quot;file&quot; name=&quot;pic&quot;&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;下拉列表&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;select name=&quot;xy&quot;&gt;</span><br><span class="line">						&lt;option value=&quot;0&quot;&gt;----请选择----&lt;option&gt;</span><br><span class="line">						&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;2&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;3&lt;/option&gt;</span><br><span class="line">					&lt;/select&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;列表&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;select name=&quot;xy&quot; size=5&gt;</span><br><span class="line">						&lt;option value=&quot;0&quot;&gt;----请选择----&lt;option&gt;</span><br><span class="line">						&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;2&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;3&lt;/option&gt;</span><br><span class="line">					&lt;/select&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;多选列表&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;select name=&quot;xy&quot; size=&quot;5&quot; multiple&gt;</span><br><span class="line">						&lt;option value=&quot;0&quot;&gt;----请选择----&lt;option&gt;</span><br><span class="line">						&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;2&lt;/option&gt;</span><br><span class="line">						&lt;option&gt;3&lt;/option&gt;</span><br><span class="line">					&lt;/select&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;多行文本输入区域&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;textarea cols=&quot;40&quot; rows=&quot;6&quot; name=&quot;mesg&quot;&gt;在此输入信息&lt;/textarea&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">			&lt;tr&gt;</span><br><span class="line">				&lt;th&gt;&lt;label for=&quot;xx&quot; accesskey=&quot;s&quot;&gt;label标签使用&lt;/label&gt;(&lt;u&gt;s&lt;/u&gt;)&lt;/th&gt;</span><br><span class="line">				&lt;td&gt;</span><br><span class="line">					&lt;select id=&quot;xx&quot;&gt;yy&lt;/select&gt;</span><br><span class="line">				&lt;/td&gt;</span><br><span class="line">			&lt;/tr&gt;</span><br><span class="line">		&lt;/table&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>重要属性：<br>action:将当前数据提交给某个链接。可以是相对路径，也可以是绝对路径。</p>
-<p>method：提交方式，GET或者POST<br>GET不能超过8192个字符，且不能传送ASCII字符。<br>enctype:是指示浏览器用哪种编码方式将数据传送给WEB服务器。<br>–&gt;application/x-www-form-urlencoded（默认的）<br>–&gt;multipart/form-data（文件上传的时候，用这个设置）</p>
-<p>在input标签：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1.maxlenth 标签规定了输入的最大字符数。</span><br><span class="line">2.readonly 布尔值。只读，不允许输入。</span><br><span class="line">3.value 默认值。</span><br><span class="line">4.reset 是全部回到默认值。</span><br><span class="line">###若要清空内容的话，需要调用javascript，用程序清空。本身不提供清空功能。如例子上的清空按钮，使用了JAVA。###</span><br><span class="line">单选按钮</span><br><span class="line">5.checkbox 复选按钮。有选中和不选中的状态。name=&quot;del[]&quot;，提交是以数组的形式提交的。checked：默认选择。</span><br><span class="line"></span><br><span class="line">6.radio 单选模块。需要注意的是：name必须相同，是属于同一个组。同样，checked：默认选择。</span><br><span class="line">7.hidden 隐藏域。</span><br><span class="line">8.上传文件。file元素。需要保证：POST和enctype为multipart/form-data选项。</span><br><span class="line">9.下拉菜单。select标签，中间用option选择。如果定义了value，则提交value值，如果没有规定，则提交名称值。</span><br><span class="line">10.列表，就是select中多加一项size</span><br><span class="line">11.多选列表，就是select中多加一项multiple</span><br><span class="line">12.多行输入。用textarea</span><br><span class="line">13.label标签，是快捷键使用。alt+你定义的字符，即可使用。需要添加id，并在label中使用accesskey来定义快捷键。</span><br></pre></td></tr></table></figure></p>
+        <p>PHP是一门服务器语言。<br><a id="more"></a></p>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;this is the first php file test&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">	</span><br><span class="line">			&lt;script&gt;</span><br><span class="line">				document.write(new Data());</span><br><span class="line">			&lt;/script&gt;</span><br><span class="line">			&lt;?php</span><br><span class="line">			for ($i=0;$i&lt;10;$i++)</span><br><span class="line">					echo &quot;$i ########&lt;br&gt;&quot;;</span><br><span class="line">			</span><br><span class="line">			?&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>这样处理之后，在页面查看源代码，能看到script内的源码，但是看不到PHP源码。因为用&lt;?php?&gt;规定之后，内部的源码经过PHP处理之后，将动态输出到页面，而不是在HTML直接输出。</p>
+<p>而且，PHP标签可以插入到HTML中的任何位置。</p>
+<h2 id="指令分隔符"><a href="#指令分隔符" class="headerlink" title="指令分隔符"></a>指令分隔符</h2><p>语句有两种：功能执行语句和结构定义语句。<br>功能执行语句后边，一定要加分号。但是结构定义语句一定不能加分号。<br>PS：与?&gt;最近的一条语句，可以不加分号。</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>1.// 单行注释<br>2./<em> </em>/ 多行注释<br>3.# 脚本注释<br>4./<em>* </em>/ 文档注释</p>
+<p>但是多行注释中，不能再包含多行注释。</p>
+<h2 id="程序中的空白"><a href="#程序中的空白" class="headerlink" title="程序中的空白"></a>程序中的空白</h2><p>1.空格<br>2.tab<br>3.换行</p>
+<h2 id="另外注意"><a href="#另外注意" class="headerlink" title="另外注意"></a>另外注意</h2><p>如果某条PHP脚本已经是程序最末尾，建议不要加 ?&gt;，因为如果在别的脚本文件调用的时候，加了有可能会出错。<br>因为，很多函数都是属于头函数，在头函数前边不能有任何空白，但是原脚本文件的?&gt;后边，可能会有很多空白，因此导致了出错。</p>
 
       
     </div>
@@ -284,8 +287,6 @@
           
             <a href="/tags/PHP/" rel="tag">#PHP</a>
           
-            <a href="/tags/表单/" rel="tag">#表单</a>
-          
         </div>
       
 
@@ -293,16 +294,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/13/PHP听课笔记-05-HTML/" rel="next" title="PHP听课笔记-05">
-                <i class="fa fa-chevron-left"></i> PHP听课笔记-05
+              <a href="/2016/04/13/PHP听课笔记-11(CSS实战)/" rel="next" title="PHP听课笔记-11">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-11
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/13/PHP听课笔记-07-CSS入门/" rel="prev" title="PHP听课笔记-07">
-                PHP听课笔记-07 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/14/PHP-笔记13（变量）/" rel="prev" title="PHP-笔记（变量）">
+                PHP-笔记（变量） <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -422,7 +423,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#表单"><span class="nav-number">1.</span> <span class="nav-text">表单</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.</span> <span class="nav-text">入门</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令分隔符"><span class="nav-number">2.</span> <span class="nav-text">指令分隔符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注释"><span class="nav-number">3.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序中的空白"><span class="nav-number">4.</span> <span class="nav-text">程序中的空白</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#另外注意"><span class="nav-number">5.</span> <span class="nav-text">另外注意</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">

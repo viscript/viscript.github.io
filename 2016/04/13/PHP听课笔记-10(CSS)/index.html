@@ -57,16 +57,16 @@
 
 
 
-<meta name="description" content="终于学到CSS了。o(∩_∩)o">
+<meta name="description" content="布局的基本形式。使用DIV+CSS对网站进行布局。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="PHP听课笔记-07">
-<meta property="og:url" content="http://www.ariesin.com/2016/04/13/PHP听课笔记-07-CSS入门/index.html">
+<meta property="og:title" content="PHP听课笔记-10">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/13/PHP听课笔记-10(CSS)/index.html">
 <meta property="og:site_name" content="Ariesin">
-<meta property="og:description" content="终于学到CSS了。o(∩_∩)o">
-<meta property="og:updated_time" content="2016-04-13T05:21:33.409Z">
+<meta property="og:description" content="布局的基本形式。使用DIV+CSS对网站进行布局。">
+<meta property="og:updated_time" content="2016-04-13T08:18:40.512Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="PHP听课笔记-07">
-<meta name="twitter:description" content="终于学到CSS了。o(∩_∩)o">
+<meta name="twitter:title" content="PHP听课笔记-10">
+<meta name="twitter:description" content="布局的基本形式。使用DIV+CSS对网站进行布局。">
 
 
 
@@ -84,7 +84,7 @@
   };
 </script>
 
-  <title> PHP听课笔记-07 | Ariesin </title>
+  <title> PHP听课笔记-10 | Ariesin </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -204,7 +204,7 @@
             
             
               
-                PHP听课笔记-07
+                PHP听课笔记-10
               
             
           </h1>
@@ -216,7 +216,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-13T10:57:55+08:00" content="2016-04-13">
+            <time itemprop="dateCreated" datetime="2016-04-13T15:07:29+08:00" content="2016-04-13">
               2016-04-13
             </time>
           </span>
@@ -262,18 +262,24 @@
       
 
       
-        <p>终于学到CSS了。o(∩_∩)o<br><a id="more"></a></p>
-<h2 id="CSS基础"><a href="#CSS基础" class="headerlink" title="CSS基础"></a>CSS基础</h2><p>层叠样式表。Cascading Style Sheets<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;CSS&lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;p style=&quot;color:red;background-color:yellow;font-size:4cm;border:2px solid blue;text-align:center;&quot;&gt;aaa&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;bbb&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;ccc&lt;/p&gt;</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
-<p>四个通用属性：<br>id<br>class<br>style<br>name</p>
-<h2 id="CSS语法"><a href="#CSS语法" class="headerlink" title="CSS语法"></a>CSS语法</h2><p>格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">属性1：值;属性2:值;</span><br></pre></td></tr></table></figure></p>
-<p>单位：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">颜色：</span><br><span class="line">#rgb --&gt;#8fa</span><br><span class="line">#aaffaa red green </span><br><span class="line">rgb(255,0,10)</span><br><span class="line"></span><br><span class="line">大小：</span><br><span class="line">em  eg:2em</span><br><span class="line">px 像素</span><br><span class="line">pt 磅</span><br><span class="line">%</span><br><span class="line">pc</span><br><span class="line">cm</span><br><span class="line">mm</span><br><span class="line">in等等</span><br><span class="line"></span><br><span class="line">URL：（URL）</span><br><span class="line"></span><br><span class="line">注释：/* */</span><br></pre></td></tr></table></figure></p>
-<h3 id="四种设置方式"><a href="#四种设置方式" class="headerlink" title="四种设置方式"></a>四种设置方式</h3><h4 id="一-内联样式表"><a href="#一-内联样式表" class="headerlink" title="一.内联样式表"></a>一.内联样式表</h4><p>在HTML元素标签中使用style属性内联。不利于更新代码。<br><b style="" color:=""></b></p>
-<h4 id="二-嵌入样式表"><a href="#二-嵌入样式表" class="headerlink" title="二.嵌入样式表"></a>二.嵌入样式表</h4><p>就是指将<style>标签嵌入到整个HTML页面。会控制整个页面的样式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;title&gt;&lt;/title&gt;</span><br><span class="line">	&lt;style&gt;</span><br><span class="line">		/* CSS语法设置 */</span><br><span class="line">	/* 样式选择器 ｛</span><br><span class="line">				属性1：值；</span><br><span class="line">				属性2：值；</span><br><span class="line">	</span><br><span class="line">｝  */</span><br><span class="line">		b &#123;           /*  针对b标签  */</span><br><span class="line">			color:red;</span><br><span class="line">			font-size:4cm;</span><br><span class="line">			background:yellow;</span><br><span class="line">		&#125;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;b&gt;xxx&lt;/b&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		alert(new Data());</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">	&lt;?php</span><br><span class="line">		echo time();</span><br><span class="line">	?&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure></p>
-<p>不能控制所有页面的样式。只能控制某个标签的样式。</p>
-<h4 id="三-外部样式表"><a href="#三-外部样式表" class="headerlink" title="三.外部样式表"></a>三.外部样式表</h4><p>多个文档使用同个样式表。将样式单独定义在一个后缀.css文档中。并在HTML中通过link标签链接到HTML中使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;css/main.css&quot; /&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="四-输入样式表"><a href="#四-输入样式表" class="headerlink" title="四.输入样式表"></a>四.输入样式表</h4><p>可以将一个样式文件输入到另外一个样式文件中，或将一个样式文件输入到<style>元素中。<br>eg:在第三个CSS样式表文件中，或者在HTML文件的<style>标签中：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">b &#123;</span><br><span class="line">	background-color:red;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@import url(one.css);</span><br><span class="line">@import url(two.css);</span><br></pre></td></tr></table></figure></p>
-<p><strong>内联的优先级高于其它三种，因为离得最近。其它三个和加载顺序有关。</strong></p>
-</style></p>
+        <p>布局的基本形式。使用DIV+CSS对网站进行布局。<br><a id="more"></a></p>
+<p>这种布局，符合W3C标准。DIV用于创建网页结构，CSS用于修饰。</p>
+<h2 id="DIV和SPAN标签"><a href="#DIV和SPAN标签" class="headerlink" title="DIV和SPAN标签"></a>DIV和SPAN标签</h2><p>DIV标签是无意义标签。就是用DIV做标签之后，没有任何效果。但是默认是换行的。<br>SPAN标签默认是不换行的。<br>一般，DIV用于定义大的区块，SPAN用来定义小的。<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;DIV+CSS&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			span ｛</span><br><span class="line">				color:red;</span><br><span class="line">				font-size:2cm;</span><br><span class="line">		｝</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">			xxx</span><br><span class="line"></span><br><span class="line">		&lt;div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">			</span><br><span class="line">		name:ariesin&lt;br&gt;</span><br><span class="line">		&lt;span&gt;name:&lt;/span&gt;ariesin&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如name标签，加上span是没有任何效果的。但是可以利用span标签来修饰。</p>
+<h2 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;DIV+CSS&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			#bor ｛</span><br><span class="line">				width:20px;</span><br><span class="line">				border:dashed 1px;</span><br><span class="line">		｝</span><br><span class="line">			#main &#123;</span><br><span class="line">				height:200px;</span><br><span class="line">				width:200px;</span><br><span class="line">				margin:20px;</span><br><span class="line">				padding:20px;</span><br><span class="line">				border:1px solid #ooo;</span><br><span class="line">				background:#eaffea;</span><br><span class="line">		&#125;</span><br><span class="line">			span &#123;</span><br><span class="line">				width:100%;</span><br><span class="line">				height:100%;</span><br><span class="line">				border:1px dashed red;</span><br><span class="line">				text-align:center;</span><br><span class="line">				padding-top:50%;</span><br><span class="line">		&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line">	&lt;body&gt;</span><br><span class="line">			xxx</span><br><span class="line"></span><br><span class="line">		&lt;div id=&quot;bor&quot;&gt;</span><br><span class="line">			&lt;div id=&quot;main&quot;&gt;</span><br><span class="line">				&lt;span&gt;内容区域&lt;/span&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">			</span><br><span class="line">		name:ariesin&lt;br&gt;</span><br><span class="line">		&lt;span&gt;name:&lt;/span&gt;ariesin&lt;br&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>常用样式：<br>font<br>line-height<br>color<br>margin<br>padding<br>border<br>text-align<br>background</p>
+<p>例子：鼠标移动到链接上时，能够有一个动一点位置的特效。</p>
+<p>eg:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;例子&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line">			a:hover &#123;</span><br><span class="line">				position:relative;</span><br><span class="line">				top:1px;</span><br><span class="line">				left:1px;</span><br><span class="line">			&#125;</span><br><span class="line">			#dis &#123; </span><br><span class="line">				display:block;		</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;a href=&quot;#&quot;&gt;aaa&lt;/a&gt;&lt;br&gt;	</span><br><span class="line">		&lt;a href=&quot;#&quot;&gt;aaa&lt;/a&gt;&lt;br&gt;	</span><br><span class="line">		&lt;a href=&quot;#&quot;&gt;aaa&lt;/a&gt;&lt;br&gt;	</span><br><span class="line">		&lt;div id=&quot;dis&quot;&gt;</span><br><span class="line">		&lt;a href=&quot;#&quot;&gt;aaa&lt;/a&gt;&lt;br&gt;	</span><br><span class="line">		&lt;a href=&quot;#&quot;&gt;aaa&lt;/a&gt;&lt;br&gt;</span><br><span class="line">		&lt;/div&gt;	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>position:relative 相对位置、absolute 绝对位置<br>display用于是否显示，或者是以什么方式显示。</p>
+<h2 id="浮动-脱离文档流"><a href="#浮动-脱离文档流" class="headerlink" title="浮动-脱离文档流"></a>浮动-脱离文档流</h2><p>用法：</p>
+<p>float:left</p>
+<p>将有float项的从文档流脱离，因此，原来的文档流会自动覆盖到本身位置，然后脱离文档流的会覆盖到本位置的上层。</p>
+<h2 id="行框和清理"><a href="#行框和清理" class="headerlink" title="行框和清理"></a>行框和清理</h2><p>当用float，浮动块多的时候，当某些时候，不想在某个窗口大小时，某一侧有浮动块。</p>
+<p>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt;例子&lt;/title&gt;</span><br><span class="line">		&lt;style&gt;</span><br><span class="line"></span><br><span class="line">			#one &#123; </span><br><span class="line">				float:left;</span><br><span class="line">				width:200px;</span><br><span class="line">				height:200px;</span><br><span class="line">				background:yellow;		</span><br><span class="line">			&#125;</span><br><span class="line">			#two &#123; </span><br><span class="line">				float:left;</span><br><span class="line">				width:200px;</span><br><span class="line">				height:200px;</span><br><span class="line">				background:red;		</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			#thr &#123; </span><br><span class="line">				float:left;</span><br><span class="line">				width:200px;</span><br><span class="line">				height:200px;</span><br><span class="line">				background:green;</span><br><span class="line">	/*			clear:both;		*/</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			.clear &#123;</span><br><span class="line">					clear:both;</span><br><span class="line">			&#125;</span><br><span class="line">		&lt;/style&gt;</span><br><span class="line">	&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;div id=&quot;one&quot;&gt;aaa&lt;/div&gt;</span><br><span class="line">		&lt;div id=&quot;two&quot;&gt;aaa&lt;/div&gt;</span><br><span class="line">		&lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;</span><br><span class="line">		&lt;div id=&quot;thr&quot;&gt;aaa&lt;/div&gt;</span><br><span class="line">	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>这样设置之后(clear:both–或者用left,right)，第三个块将不会自动跳到上边，及时空间足够。这样设置的目的，是让块的某个边，不挨着浮动块。<br>一般来说，都是单独设置一个clear块。这样相当于添加两个浮动块之后，添加一个换行符。相当于<br>。</p>
+<p>之后，每个浮动块可以分别包含到盒子里边。用<div>进行包含。</div></p>
+
       
     </div>
 
@@ -298,16 +304,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/13/PHP听课笔记-06-HTML/" rel="next" title="PHP听课笔记-06">
-                <i class="fa fa-chevron-left"></i> PHP听课笔记-06
+              <a href="/2016/04/13/PHP听课笔记-09(CSS)/" rel="next" title="PHP听课笔记-09">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-09
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/13/PHP听课笔记-08-CSS选择器分类/" rel="prev" title="PHP听课笔记-08">
-                PHP听课笔记-08 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/13/PHP听课笔记-11(CSS实战)/" rel="prev" title="PHP听课笔记-11">
+                PHP听课笔记-11 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -427,7 +433,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS基础"><span class="nav-number">1.</span> <span class="nav-text">CSS基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS语法"><span class="nav-number">2.</span> <span class="nav-text">CSS语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#四种设置方式"><span class="nav-number">2.1.</span> <span class="nav-text">四种设置方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-内联样式表"><span class="nav-number">2.1.1.</span> <span class="nav-text">一.内联样式表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-嵌入样式表"><span class="nav-number">2.1.2.</span> <span class="nav-text">二.嵌入样式表</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DIV和SPAN标签"><span class="nav-number">1.</span> <span class="nav-text">DIV和SPAN标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#盒子模型"><span class="nav-number">2.</span> <span class="nav-text">盒子模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浮动-脱离文档流"><span class="nav-number">3.</span> <span class="nav-text">浮动-脱离文档流</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#行框和清理"><span class="nav-number">4.</span> <span class="nav-text">行框和清理</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator">
