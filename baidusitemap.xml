@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>http://www.ariesin.com/2016/04/14/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-14%EF%BC%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%89/</loc>
+    <lastmod>2016-04-14T09:56:26.278Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-14（数据类型的转换）</title>
+        <pubTime>2016-04-14T07:01:06.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>变量</tag>
+         
+        <tag>数据类型</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/14/PHP-%E7%AC%94%E8%AE%B013%EF%BC%88%E5%8F%98%E9%87%8F%EF%BC%89/</loc>
+    <lastmod>2016-04-14T06:59:55.740Z</lastmod>
+    <data>
+        <display>
+        <title>PHP-笔记（变量）</title>
+        <pubTime>2016-04-14T06:15:54.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>变量</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/14/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-12-PHP/</loc>
+    <lastmod>2016-04-14T06:15:27.001Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-12-PHP</title>
+        <pubTime>2016-04-14T02:52:14.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.ariesin.com/2016/04/13/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-06-HTML/</loc>
     <lastmod>2016-04-14T01:06:53.880Z</lastmod>
     <data>
@@ -215,9 +281,9 @@
         
         <tag>PHP</tag>
          
-        <tag>标签</tag>
-         
         <tag>笔记</tag>
+         
+        <tag>标签</tag>
          
          
            
