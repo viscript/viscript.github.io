@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>http://www.ariesin.com/2016/04/15/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-17-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/</loc>
+    <lastmod>2016-04-15T09:26:51.645Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-17-函数定义</title>
+        <pubTime>2016-04-15T08:51:27.000Z</pubTime>
+        
+        <tag>函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/15/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-16-%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/</loc>
+    <lastmod>2016-04-15T08:19:57.824Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-16-流程控制</title>
+        <pubTime>2016-04-15T07:12:11.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>流程</tag>
+         
+        <tag>控制</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/15/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-15-%E8%BF%90%E7%AE%97%E7%AC%A6%E5%8F%8A%E8%A1%A8%E8%BE%BE%E5%BC%8F/</loc>
+    <lastmod>2016-04-15T07:11:23.651Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-15-运算符及表达式</title>
+        <pubTime>2016-04-15T06:21:32.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>运算符</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.ariesin.com/2016/04/14/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-14%EF%BC%88%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%89/</loc>
     <lastmod>2016-04-14T09:56:26.278Z</lastmod>
     <data>
@@ -281,9 +347,9 @@
         
         <tag>PHP</tag>
          
-        <tag>笔记</tag>
-         
         <tag>标签</tag>
+         
+        <tag>笔记</tag>
          
          
            
