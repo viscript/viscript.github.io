@@ -4,6 +4,96 @@
 
     
   <url>
+    <loc>http://www.ariesin.com/2016/04/18/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-21-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</loc>
+    <lastmod>2016-04-18T08:45:35.982Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-21-面向对象</title>
+        <pubTime>2016-04-18T07:28:21.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>对象</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/18/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-20-%E6%95%B0%E7%BB%84%E5%A4%84%E7%90%86%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2016-04-18T07:27:57.743Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-20-数组处理函数</title>
+        <pubTime>2016-04-18T05:14:49.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>函数</tag>
+         
+        <tag>处理</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/18/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B019-%E6%95%B0%E7%BB%84/</loc>
+    <lastmod>2016-04-18T05:14:28.653Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记19-数组</title>
+        <pubTime>2016-04-18T01:44:03.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>数组</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://www.ariesin.com/2016/04/18/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-18-%E5%87%BD%E6%95%B0/</loc>
+    <lastmod>2016-04-18T01:43:16.824Z</lastmod>
+    <data>
+        <display>
+        <title>PHP听课笔记-18-函数</title>
+        <pubTime>2016-04-18T01:03:09.000Z</pubTime>
+        
+        <tag>PHP</tag>
+         
+        <tag>递归</tag>
+         
+         
+           
+             
+              <breadCrumb title="PHP" url="http://www.ariesin.com/categories/PHP/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://www.ariesin.com/2016/04/15/PHP%E5%90%AC%E8%AF%BE%E7%AC%94%E8%AE%B0-17-%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/</loc>
     <lastmod>2016-04-15T09:26:51.645Z</lastmod>
     <data>
@@ -588,9 +678,9 @@
         
         <tag>code</tag>
          
-        <tag>域名</tag>
-         
         <tag>爬取</tag>
+         
+        <tag>域名</tag>
          
          
            

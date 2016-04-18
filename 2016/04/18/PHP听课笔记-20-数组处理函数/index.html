@@ -1,0 +1,727 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,函数,处理," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="常用的数组处理函数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-20-数组处理函数">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/18/PHP听课笔记-20-数组处理函数/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="常用的数组处理函数。">
+<meta property="og:updated_time" content="2016-04-18T07:27:57.743Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-20-数组处理函数">
+<meta name="twitter:description" content="常用的数组处理函数。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-20-数组处理函数 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-20-数组处理函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-18T13:14:49+08:00" content="2016-04-18">
+              2016-04-18
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>常用的数组处理函数。<br><a id="more"></a></p>
+<h2 id="数组的键值操作有关的函数"><a href="#数组的键值操作有关的函数" class="headerlink" title="数组的键值操作有关的函数"></a>数组的键值操作有关的函数</h2><h3 id="array-values"><a href="#array-values" class="headerlink" title="array_values"></a>array_values</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(&quot;os&quot;=&gt;&quot;linux&quot;,&quot;webserver&quot;=&gt;&quot;apache&quot;,&quot;db&quot;=&gt;&quot;mysql&quot;,&quot;lang&quot;=&gt;&quot;php&quot;);</span><br><span class="line"></span><br><span class="line">$arr2=array_values($arr);</span><br><span class="line"></span><br><span class="line">echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line">print_r($arr2);</span><br><span class="line">echo &apos;&lt;/pre&gt;&apos;;</span><br></pre></td></tr></table></figure>
+<h3 id="array-keys"><a href="#array-keys" class="headerlink" title="array_keys"></a>array_keys</h3><p>默认返回键名。但是如果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$arr2=array_keys($arr,&quot;mysql&quot;);</span><br></pre></td></tr></table></figure>
+<p>会只返回mysql的键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$arr2=array_keys($arr,&quot;100&quot;,true)</span><br></pre></td></tr></table></figure></p>
+<p>会检查100是否为字符类，是真则返还结果。</p>
+<h3 id="in-array"><a href="#in-array" class="headerlink" title="in_array"></a>in_array</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">if(in_array(&quot;linux&quot;,$arr2))&#123;</span><br><span class="line">	echo &quot;exists&quot;;</span><br><span class="line">&#125;</span><br><span class="line">else &#123;</span><br><span class="line">echo &quot;not exists&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">PS:</span><br><span class="line">in_array(&quot;100&quot;,$arr2,true)</span><br></pre></td></tr></table></figure>
+<h3 id="array-key-exists"><a href="#array-key-exists" class="headerlink" title="array_key_exists"></a>array_key_exists</h3><p>查看键值知否在数组中。</p>
+<h3 id="array-flip"><a href="#array-flip" class="headerlink" title="array_flip"></a>array_flip</h3><p>交换数组中的键和值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(xxx);</span><br><span class="line"></span><br><span class="line">array_flip($arr);</span><br></pre></td></tr></table></figure></p>
+<h3 id="array-reverse"><a href="#array-reverse" class="headerlink" title="array_reverse"></a>array_reverse</h3><p>返回数组元素相反的数组。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$arr2=array_reverse($arr)</span><br></pre></td></tr></table></figure>
+<h2 id="统计数组元素个数和唯一性"><a href="#统计数组元素个数和唯一性" class="headerlink" title="统计数组元素个数和唯一性"></a>统计数组元素个数和唯一性</h2><h3 id="count-别名：-sizeof"><a href="#count-别名：-sizeof" class="headerlink" title="count() 别名： sizeof()"></a>count() 别名： sizeof()</h3><p>统计数组长度。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo count($arr);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">count($arr,1);</span><br></pre></td></tr></table></figure>
+<p>会计算数组中的子数组，统计。1是布尔型值。</p>
+<h3 id="array-count-values"><a href="#array-count-values" class="headerlink" title="array_count_values"></a>array_count_values</h3><p>统计数组中所有值出现的次数。</p>
+<h3 id="array-unique"><a href="#array-unique" class="headerlink" title="array_unique"></a>array_unique</h3><p>移除数组中重复的值。</p>
+<h2 id="利用回调函数处理数组的函数"><a href="#利用回调函数处理数组的函数" class="headerlink" title="利用回调函数处理数组的函数"></a>利用回调函数处理数组的函数</h2><h3 id="array-filter"><a href="#array-filter" class="headerlink" title="array_filter()"></a>array_filter()</h3><p>用回调函数过滤数组中的单元。<br>eg：将负数删掉。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(1,2,3,4,5,-6,7,8,-9,10);</span><br><span class="line"></span><br><span class="line">$arr1=array_filter($arr,&quot;my&quot;);</span><br><span class="line"></span><br><span class="line">	function my($n)&#123;</span><br><span class="line">		if($n&gt;0)</span><br><span class="line">			return true;</span><br><span class="line">		else</span><br><span class="line">			return false;</span><br><span class="line">	&#125;</span><br><span class="line">echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line">print_r($arr2);</span><br><span class="line">echo &apos;&lt;/pre&gt;&apos;;</span><br></pre></td></tr></table></figure></p>
+<h3 id="array-walk"><a href="#array-walk" class="headerlink" title="array_walk()"></a>array_walk()</h3><p>数组中的每个成员应用用户函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(&quot;os&quot;=&gt;&quot;linux&quot;,&quot;db&quot;=&gt;&quot;mysql&quot;);</span><br><span class="line">array_walk($arr,&quot;my&quot;,&quot;====&quot;);</span><br><span class="line"></span><br><span class="line">function my($value,$key,$p)&#123;</span><br><span class="line">	echo &quot;the key &apos;&#123;$key&#125;&apos; has &#123;$p&#125; &apos;$value&apos; &lt;br&gt;&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="array-map"><a href="#array-map" class="headerlink" title="array_map()"></a>array_map()</h3><p>将回调函数作用到给定数组的单元上。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(&quot;os&quot;=&gt;&quot;linux&quot;,&quot;db&quot;=&gt;&quot;mysql&quot;);</span><br><span class="line"></span><br><span class="line">$arr2=array_map(&quot;my&quot;,$arr);</span><br><span class="line"></span><br><span class="line">function arr($n)&#123;</span><br><span class="line">	return &quot;==&quot; .$n. &quot;==&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">其中，array_map函数也可以对两个数组进行处理。但是要保证两个数组元素数量必须一样。</span><br></pre></td></tr></table></figure>
+<h2 id="数组的排序函数"><a href="#数组的排序函数" class="headerlink" title="数组的排序函数"></a>数组的排序函数</h2><h3 id="sort"><a href="#sort" class="headerlink" title="sort()"></a>sort()</h3><p>把数组的值，由小到大排序。排序函数还有如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">rsort()  </span><br><span class="line">usort()  </span><br><span class="line">arsort()  </span><br><span class="line">uasort() </span><br><span class="line">ksort() </span><br><span class="line">krsort() </span><br><span class="line">uksort()</span><br><span class="line">natsort()</span><br><span class="line">natcasesort()</span><br><span class="line">array_multisort()</span><br></pre></td></tr></table></figure>
+<h3 id="ksort"><a href="#ksort" class="headerlink" title="ksort"></a>ksort</h3><p>按键，由小到大排序</p>
+<h3 id="rsort"><a href="#rsort" class="headerlink" title="rsort"></a>rsort</h3><p>元素值，由大到小排序。</p>
+<h3 id="usort-uasort-uksort"><a href="#usort-uasort-uksort" class="headerlink" title="usort()  uasort() uksort()"></a>usort()  uasort() uksort()</h3><p>根据用户自定义规则 </p>
+<p>按照数组中元素字符串长度排序：<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(&quot;linux&quot;,&quot;apache&quot;,&quot;mysql&quot;,&quot;php&quot;);</span><br><span class="line"></span><br><span class="line">usort($arr,&quot;sortbylen&quot;);</span><br><span class="line"></span><br><span class="line">function sortbylen($one,$two)&#123;</span><br><span class="line">	if(strlen($one)==strlen($two))</span><br><span class="line">		return 0;</span><br><span class="line">	else </span><br><span class="line">		return (strlen($one)&lt;strlen($two))?1:-1;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">print_r($arr);</span><br><span class="line">echo &apos;&lt;br&gt;&apos;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="拆分、合并、分解、接合的数组函数"><a href="#拆分、合并、分解、接合的数组函数" class="headerlink" title="拆分、合并、分解、接合的数组函数"></a>拆分、合并、分解、接合的数组函数</h2><h3 id="array-slice"><a href="#array-slice" class="headerlink" title="array_slice()"></a>array_slice()</h3><p>从数组中取出一段并返回。<br>（1）从第二个开始取，取两个。<br>（2）从倒数第二个开始取，取1个。<br>（3）保留原有键名。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$arr=array(&quot;linux&quot;,&quot;apache&quot;,&quot;mysql&quot;,&quot;php&quot;);</span><br><span class="line"></span><br><span class="line">print_r(array_slice($arr,1,2));</span><br><span class="line"></span><br><span class="line">print_r(array_slice($arr,-2,1));</span><br><span class="line"></span><br><span class="line">print_r(array_slice($arr,1,2，true));</span><br></pre></td></tr></table></figure></p>
+<h3 id="array-combine"><a href="#array-combine" class="headerlink" title="array_combine()"></a>array_combine()</h3><p>将两个数组结合。参数就是两个数组名。</p>
+<h3 id="array-merge"><a href="#array-merge" class="headerlink" title="array_merge()"></a>array_merge()</h3><p>将两个数组追加到一起，作为更多元素数的数组。索引重新建立。</p>
+<h3 id="array-intersect"><a href="#array-intersect" class="headerlink" title="array_intersect()"></a>array_intersect()</h3><p>求两个数组的交集。</p>
+<h3 id="array-diff"><a href="#array-diff" class="headerlink" title="array_diff()"></a>array_diff()</h3><p>求相差的集。</p>
+<h2 id="使用数组实现堆栈的功能"><a href="#使用数组实现堆栈的功能" class="headerlink" title="使用数组实现堆栈的功能"></a>使用数组实现堆栈的功能</h2><h3 id="array-push-array-pop"><a href="#array-push-array-pop" class="headerlink" title="array_push() array_pop()"></a>array_push() array_pop()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$a1=array(&quot;OS&quot;,&quot;WebServer&quot;,&quot;DataBase&quot;);</span><br><span class="line"></span><br><span class="line">$a1[]=&quot;one&quot;;</span><br><span class="line">$a1[]=&quot;two&quot;; //入栈一般用这个。</span><br><span class="line"></span><br><span class="line">array_push($a1,&quot;three&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo $a1[8]; //这不算出栈，只是读取。</span><br><span class="line">array_pop($a1); //出栈</span><br><span class="line">print_r($a1);</span><br><span class="line">echo &apos;&lt;br&gt;&apos;;</span><br><span class="line">echo $value;</span><br></pre></td></tr></table></figure>
+<h3 id="array-unshift"><a href="#array-unshift" class="headerlink" title="array_unshift()"></a>array_unshift()</h3><p>实现队列过程。<br>其实就是刚才入栈的过程中，此函数用来在头部入栈。</p>
+<h3 id="array-shift"><a href="#array-shift" class="headerlink" title="array_shift()"></a>array_shift()</h3><p>实现链表。此函数用来在头部取出数据。</p>
+<h3 id="unset"><a href="#unset" class="headerlink" title="unset()"></a>unset()</h3><p>可用来删除对象、数组中的元素或成员。</p>
+<h3 id="array-rand-等其他与数据操作有关的函数"><a href="#array-rand-等其他与数据操作有关的函数" class="headerlink" title="array_rand()等其他与数据操作有关的函数"></a>array_rand()等其他与数据操作有关的函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">shuffle() 随机调度</span><br><span class="line">array_sum()</span><br><span class="line">range()</span><br><span class="line">.</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
+<p>array_rand用来取数组中的键值。</p>
+<p>shuffle()用来将数组中的所有元素全部打乱。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">	eg:</span><br><span class="line">shuffle($arr);</span><br><span class="line">print($arr);</span><br></pre></td></tr></table></figure></p>
+<p>range()<br>如例子：产生一组元素，0为起点，50为终点，10为步长。<br>eg:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$arr=range(0,50,10);</span><br><span class="line"></span><br><span class="line">print_r($arr);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/函数/" rel="tag">#函数</a>
+          
+            <a href="/tags/处理/" rel="tag">#处理</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/18/PHP听课笔记19-数组/" rel="next" title="PHP听课笔记19-数组">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记19-数组
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/04/18/PHP听课笔记-21-面向对象/" rel="prev" title="PHP听课笔记-21-面向对象">
+                PHP听课笔记-21-面向对象 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">54</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的键值操作有关的函数"><span class="nav-number">1.</span> <span class="nav-text">数组的键值操作有关的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array-values"><span class="nav-number">1.1.</span> <span class="nav-text">array_values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-keys"><span class="nav-number">1.2.</span> <span class="nav-text">array_keys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#in-array"><span class="nav-number">1.3.</span> <span class="nav-text">in_array</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-key-exists"><span class="nav-number">1.4.</span> <span class="nav-text">array_key_exists</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-flip"><span class="nav-number">1.5.</span> <span class="nav-text">array_flip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-reverse"><span class="nav-number">1.6.</span> <span class="nav-text">array_reverse</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#统计数组元素个数和唯一性"><span class="nav-number">2.</span> <span class="nav-text">统计数组元素个数和唯一性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#count-别名：-sizeof"><span class="nav-number">2.1.</span> <span class="nav-text">count() 别名： sizeof()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-count-values"><span class="nav-number">2.2.</span> <span class="nav-text">array_count_values</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-unique"><span class="nav-number">2.3.</span> <span class="nav-text">array_unique</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用回调函数处理数组的函数"><span class="nav-number">3.</span> <span class="nav-text">利用回调函数处理数组的函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array-filter"><span class="nav-number">3.1.</span> <span class="nav-text">array_filter()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-walk"><span class="nav-number">3.2.</span> <span class="nav-text">array_walk()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-map"><span class="nav-number">3.3.</span> <span class="nav-text">array_map()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组的排序函数"><span class="nav-number">4.</span> <span class="nav-text">数组的排序函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">4.1.</span> <span class="nav-text">sort()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ksort"><span class="nav-number">4.2.</span> <span class="nav-text">ksort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsort"><span class="nav-number">4.3.</span> <span class="nav-text">rsort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#usort-uasort-uksort"><span class="nav-number">4.4.</span> <span class="nav-text">usort()  uasort() uksort()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拆分、合并、分解、接合的数组函数"><span class="nav-number">5.</span> <span class="nav-text">拆分、合并、分解、接合的数组函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array-slice"><span class="nav-number">5.1.</span> <span class="nav-text">array_slice()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-combine"><span class="nav-number">5.2.</span> <span class="nav-text">array_combine()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-merge"><span class="nav-number">5.3.</span> <span class="nav-text">array_merge()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-intersect"><span class="nav-number">5.4.</span> <span class="nav-text">array_intersect()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-diff"><span class="nav-number">5.5.</span> <span class="nav-text">array_diff()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用数组实现堆栈的功能"><span class="nav-number">6.</span> <span class="nav-text">使用数组实现堆栈的功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#array-push-array-pop"><span class="nav-number">6.1.</span> <span class="nav-text">array_push() array_pop()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-unshift"><span class="nav-number">6.2.</span> <span class="nav-text">array_unshift()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-shift"><span class="nav-number">6.3.</span> <span class="nav-text">array_shift()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#unset"><span class="nav-number">6.4.</span> <span class="nav-text">unset()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#array-rand-等其他与数据操作有关的函数"><span class="nav-number">6.5.</span> <span class="nav-text">array_rand()等其他与数据操作有关的函数</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
