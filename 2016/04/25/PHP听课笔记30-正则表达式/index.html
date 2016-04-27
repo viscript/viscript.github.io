@@ -1,0 +1,694 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,正则," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="正则表达式！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记30-正则表达式">
+<meta property="og:url" content="http://www.ariesin.com/2016/04/25/PHP听课笔记30-正则表达式/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="正则表达式！">
+<meta property="og:updated_time" content="2016-04-27T02:18:19.455Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记30-正则表达式">
+<meta name="twitter:description" content="正则表达式！">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记30-正则表达式 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记30-正则表达式
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-25T10:14:06+08:00" content="2016-04-25">
+              2016-04-25
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>正则表达式！</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>1.正则表达式，就是描述字符串排列模式的一种自定义语法规则。</p>
+<p>2.如果可以使用字符串处理函数完成的任务，就不选择正则表达式。</p>
+<p>3.复杂操作只能正则表达式。</p>
+<p>4.正则表达式可以在很多计算机语言中应用。</p>
+<p>5.也称之为模式表达式。</p>
+<p>6.就是通过构建具有特定规则的模式，再与输入的字符串信息进行比较，然后再进行分割、匹配、查找、替换等操作。</p>
+<p>★7.如果正则表达式不喝函数一起使用，那它就是一个字符串。如果将表达式放入到某个函数中使用，才能发挥出正则表达式的作用。</p>
+<p>8.POSIX扩展正则表达式函数，以ereg开头的函数库。<br>9.Perl兼容正则表达式函数，推荐使用perl。以preg开头的函数。</p>
+<p>10.学习过程涉及两方面：正则表达式模式如何编写，以及相关的处理函数。</p>
+<h2 id="正则起步"><a href="#正则起步" class="headerlink" title="正则起步"></a>正则起步</h2><p><strong>语法</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line">/* 1. 正则表达式就是描述字符串排列模式的一种自定义语法规则。</span><br><span class="line"> * 2. 如果可以使用字符串处理函数完成的任务，就不要使用正则</span><br><span class="line"> * 3. 有一些复杂的操作，只能使用正则完成。</span><br><span class="line"> * </span><br><span class="line"> * 正则表达式可以在很多计算机语言中应用</span><br><span class="line"> *</span><br><span class="line"> *  4. 正则表达式也称为一种模式表达式。</span><br><span class="line"> *  5.正则表达式就是通过构建具有特定规则的模式，与输入的字符信息比较。再进行分割、匹配、查找、替换等工作</span><br><span class="line"> *   </span><br><span class="line"> *    &quot;/\&lt;img\s*src=\&quot;.*?\&quot;\/\&gt;/&quot;</span><br><span class="line"> *	</span><br><span class="line"> *    一、正则表达式也是一个字符串</span><br><span class="line"> *    二、由具有特殊意义的字符组成的字符串</span><br><span class="line"> *    三、具有一点编写规则，也是一种模式</span><br><span class="line"> *    四、看作是一种编程语言（是用一些特殊字符，按规则编写出一个字符串，形成一种模式---正则表达式）</span><br><span class="line"> *</span><br><span class="line"> *</span><br><span class="line"> *    注意： 如果正则表达式，不和函数一起使用，则它就是一个字符串，如果将正则表达式放到到某个函数中使用， 才能发挥出正则表达式的作用。</span><br><span class="line"> *</span><br><span class="line"> *     用到分割函数中，就可以用这个正则去分割字符串</span><br><span class="line"> *     用到替换函数中，就可以用这个正则去替换字符串</span><br><span class="line"> *     ...</span><br><span class="line"> *</span><br><span class="line"> *	在PHP中给我们提供两套正则表达式函数库</span><br><span class="line">	POSIX 扩展正则表达式函数（ereg_）</span><br><span class="line">	Perl 兼容正则表达式函数(preg_)</span><br><span class="line"></span><br><span class="line">	这个函数功能一样， 找一个处理字符串效率高的</span><br><span class="line"></span><br><span class="line">	注意：推荐使用Perl 兼容正则表达式函数库（只学这一种）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	学习正则表达式时，有两方面需要学习：</span><br><span class="line"></span><br><span class="line">	一、正则表达式的模式如何编写</span><br><span class="line">	语法：</span><br><span class="line">		1. 定界符号  // </span><br><span class="line">			除了字母、数字和正斜线\ 以外的任何字符都可以为定界符号</span><br><span class="line">			| |</span><br><span class="line">			/ /</span><br><span class="line">			&#123; &#125;</span><br><span class="line">			! !</span><br><span class="line">			</span><br><span class="line">			没有特殊需要，我们都使用正斜线作为正则表达式的定界符号</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		2. 原子   img \s . </span><br><span class="line">			注意：原子是正则表达式的最基本组成单位，而且必须至少要包含一个原子</span><br><span class="line">			只要一个正则表达式可以单独使用的字符，就是原子</span><br><span class="line"></span><br><span class="line">			1. 所有打印（所有可以在屏幕上输出的字符串）和非打印字符（看不到的）</span><br><span class="line">			2. \. \* \+ \? \( \&lt;\&gt; 如果所有有意义的字符，想作为原子使用，统统使用 ”\“转义字符转义 m</span><br><span class="line">				&quot; \ &quot;转义字符可以将有意的字符转成没意义的字符，还可以将没意义的字符转为有意义的字符</span><br><span class="line">			3. 在正则表达式中可以直接使用一些代表范围的原子</span><br><span class="line">				\d  : 表示任意一个十进制的数字       [0-9]</span><br><span class="line">				\D  : 表示任意一个除数字这外的字符   [^0-9]</span><br><span class="line">				\s  : 表示任意一个空白字符，空格、\n\r\t\f   [\n\r\t\f ]</span><br><span class="line">				\S  : 表示任意一个非空白                     [^\n\r\t\f ]</span><br><span class="line">				\w  : 表示任意一个字 a-zA-Z0-9_              [a-zA-Z_]</span><br><span class="line">				\W  : 表示任意一个非字， 除了a-zA-Z0-9_以外的任意一个字符  [^a-zA-Z0-9_]</span><br><span class="line">			4. 自己定义一个原子表[], 可以匹配方括号中的任何一个原子</span><br><span class="line">				[a-z5-8]</span><br><span class="line">				[^a-z] 表示取反， 就是除了原子表中的原子，都可以表示(^必须在［］内的第一个字符处出现)</span><br><span class="line"></span><br><span class="line">			.	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		3. 元字符  * ? </span><br><span class="line">			元字符是一种特殊的字符，是用来修饰原子用的，不可以单独出现</span><br><span class="line">			*  : 表示其前的原子可以出现 0次、1次、或多次                       &#123;0,&#125;</span><br><span class="line">			+  : 表示其前的原子可以出现1次 或多次， 不能没有最少要有一个       &#123;1,&#125;</span><br><span class="line">			?  ： 表示其前面的原子可以出现0次或1次， 有只能有一次，要么没有    &#123;0,1&#125;</span><br><span class="line">			&#123;&#125; : 用于自己定义前面原子出现的次数</span><br><span class="line">				&#123;m&#125;   //m表示一个整数， &#123;5&#125;表示前面的原子出现5次</span><br><span class="line">				&#123;m,n&#125;  //m和n表示一个整数，&#123;2,5&#125; m要小于n, 表示前面出现的原子，最少m次，最多n次，包括m和n次</span><br><span class="line">				&#123;m,&#125;   //表示前面的原子最少出现m次,最多无限	</span><br><span class="line">				</span><br><span class="line">			.   : 默认情况下，表示除换行符外任意一个字符</span><br><span class="line">			^   : 直接在一个正则表达式的第一个字符出现，则表达必须以这个正则表达式开始</span><br><span class="line">			$   : 直接在一个正则表达式的最后一个字符出现，则表达必须以这个正则表达式结束</span><br><span class="line">			|   : 表示或的关系 , 它的优先级是最低的， 最后考虑它的功能</span><br><span class="line"></span><br><span class="line">			\b  : 表示一个边界</span><br><span class="line">			\B  ： 表示一个非边界</span><br><span class="line">-------------------------------</span><br><span class="line">			()  : 重点</span><br><span class="line"></span><br><span class="line">			一、 () 作用： 是作为大原子使用</span><br><span class="line">			二、 改变优先级,加上括号可以提高优先级别</span><br><span class="line">			三、 作为子模式使用, 正则表达式不光对一个字符串匹配一次, 全部匹配作为一个大模式，放到数组的第一个元素中，每个()是一个子模式按顺序放到数组的其它元素中去。</span><br><span class="line">			四、可以取消子模式，就将（）作为大原子或改变优先级使用, 在括号中最前面使用&quot;?:&quot;就可以取消这个（）表示的子模式</span><br><span class="line">			五、反向引用， 可以在模式中直接将子模式取出来，再作为正则表达式模式的一部分， 如果是在正则表达式像替换函数preg_replace函数中， 可以将子模式取出， 在被替换的字符串中使用</span><br><span class="line"></span><br><span class="line">			\1 取第一个子模式、 \2取第二个子模式， ....  \5 (注意是单引号还是双引号引起来的正则)</span><br><span class="line"></span><br><span class="line">			&quot;\\1&quot;</span><br><span class="line">			&apos;\1&apos; 因为单引号不解释转义字符。</span><br><span class="line">			</span><br><span class="line">			$&#123;1&#125; $&#123;2&#125;</span><br><span class="line"></span><br><span class="line">			\* \+ \. \?</span><br><span class="line"></span><br><span class="line">			\ </span><br><span class="line">			() (?:) []</span><br><span class="line">			* + ? &#123;&#125;</span><br><span class="line">			^  $   \b</span><br><span class="line">			|</span><br><span class="line">--------------------------------------</span><br><span class="line">		4. 模式修正符号	 i u</span><br><span class="line">			&quot;/ /模式修正符&quot;</span><br><span class="line">			1. 就是几个字母</span><br><span class="line">			2. 可以一次使用一个，每一个具一定的意义， 也可以连续使用多个</span><br><span class="line">			3. 是对整个正则表达式调优使用， 也可以说是对正则表达式功能的扩展</span><br><span class="line"></span><br><span class="line">			&quot;/abc/&quot; 只能匹配小写字母 abc</span><br><span class="line">			&quot;/abc/i&quot; 可以不区分大小写匹配 ABC abc Abc ABc AbC</span><br><span class="line"></span><br><span class="line">		i : 表示在和模式进行匹配进不区分大小写</span><br><span class="line">		m : 默认情况，将字符串视为一行  ^  $ 视为多行后，任何一行都可以以正则开始或结束</span><br><span class="line">		s : 如果没有使用这个模式修正符号时， 元字符中的&quot;.&quot;默认不能表示换行符号,将字符串视为单行</span><br><span class="line">		x : 表示模式中的空白忽略不计</span><br><span class="line">		e : 正则表达式必须使用在preg_replace替换字符串的函数中时才可以使用(讲这个函数时再说)</span><br><span class="line">		A :</span><br><span class="line">		Z :</span><br><span class="line">		U : 正则表达式的特点：就是比较”贪婪“  .* .+ 所有字符都符合这个条件</span><br><span class="line"></span><br><span class="line">			一种使用模式修正符号 U </span><br><span class="line">			加一种是使用?完成  .*?  .+?</span><br><span class="line"></span><br><span class="line">			如果两种方式同时出现又开启了 贪婪模式  .*? /U</span><br><span class="line">		</span><br><span class="line">		&quot;/\&lt;img\s*src=\&quot;.*?\&quot;\/\&gt;/iU&quot;</span><br><span class="line">		&quot;#\&lt;img\s*src=\&quot;.*?\&quot;\/\&gt;#iU&quot;</span><br><span class="line"></span><br><span class="line">		/原子和元字符/模式修正符号   / 为定界符号 （有一些语言是不需要这个定界符号）</span><br><span class="line"></span><br><span class="line">		有点语言中不支持模式修正符号 javascript</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		用户名不能为空 /^\S+$/</span><br><span class="line">		email </span><br><span class="line">		url </span><br><span class="line">		电话</span><br><span class="line"></span><br><span class="line">		将一个网站中的所有图片取出 </span><br><span class="line">		将一个网站的所有商品取出， </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	二、学习正则表达式的强大处理函数</span><br><span class="line">		preg_match();</span><br></pre></td></tr></table></figure></p>
+<p>初步学习正则处理函数：<br>preg_match();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   $pattern=&quot;/[^0-9]/&quot;;   //正则表达式模式</span><br><span class="line">$string=&quot;0786968379#780780970&quot;;      //需要和上面模式字符串进行匹配的变量字符串</span><br><span class="line"></span><br><span class="line">   if(preg_match($pattern, $string))&#123;</span><br><span class="line">   	echo &quot;正则表达式 &lt;b&gt;&#123;$pattern&#125; &lt;/b&gt;和字符串 &lt;b&gt;&#123;$string&#125;&lt;/b&gt; 匹配成功&quot;;</span><br><span class="line">   &#125;else&#123;</span><br><span class="line">   	echo &quot;&lt;font color=&apos;red&apos;&gt;正则表达式&#123;$pattern&#125; 和字符串 &#123;$string&#125; 匹配失败&lt;/font&gt;&quot;;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/正则/" rel="tag">#正则</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/22/PHP听课笔记-29-内置字符串处理函数/" rel="next" title="PHP听课笔记-29-内置字符串处理函数">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-29-内置字符串处理函数
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">49</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则起步"><span class="nav-number">2.</span> <span class="nav-text">正则起步</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
