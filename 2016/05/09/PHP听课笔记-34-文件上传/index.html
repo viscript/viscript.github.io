@@ -1,0 +1,709 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,文件上传," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="文件上传的相关内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-34-文件上传">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/09/PHP听课笔记-34-文件上传/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="文件上传的相关内容。">
+<meta property="og:updated_time" content="2016-05-09T06:33:05.605Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-34-文件上传">
+<meta name="twitter:description" content="文件上传的相关内容。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-34-文件上传 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-34-文件上传
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-09T11:44:17+08:00" content="2016-05-09">
+              2016-05-09
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>文件上传的相关内容。</p>
+<a id="more"></a>
+<pre><code>1. 单个文件上传
+
+2. 多个文件上传
+</code></pre><h2 id="一、PHP配置文件中和上传文件有关的选项"><a href="#一、PHP配置文件中和上传文件有关的选项" class="headerlink" title="一、PHP配置文件中和上传文件有关的选项"></a>一、PHP配置文件中和上传文件有关的选项</h2><pre><code>file_uploads = on 
+
+upload_max_filesize= 200M  最大不要超过服务器的内存
+
+upload_tmp_dir = c:/uploads/
+
+    *post_max_size = 250M
+</code></pre><h2 id="二、上传表单需要的注意事项"><a href="#二、上传表单需要的注意事项" class="headerlink" title="二、上传表单需要的注意事项"></a>二、上传表单需要的注意事项</h2><pre><code>1. 如果有文件上传操作表单的提交方法必须 HTTP post 
+2. 表单上传需要使用type为file的表
+3. enctype=&quot;multipart/form-data&quot; 只有文件上传时才使用这个值 ，用来指定表单编码的数据方式， 让服务器知道，我们要传递一个文件并带有常规的表单信息。
+(因为文件上传和表单上传是不一样的。表单数据上传：$_POST;文件：$_FILES)
+4. 建议添加一个 MAX_FILE_SIZE 隐藏表单， 值的单位也是字节
+</code></pre><h2 id="三、PHP处理上传的数据"><a href="#三、PHP处理上传的数据" class="headerlink" title="三、PHP处理上传的数据"></a>三、PHP处理上传的数据</h2><pre><code>  $_POST 接收非上传的数据
+
+
+如果是文件上传的数据使用 $_FILES处理上传的文件
+</code></pre><h3 id="print-r-POST-amp-print-r-FILES"><a href="#print-r-POST-amp-print-r-FILES" class="headerlink" title="print_r($_POST) &amp; print_r($_FILES)"></a>print_r($_POST) &amp; print_r($_FILES)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">  [pic] =&gt; Array</span><br><span class="line">        (</span><br><span class="line">            [name] =&gt; hee.jpg</span><br><span class="line">            [type] =&gt; image/pjpeg</span><br><span class="line">            [tmp_name] =&gt; C:\WINDOWS\Temp\php68.tmp</span><br><span class="line">            [error] =&gt; 0</span><br><span class="line">            [size] =&gt; 24485</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">Array</span><br><span class="line">(</span><br><span class="line">    [pic] =&gt; Array</span><br><span class="line">        (</span><br><span class="line">            [name] =&gt; Array</span><br><span class="line">                (</span><br><span class="line">                    [0] =&gt; icon_pdf.gif</span><br><span class="line">                    [1] =&gt; icon_ppt.gif</span><br><span class="line">                    [2] =&gt; icon_pptx.gif</span><br><span class="line">                    [3] =&gt; icon_doc.gif</span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">            [type] =&gt; Array</span><br><span class="line">                (</span><br><span class="line">                    [0] =&gt; image/gif</span><br><span class="line">                    [1] =&gt; image/gif</span><br><span class="line">                    [2] =&gt; image/gif</span><br><span class="line">                    [3] =&gt; image/gif</span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">            [tmp_name] =&gt; Array</span><br><span class="line">                (</span><br><span class="line">                    [0] =&gt; C:\WINDOWS\Temp\php69.tmp</span><br><span class="line">                    [1] =&gt; C:\WINDOWS\Temp\php6A.tmp</span><br><span class="line">                    [2] =&gt; C:\WINDOWS\Temp\php6B.tmp</span><br><span class="line">                    [3] =&gt; C:\WINDOWS\Temp\php6C.tmp</span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">            [error] =&gt; Array</span><br><span class="line">                (</span><br><span class="line">                    [0] =&gt; 0</span><br><span class="line">                    [1] =&gt; 0</span><br><span class="line">                    [2] =&gt; 0</span><br><span class="line">                    [3] =&gt; 0</span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">            [size] =&gt; Array</span><br><span class="line">                (</span><br><span class="line">                    [0] =&gt; 251</span><br><span class="line">                    [1] =&gt; 205</span><br><span class="line">                    [2] =&gt; 608</span><br><span class="line">                    [3] =&gt; 281</span><br><span class="line">                )</span><br><span class="line"></span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id="e-g-表单的文件上传"><a href="#e-g-表单的文件上传" class="headerlink" title="e.g.表单的文件上传"></a>e.g.表单的文件上传</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"> &lt;html&gt;</span><br><span class="line">	&lt;head&gt;</span><br><span class="line">		&lt;title&gt; File Uploads &lt;/title&gt;</span><br><span class="line">	&lt;/head&gt;	</span><br><span class="line"></span><br><span class="line">	&lt;body&gt;</span><br><span class="line">		&lt;form action=&quot;upload.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">			shopname: &lt;input type=&quot;text&quot; name=&quot;shopname&quot; &gt; &lt;br&gt;</span><br><span class="line">			shopprice: &lt;input type=&quot;text&quot; name=&quot;price&quot;&gt; &lt;br&gt;</span><br><span class="line">			shopnum : &lt;input type=&quot;text&quot; name=&quot;num&quot;&gt; &lt;br&gt;</span><br><span class="line">			&lt;input type=&quot;hidden&quot; name=&quot;MAX_FILE_SIZE&quot; value=&quot;100000000&quot;&gt;</span><br><span class="line">			shoppic: &lt;input type=&quot;file&quot; name=&quot;pic&quot;&gt; &lt;br&gt;</span><br><span class="line"></span><br><span class="line">			&lt;input type=&quot;submit&quot; name=&quot;sub&quot; value=&quot;添加商品&quot;&gt;</span><br><span class="line">		&lt;/form&gt;	</span><br><span class="line">	&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="接收数据"><a href="#接收数据" class="headerlink" title="接收数据"></a>接收数据</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	//step 1 使用$_FILES[&apos;pic&apos;][&quot;error&quot;] 检查错误</span><br><span class="line"></span><br><span class="line">	if($_FILES[&quot;pic&quot;][&quot;error&quot;] &gt; 0)&#123;</span><br><span class="line">		switch($_FILES[&quot;pic&quot;][&quot;error&quot;]) &#123;</span><br><span class="line">			case 1:</span><br><span class="line">				echo &quot;上传的文件超过了 php.ini 中 upload_max_filesize 选项限制的值&lt;br&gt;&quot;;</span><br><span class="line">				break;</span><br><span class="line">			case 2:</span><br><span class="line">				echo &quot;上传文件的大小超过了 HTML 表单中 MAX_FILE_SIZE 选项指定的值&quot;;</span><br><span class="line">				break;</span><br><span class="line"></span><br><span class="line">			case 3: </span><br><span class="line">				echo &quot;文件只有部分被上传&quot;;</span><br><span class="line">				break;</span><br><span class="line"></span><br><span class="line">			case 4:</span><br><span class="line">				echo &quot;没有文件被上传&quot;;</span><br><span class="line">				break;</span><br><span class="line"></span><br><span class="line">			default:</span><br><span class="line"></span><br><span class="line">				echo &quot;末知错误&quot;;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		exit;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	$maxsize=5000000;  //50k</span><br><span class="line"></span><br><span class="line">	//step 2 使用$_FILES[&quot;pic&quot;][&quot;size&quot;] 限制大小 单位字节 2M=2000000</span><br><span class="line">	if($_FILES[&quot;pic&quot;][&quot;size&quot;] &gt; $maxsize ) &#123;</span><br><span class="line">		echo &quot;上传的文件太大，不能超过&#123;$maxsize&#125;字节&quot;;</span><br><span class="line">		exit;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	//step 3 使用$_FILES[&quot;pic&quot;][&quot;type&quot;]或是文件的扩展名 限制类型 MIME  image/gif  image/png    gif png jpg</span><br><span class="line"></span><br><span class="line">	/*   list($dl, $xl) = explode(&quot;/&quot;, $_FILES[&quot;pic&quot;][&quot;type&quot;]);</span><br><span class="line"></span><br><span class="line">		if($dl!=&quot;image&quot;)&#123;</span><br><span class="line">			echo &quot;请上传一个图片，不允许其它类型文件&quot;;</span><br><span class="line">			exit;</span><br><span class="line">		&#125;</span><br><span class="line">	 */ 不建议。因为虽然限制的是图片类型，但是所有图片类型都可以上传。--&gt;最好用后缀名限制。</span><br><span class="line">	</span><br><span class="line">	$allowtype=array(&quot;png&quot;, &quot;gif&quot;, &quot;jpg&quot;, &quot;jpeg&quot;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	$arr=explode(&quot;.&quot;, $_FILES[&quot;pic&quot;][&quot;name&quot;]);</span><br><span class="line"></span><br><span class="line">	$hz=$arr[count($arr)-1];</span><br><span class="line"></span><br><span class="line">	if(!in_array($hz, $allowtype))&#123;</span><br><span class="line">		echo &quot;这是不允许的类型&quot;;</span><br><span class="line">		exit;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	//step 4 将让传后的文件名改名</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	$filepath=&quot;./uploads/&quot;;</span><br><span class="line"></span><br><span class="line">	$randname=date(&quot;Y&quot;).date(&quot;m&quot;).date(&quot;d&quot;).date(&quot;H&quot;).date(&quot;i&quot;).date(&quot;s&quot;).rand(100, 999).&quot;.&quot;.$hz;</span><br><span class="line"></span><br><span class="line">	//将临时位置的文件移动到指定的目录上即可</span><br><span class="line"></span><br><span class="line">	if(is_uploaded_file($_FILES[&quot;pic&quot;][&quot;tmp_name&quot;]))&#123; //防止攻击者欺骗，能够执行不是经过上传的文件。</span><br><span class="line">		if(move_uploaded_file($_FILES[&quot;pic&quot;][&quot;tmp_name&quot;], $filepath.$randname))&#123;</span><br><span class="line">			echo &quot;上传成功&quot;;</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			echo &quot;上传失败&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		echo &quot;不是一个上传文件&quot;;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/文件上传/" rel="tag">#文件上传</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/09/PHP听课笔记-33-文件目录操作/" rel="next" title="PHP听课笔记-33-文件目录操作">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-33-文件目录操作
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/09/PHP听课笔记-35-文件下载/" rel="prev" title="PHP听课笔记-35-文件下载">
+                PHP听课笔记-35-文件下载 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、PHP配置文件中和上传文件有关的选项"><span class="nav-number">1.</span> <span class="nav-text">一、PHP配置文件中和上传文件有关的选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、上传表单需要的注意事项"><span class="nav-number">2.</span> <span class="nav-text">二、上传表单需要的注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、PHP处理上传的数据"><span class="nav-number">3.</span> <span class="nav-text">三、PHP处理上传的数据</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#print-r-POST-amp-print-r-FILES"><span class="nav-number">3.1.</span> <span class="nav-text">print_r($_POST) & print_r($_FILES)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#e-g-表单的文件上传"><span class="nav-number">3.2.</span> <span class="nav-text">e.g.表单的文件上传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收数据"><span class="nav-number">3.3.</span> <span class="nav-text">接收数据</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

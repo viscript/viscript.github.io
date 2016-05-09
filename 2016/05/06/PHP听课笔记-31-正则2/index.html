@@ -1,0 +1,698 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,正则," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="关于和perl兼容的正则表达式处理函数。由于相比于posix兼容函数，perl是后加的，因此效率都要比posix要高。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-31-正则2">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/06/PHP听课笔记-31-正则2/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="关于和perl兼容的正则表达式处理函数。由于相比于posix兼容函数，perl是后加的，因此效率都要比posix要高。">
+<meta property="og:updated_time" content="2016-05-06T02:32:17.985Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-31-正则2">
+<meta name="twitter:description" content="关于和perl兼容的正则表达式处理函数。由于相比于posix兼容函数，perl是后加的，因此效率都要比posix要高。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-31-正则2 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-31-正则2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-06T08:48:56+08:00" content="2016-05-06">
+              2016-05-06
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>关于和perl兼容的正则表达式处理函数。<br>由于相比于posix兼容函数，perl是后加的，因此效率都要比posix要高。<br><a id="more"></a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">/*  正则表达式</span><br><span class="line"> *</span><br><span class="line"> *  1. 定界符号</span><br><span class="line"> *</span><br><span class="line"> *  2. 原子</span><br><span class="line"> *</span><br><span class="line"> *  3. 元字符</span><br><span class="line"> *</span><br><span class="line"> *  4. 模式修正符</span><br><span class="line"> *  </span><br><span class="line"> *  一个URL正则表达式</span><br><span class="line"> *</span><br><span class="line"> *  $url=&quot;/(https?|ftps?):\/\/(www|mail|news)\.([^\.\/]+)\.(com|org|net)/i&quot;;</span><br><span class="line"> *  </span><br><span class="line"> *   http://www.baidu.com</span><br><span class="line"> *   ftp://mail.google.com</span><br><span class="line"> *   https://news.hello.org</span><br><span class="line"> *</span><br><span class="line"> *   </span><br><span class="line"> *   用在分割的函数中， 则使用上面的正则表字符串进行分割</span><br><span class="line"> *用在匹配的函数中， 则使用上面的正则表字符串进行匹配 </span><br><span class="line"> 用在替换的函数中， 则使用上面的正则表字符串进行替换</span><br><span class="line"></span><br><span class="line">   有了正则，再在一个正则处理函数中使用这个正则，则才能对字符串进行分割、匹配、查找及替换等工作。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   和字符串处理函数对比介绍</span><br><span class="line"></span><br><span class="line">   能使用字符串处理函数完成的功能，就不要使用正则表达式处理函数</span><br><span class="line"></span><br><span class="line">   </span><br><span class="line">   1. 字符串的匹配与查找（用在验证功能上比较多）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   字符串处理函数 strstr() strpos()   substr()  </span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line"> *</span><br><span class="line"> */</span><br></pre></td></tr></table></figure></p>
+<h3 id="preg-match"><a href="#preg-match" class="headerlink" title="preg_match"></a>preg_match</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$str=&quot;这是一个正则表https://www.baidu.com达式的匹配函数&quot;;</span><br><span class="line"></span><br><span class="line">$url=&quot;/(https?|ftps?):\/\/((www|mail|news)\.([^\.\/]+)\.(com|org|net))/i&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if(preg_match($url, $str, $arr))&#123;</span><br><span class="line"> echo &quot;字符串中有正确的URL信息&lt;br&gt;&quot;;</span><br><span class="line"> echo &apos;&lt;pre&gt;&apos;;</span><br><span class="line"> print_r($arr);</span><br><span class="line"> echo &apos;&lt;/pre&gt;&apos;;</span><br><span class="line"></span><br><span class="line"> echo &quot;主机：&quot;.$arr[2].&quot;&lt;br&gt;&quot;;</span><br><span class="line"> </span><br><span class="line">&#125;else&#123;</span><br><span class="line">	echo &quot;字符串中不包括URL&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="preg-match-all-str-replace"><a href="#preg-match-all-str-replace" class="headerlink" title="preg_match_all  str_replace"></a>preg_match_all  str_replace</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$str=&quot;这是一个正则表https://www.baidu.com达式的匹配函数</span><br><span class="line">这是一个正则表http://www.baidu1.com达式的匹配函数</span><br><span class="line">这是一个正则表https://mail.baidu2.com达式的匹配函数</span><br><span class="line">这是一个正则表https://news.baidu3.com达式的匹配函数</span><br><span class="line">这是一个正则表https://www.baidu4.org达式的匹配函数</span><br><span class="line">这是一个正则表https://www.baidu5.net达式的匹配函数</span><br><span class="line">这是一个正则表ftps://www.baidu6.com达式的匹配函数</span><br><span class="line">这是一个正则表ftp://www.google7.com达式的匹配函数</span><br><span class="line">这是一个正则表https://www.baidu7.net达式的匹配函数</span><br><span class="line">&quot;;</span><br><span class="line"></span><br><span class="line"> </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function setUrl($str) &#123;</span><br><span class="line"> 	$url=&quot;/(https?|ftps?):\/\/((www|mail|news)\.([^\.\/]+)\.(com|org|net))/i&quot;;</span><br><span class="line">	  preg_match_all($url, $str, $arr,PREG_PATTERN_ORDER );</span><br><span class="line"> 	 foreach($arr[0] as $url)&#123;</span><br><span class="line">  		$str=str_replace($url, &apos;&lt;a href=&quot;&apos;.$url.&apos;&quot;&gt;&apos;.$url.&apos;&lt;/a&gt;&apos;, $str);</span><br><span class="line">	  &#125;</span><br><span class="line"></span><br><span class="line"> 	 return  $str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo setUrl($str);</span><br></pre></td></tr></table></figure>
+<h3 id="strstr-stristr"><a href="#strstr-stristr" class="headerlink" title="strstr()  stristr()"></a>strstr()  stristr()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">echo stristr(&quot;this is a test hrello&quot;, &quot;test&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	从test开始，到最后的字符串都拿出来。</span><br><span class="line">echo strstr(&quot;this is a tedst&quot;, 100);</span><br><span class="line">	搜索ASCII码是100的字符到最后。//dst</span><br><span class="line"></span><br><span class="line">if(stristr(&quot;this is a hello test&quot;,&quot;HELLO&quot;))&#123;</span><br><span class="line">	echo &quot;存在&quot;;</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	echo &quot;不存在&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="strpos（第一次出现的位置）-strrpos-（最后出现的位置）"><a href="#strpos（第一次出现的位置）-strrpos-（最后出现的位置）" class="headerlink" title="strpos（第一次出现的位置） strrpos （最后出现的位置）"></a>strpos（第一次出现的位置） strrpos （最后出现的位置）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">// strpos()  strrpos()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> echo getFile(&apos;http://www.baidu.com/index.php&apos;).&apos;&lt;br&gt;&apos;;</span><br><span class="line"> echo getFile(&apos;/url/www/index.jsp&apos;).&apos;&lt;br&gt;&apos;;</span><br><span class="line"> echo getFile(&apos;../../images/bgcolor.gif&apos;).&apos;&lt;br&gt;&apos;;</span><br><span class="line"> echo getFile(&apos;c:/hello/demo.rar&apos;).&apos;&lt;br&gt;&apos;;</span><br><span class="line"></span><br><span class="line"> function getFile($url)&#123;</span><br><span class="line">  $loc=strrpos($url, &quot;/&quot;)+1;</span><br><span class="line">	</span><br><span class="line">  $fileName=substr($url, $loc);</span><br><span class="line"></span><br><span class="line">  return $fileName;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="str-replace-替换函数"><a href="#str-replace-替换函数" class="headerlink" title="str_replace 替换函数"></a>str_replace 替换函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot;http://www.baidu.com/baidu/index.asp&quot;;</span><br><span class="line"></span><br><span class="line">$newstr=str_replace(&quot;baidu&quot;, &quot;google&quot;, $str);</span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $newstr.&quot;&lt;br&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot; 字符串中php的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供php的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系php统提供的 字符串中的替换函数，系统提供的 字符串中的php替换函数，系统提供的 字符串中的替换函数，系统提供的php 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提php供的 字符串中的替换函数，系统提供的&quot;;</span><br><span class="line"></span><br><span class="line">$search=&quot;函数&quot;;</span><br><span class="line">$replace=&apos;&lt;font color=&quot;red&quot;&gt;&apos;.$search.&apos;&lt;/font&gt;&apos;;</span><br><span class="line">$newstr=str_replace($search, $replace, $str);</span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $newstr.&quot;&lt;br&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="关键字变红"><a href="#关键字变红" class="headerlink" title="关键字变红"></a>关键字变红</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot; 字符串中php的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供php的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系php统提供的 字符串中的替换函数，系统提供的 字符串中的php替换函数，系统提供的 字符串中的替换函数，系统提供的php 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提php供的 字符串中的替换函数，系统提供的&quot;;</span><br><span class="line"></span><br><span class="line">$count=0;</span><br><span class="line">$search=&quot;php&quot;;</span><br><span class="line">$replace=&apos;&lt;font color=&quot;red&quot;&gt;&apos;.$search.&apos;&lt;/font&gt;&apos;;</span><br><span class="line">$newstr=str_replace($search, $replace, $str, $count);</span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $newstr.&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;一共被替换了 &quot;.$count.&quot; 次&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="替换非法关键字"><a href="#替换非法关键字" class="headerlink" title="替换非法关键字"></a>替换非法关键字</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot; 字符串中php的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字lamp符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供php的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符apache串中的替换函数，系统提供的 mysql字符串中的替换函数，系统Apache提供的 字符串中的MySQL替换函数，系php统提供的 字符串中的替换函数，系统提供的 字符串中的php替换函数，系统提供的 字linux符串中的替换mysql函数，系统提供的php 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提php供的 字符串中的替换函数，系统提供的&quot;;</span><br><span class="line"></span><br><span class="line">$count=0;</span><br><span class="line">$search=array(&quot;lamp&quot;, &quot;Apache&quot;, &quot;Linux&quot;, &quot;MySQL&quot;, &quot;Php&quot;);</span><br><span class="line">$replace=&quot;**&quot;;</span><br><span class="line">$newstr=str_ireplace($search, $replace, $str, $count);</span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $newstr.&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;一共被替换了 &quot;.$count.&quot; 次&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="多个替换多个"><a href="#多个替换多个" class="headerlink" title="多个替换多个"></a>多个替换多个</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot; 字符串中php的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字lamp符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供php的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符apache串中的替换函数，系统提供的 mysql字符串中的替换函数，系统Apache提供的 字符串中的MySQL替换函数，系php统提供的 字符串中的替换函数，系统提供的 字符串中的php替换函数，系统提供的 字linux符串中的替换mysql函数，系统提供的php 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提php供的 字符串中的替换函数，系统提供的&quot;;</span><br><span class="line"></span><br><span class="line">$count=0;</span><br><span class="line">$search=array(&quot;lamp&quot;, &quot;Apache&quot;, &quot;Linux&quot;, &quot;MySQL&quot;, &quot;Php&quot;);</span><br><span class="line"></span><br><span class="line">$replace=array(&quot;J2EE&quot;, &quot;Tomcat&quot;, &quot;Windows&quot;, &quot;Oracle&quot;, &quot;Jsp&quot;);</span><br><span class="line">$newstr=str_ireplace($search, $replace, $str, $count);</span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line">echo $newstr.&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">echo &quot;一共被替换了 &quot;.$count.&quot; 次&quot;;</span><br></pre></td></tr></table></figure>
+<p>###<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function setUrl($str) &#123;</span><br><span class="line"> 	$url=&quot;/(https?|ftps?):\/\/((www|mail|news)\.([^\.\/]+)\.(com|org|net))/i&quot;;</span><br><span class="line">	  preg_match_all($url, $str, $arr,PREG_PATTERN_ORDER );</span><br><span class="line"></span><br><span class="line">	 </span><br><span class="line"></span><br><span class="line">  	 $str=str_replace($arr[0], array_map(&quot;addLink&quot;, $arr[0]), $str);</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line"> 	 return  $str;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function addLink($url)&#123;</span><br><span class="line">	return &apos;&lt;a href=&quot;&apos;.$url.&apos;&quot;&gt;&apos;.$url.&apos;&lt;/a&gt;&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">echo setUrl($str);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> $str=&quot; 字符串中php的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字lamp符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供php的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提供的 字符apache串中的替换函数，系统提供的 mysql字符串中的替换函数，系统Apache提供的 字符串中的MySQL替换函数，系php统提供的 字符串中的替换函数，系统提供的 字符串中的php替换函数，系统提供的 字linux符串中的替换mysql函数，系统提供的php 字符串中的替换函数，系统提供的 字符串中的替换函数，系统php提供的 字符串中的替换函数，系统提供的 字符串中的替换函数，系统提php供的 字符串中的替换函数，系统提供的&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">echo preg_replace(&quot;/[a-zA-z]+/&quot;,&apos;&apos;,$str);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">echo $str.&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">$ubbcodes=array(</span><br><span class="line">	&apos;/\[b\](.*?)\[\/b\]/i&apos;,</span><br><span class="line">	&apos;/\[u\](.*?)\[\/u\]/i&apos;,</span><br><span class="line">	&apos;/\[i\](.*?)\[\/i\]/i&apos;,</span><br><span class="line">	&apos;/\[color=(.*?)\](.*?)\[\/color\]/&apos;,</span><br><span class="line">	&apos;/\[size=(.*?)\](.*?)\[\/size\]/&apos;,</span><br><span class="line">	&apos;/\[align=(.*?)\](.*?)\[\/align\]/&apos;</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">$htmls=array(</span><br><span class="line">	&apos;&lt;b&gt;\1&lt;/b&gt;&apos;,</span><br><span class="line">	&apos;&lt;u&gt;\1&lt;/u&gt;&apos;,</span><br><span class="line">	&apos;&lt;i&gt;\1&lt;/i&gt;&apos;,</span><br><span class="line">	&apos;&lt;font color=&quot;\1&quot;&gt;\2&lt;/font&gt;&apos;,</span><br><span class="line">	&apos;&lt;font size=&quot;\1&quot;&gt;\2&lt;/font&gt;&apos;,</span><br><span class="line">	&apos;&lt;p align=&quot;\1&quot;&gt;\2&lt;/p&gt;&apos;</span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">echo preg_replace($ubbcodes,$htmls,$str);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$string=&quot;192.168.1.1&quot;;</span><br><span class="line"></span><br><span class="line">$arr=explode(&quot;.&quot;,$string);</span><br><span class="line"></span><br><span class="line">print_r($arr);</span><br><span class="line"></span><br><span class="line">$arrs=preg_split(&apos;/[,.?!]/&apos;,$str);//按照正则分割</span><br><span class="line"></span><br><span class="line">echo implode(&quot;---&quot;,$arrs); //用---组合。</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/正则/" rel="tag">#正则</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/04/25/PHP听课笔记30-正则表达式/" rel="next" title="PHP听课笔记30-正则表达式">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记30-正则表达式
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/06/PHP听课笔记-32-文件系统操作/" rel="prev" title="PHP听课笔记-32-文件系统操作">
+                PHP听课笔记-32-文件系统操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">55</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">73</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#preg-match"><span class="nav-number">1.</span> <span class="nav-text">preg_match</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#preg-match-all-str-replace"><span class="nav-number">2.</span> <span class="nav-text">preg_match_all  str_replace</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strstr-stristr"><span class="nav-number">3.</span> <span class="nav-text">strstr()  stristr()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#strpos（第一次出现的位置）-strrpos-（最后出现的位置）"><span class="nav-number">4.</span> <span class="nav-text">strpos（第一次出现的位置） strrpos （最后出现的位置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#str-replace-替换函数"><span class="nav-number">5.</span> <span class="nav-text">str_replace 替换函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字变红"><span class="nav-number">6.</span> <span class="nav-text">关键字变红</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#替换非法关键字"><span class="nav-number">7.</span> <span class="nav-text">替换非法关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多个替换多个"><span class="nav-number">8.</span> <span class="nav-text">多个替换多个</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
