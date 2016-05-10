@@ -1,0 +1,712 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,处理,图像," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="PHP图像处理。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-40-图像处理">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/10/PHP听课笔记-40-图像处理/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="PHP图像处理。">
+<meta property="og:updated_time" content="2016-05-10T07:34:05.391Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-40-图像处理">
+<meta name="twitter:description" content="PHP图像处理。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-40-图像处理 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-40-图像处理
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-10T13:18:29+08:00" content="2016-05-10">
+              2016-05-10
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>PHP图像处理。</p>
+<a id="more"></a>
+<p>包含两部分内容：</p>
+<blockquote>
+<p>画图<br>处理原有图像</p>
+</blockquote>
+<h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><p>验证码、统计图等都应用到画图功能。</p>
+<h3 id="安装GD库"><a href="#安装GD库" class="headerlink" title="安装GD库"></a>安装GD库</h3><p>LAMP环境安装方面的GD库安装。</p>
+<h3 id="创建画布"><a href="#创建画布" class="headerlink" title="创建画布"></a>创建画布</h3><p>等于在内存开辟一块区域，在这个区域存储图像信息。属于创建资源类型。<br>需要指定的参数：</p>
+<blockquote>
+<p>高度<br>宽度<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">resource imagecreate (int x_size,int y_size)</span><br><span class="line">resource imagecreatetruecolor(int x_size,int y_size)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h3><p>矩形、圆、像素点、线段、扇、字符、字符串等。<br>制定颜色。</p>
+<h3 id="输出图像及保存"><a href="#输出图像及保存" class="headerlink" title="输出图像及保存"></a>输出图像及保存</h3><p>输出各种类型：</p>
+<blockquote>
+<p>imagegif();<br>imagejpeg();<br>imagepng();</p>
+</blockquote>
+<h3 id="释放资源"><a href="#释放资源" class="headerlink" title="释放资源"></a>释放资源</h3><blockquote>
+<p>imagedestroy($img);</p>
+</blockquote>
+<h3 id="处理原有图像"><a href="#处理原有图像" class="headerlink" title="处理原有图像"></a>处理原有图像</h3><p>图片缩放、水印、电子相册等。</p>
+<h3 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	</span><br><span class="line">	//step 1创建图片资源</span><br><span class="line">	$img=imagecreatetruecolor(200, 200);</span><br><span class="line"></span><br><span class="line">//	$img=imagecreate(200, 200);</span><br><span class="line"></span><br><span class="line">	$white=imagecolorallocate($img, 255, 255, 255);</span><br><span class="line">	$gray=imagecolorallocate($img, 0xC0, 0xC0, 0xC0);</span><br><span class="line">	$darkgray=imagecolorallocate($img, 0x90, 0x90, 0x90);</span><br><span class="line">	$navy=imagecolorallocate($img, 0, 0, 0x80);</span><br><span class="line">	$darknavy=imagecolorallocate($img, 0, 0, 0x50);</span><br><span class="line">	$red=	imagecolorallocate($img, 0xFF, 0, 0);</span><br><span class="line">	$darkred=imagecolorallocate($img, 0x90, 0, 0);</span><br><span class="line"></span><br><span class="line">	imagefill($img, 0, 0, $gray); //会填充颜色。</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	//step 2画各种图形</span><br><span class="line">	//画一个矩形并填充</span><br><span class="line">	imagefilledrectangle($img, 10, 10, 80, 80, $green); //从10，10开始到80，80，填充绿色的矩形。</span><br><span class="line">	//画一个矩形</span><br><span class="line">	imagerectangle($img, 90, 10, 190, 80, $green);</span><br><span class="line"></span><br><span class="line">	//线段</span><br><span class="line">	imageline($img,0, 0, 200, 200 ,$blue);</span><br><span class="line">	imageline($img,200, 0, 0, 200, $blue);</span><br><span class="line"></span><br><span class="line">	//点</span><br><span class="line">	imagesetpixel($img,50, 50 ,$red);</span><br><span class="line">	imagesetpixel($img,55, 50 ,$red);</span><br><span class="line">	imagesetpixel($img,59, 50 ,$red);</span><br><span class="line">	imagesetpixel($img,64, 50 ,$red);</span><br><span class="line">	imagesetpixel($img,72, 50 ,$red);</span><br><span class="line"></span><br><span class="line">	//圆</span><br><span class="line">	imageellipse($img, 100, 100, 100, 100,$green);</span><br><span class="line">	//圆</span><br><span class="line">	imagefilledellipse($img, 100, 100, 10, 10,$blue);</span><br><span class="line"></span><br><span class="line">	imagechar($img, 5, 100, 100, &quot;A&quot;, $red);</span><br><span class="line">	imagechar($img, 5, 120, 120, &quot;B&quot;, $red);</span><br><span class="line">	imagecharup($img, 5, 60, 60, &quot;C&quot;, $red); //加up，垂直画字符</span><br><span class="line">	imagecharup($img, 5, 80, 80, &quot;D&quot;, $red);</span><br><span class="line"></span><br><span class="line">	imagestring($img, 3, 10, 10, &quot;Hello&quot;, $navy);</span><br><span class="line">	imagestringup($img, 3, 10, 80, &quot;Hello&quot;, $navy);</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	imagettftext($img, 25, 60, 150, 150, $red, &quot;simkai.ttf&quot;, &quot;xxx&quot;); </span><br><span class="line">	imagettftext($img, 12, -60, 50, 150, $red, &quot;simli.ttf&quot;, &quot;xxx&quot;);</span><br><span class="line">	</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">	//3D效果</span><br><span class="line">	for($i=60; $i&gt;50; $i--)&#123;</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, -160, 40, $darkgray, IMG_ARC_PIE);</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, 40, 75, $darknavy, IMG_ARC_PIE);</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, 75, 200, $darkred, IMG_ARC_PIE);</span><br><span class="line">	&#125;</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, -160, 40, $gray, IMG_ARC_PIE);</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, 40, 75, $navy, IMG_ARC_PIE);</span><br><span class="line">		imagefilledarc($img, 50, $i,100, 50, 75, 200, $red, IMG_ARC_PIE);</span><br><span class="line"></span><br><span class="line">	header(&quot;Content-Type:image/gif&quot;);</span><br><span class="line">	imagegif($img);</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	//step3:输出或保存图像</span><br><span class="line">	header(&quot;Content-Type:image/gif&quot;); //先告诉浏览器这是一个图像资源。</span><br><span class="line">	imagegif($img);</span><br><span class="line"></span><br><span class="line">	//step4:释放资源</span><br><span class="line">	imagedestroy($img);</span><br></pre></td></tr></table></figure>
+<h2 id="验证码实例"><a href="#验证码实例" class="headerlink" title="验证码实例"></a>验证码实例</h2><h3 id="验证码源码"><a href="#验证码源码" class="headerlink" title="验证码源码"></a>验证码源码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	class ValidationCode &#123;</span><br><span class="line">		private $width;</span><br><span class="line">		private $height;</span><br><span class="line">		private $codeNum;</span><br><span class="line">		private $image;   //图像资源</span><br><span class="line">		private $disturbColorNum;</span><br><span class="line">		private $checkCode;</span><br><span class="line"></span><br><span class="line">		function __construct($width=80, $height=20, $codeNum=4)&#123;</span><br><span class="line">			$this-&gt;width=$width;</span><br><span class="line">			$this-&gt;height=$height;</span><br><span class="line">			$this-&gt;codeNum=$codeNum;</span><br><span class="line">			$this-&gt;checkCode=$this-&gt;createCheckCode();</span><br><span class="line">			$number=floor($width*$height/15);</span><br><span class="line">			</span><br><span class="line">			if($number &gt; 240-$codeNum)&#123; //保证面积越大，干扰元素的像素点越多。</span><br><span class="line">				$this-&gt;disturbColorNum=	240-$codeNum;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				$this-&gt;disturbColorNum=$number;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		//公有的输出图片的方法，通过访问该方法向浏览器中输出图像</span><br><span class="line">		function showImage($fontFace=&quot;&quot;)&#123;</span><br><span class="line">			//第一步：创建图像背景</span><br><span class="line">			$this-&gt;createImage();</span><br><span class="line">			//第二步：设置干扰元素</span><br><span class="line">			$this-&gt;setDisturbColor();</span><br><span class="line">			//第三步：向图像中随机画出文本</span><br><span class="line">			$this-&gt;outputText($fontFace);</span><br><span class="line">			//第四步：输出图像</span><br><span class="line">			$this-&gt;outputImage();</span><br><span class="line">		&#125;</span><br><span class="line">			</span><br><span class="line">		//通过调用该方法获取随机创建的验证码字符串</span><br><span class="line">		function getCheckCode()&#123;</span><br><span class="line">			return $this-&gt;checkCode;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function createImage()&#123;</span><br><span class="line">			//创建图像资源</span><br><span class="line">			$this-&gt;image=imagecreatetruecolor($this-&gt;width, $this-&gt;height);</span><br><span class="line">			//随机背景色</span><br><span class="line">			$backColor=imagecolorallocate($this-&gt;image, rand(225, 255), rand(225,255), rand(225, 255));</span><br><span class="line">			//为背景添充颜色</span><br><span class="line">			imagefill($this-&gt;image, 0, 0, $backColor);</span><br><span class="line">			//设置边框颜色</span><br><span class="line">			$border=imagecolorallocate($this-&gt;image, 0, 0, 0);</span><br><span class="line">			//画出矩形边框</span><br><span class="line">			imagerectangle($this-&gt;image, 0, 0, $this-&gt;width-1, $this-&gt;height-1, $border);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function  setDisturbColor()&#123;</span><br><span class="line">			for($i=0; $i&lt;$this-&gt;disturbColorNum; $i++)&#123; //100个随机位置随机颜色的像素点</span><br><span class="line">				$color=imagecolorallocate($this-&gt;image, rand(0, 255), rand(0, 255), rand(0, 255));</span><br><span class="line">				imagesetpixel($this-&gt;image, rand(1, $this-&gt;width-2), rand(1, $this-&gt;height-2), $color); </span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			for($i=0; $i&lt;10; $i++)&#123;  //随机弧线，10个够用</span><br><span class="line">				$color=imagecolorallocate($this-&gt;image, rand(200, 255), rand(200, 255), rand(200, 255));</span><br><span class="line">				imagearc($this-&gt;image, rand(-10, $this-&gt;width), rand(-10, $this-&gt;height), rand(30, 300), rand(20, 200), 55, 44, $color);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function createCheckCode()&#123;</span><br><span class="line">			$code=&quot;23456789abcdefghijkmnpqrstuvwxyzABCDEFGHIJKMNPQRSTUVWXYZ&quot;;</span><br><span class="line">			$string=&apos;&apos;;</span><br><span class="line">			for($i=0; $i &lt; $this-&gt;codeNum; $i++)&#123;</span><br><span class="line">				$char=$code&#123;rand(0, strlen($code)-1)&#125;;</span><br><span class="line">				$string.=$char;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return $string;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function outputText($fontFace=&quot;&quot;)&#123;</span><br><span class="line">			for($i=0; $i&lt;$this-&gt;codeNum; $i++)&#123;</span><br><span class="line">				$fontcolor=imagecolorallocate($this-&gt;image, rand(0, 128), rand(0, 128), rand(0, 128));</span><br><span class="line">				if($fontFace==&quot;&quot;)&#123;</span><br><span class="line">					$fontsize=rand(3, 5);</span><br><span class="line">					$x=floor($this-&gt;width/$this-&gt;codeNum)*$i+3;</span><br><span class="line">					$y=rand(0, $this-&gt;height-15);</span><br><span class="line">					imagechar($this-&gt;image,$fontsize, $x, $y, $this-&gt;checkCode&#123;$i&#125;,$fontcolor);</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					$fontsize=rand(12, 16);</span><br><span class="line">					$x=floor(($this-&gt;width-8)/$this-&gt;codeNum)*$i+8;</span><br><span class="line">					$y=rand($fontSize+5, $this-&gt;height);</span><br><span class="line">					imagettftext($this-&gt;image,$fontsize,rand(-30, 30),$x,$y ,$fontcolor, $fontFace, $this-&gt;checkCode&#123;$i&#125;);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function outputImage() &#123;  //不知道用户支持什么格式图片，因此需要判断。</span><br><span class="line">			if(imagetypes() &amp; IMG_GIF)&#123;   //imagetype 返回当前PHP版本支持的图像类型</span><br><span class="line">				header(&quot;Content-Type:image/gif&quot;);</span><br><span class="line">				imagepng($this-&gt;image);</span><br><span class="line">			&#125;else if(imagetypes() &amp; IMG_JPG)&#123;</span><br><span class="line">				header(&quot;Content-Type:image/jpeg&quot;);</span><br><span class="line">				imagepng($this-&gt;image);</span><br><span class="line">			&#125;else if(imagetypes() &amp; IMG_PNG)&#123;</span><br><span class="line">				header(&quot;Content-Type:image/png&quot;);</span><br><span class="line">				imagepng($this-&gt;image);</span><br><span class="line">			&#125;else if(imagetypes() &amp; IMG_WBMP)&#123;</span><br><span class="line">				header(&quot;Content-Type:image/vnd.wap.wbmp&quot;);</span><br><span class="line">				imagepng($this-&gt;image);</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				die(&quot;PHP不支持图像创建&quot;);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		function __destruct()&#123;  //析构方法，使用完之后自动调用。</span><br><span class="line">			imagedestroy($this-&gt;image);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="code-php"><a href="#code-php" class="headerlink" title="code.php"></a>code.php</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	session_start();</span><br><span class="line">	include &quot;validationcode.class.php&quot;;</span><br><span class="line"></span><br><span class="line">	$code=new ValidationCode(80, 20, 4);</span><br><span class="line"></span><br><span class="line">	$code-&gt;showImage();   //输出到页面中,供注册或登录使用</span><br><span class="line"></span><br><span class="line">	$_SESSION[&quot;code&quot;]=$code-&gt;getCheckCode();  //将验证码保存到服务器中</span><br></pre></td></tr></table></figure>
+<h3 id="login-php"><a href="#login-php" class="headerlink" title="login.php"></a>login.php</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	session_start();</span><br><span class="line">	echo $_POST[&quot;code&quot;].&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $_SESSION[&quot;code&quot;].&quot;&lt;br&gt;&quot;;</span><br><span class="line"></span><br><span class="line">	if(strtoupper($_POST[&quot;code&quot;])==strtoupper($_SESSION[&quot;code&quot;]))&#123;</span><br><span class="line">		echo &quot;ok&quot;;</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		echo &quot;error&quot;;</span><br><span class="line">	&#125;</span><br><span class="line">?&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;form action=&quot;login.php&quot; method=&quot;post&quot;&gt;</span><br><span class="line">		user:&lt;input type=&quot;text&quot; name=&quot;usenrame&quot;&gt;&lt;br&gt;</span><br><span class="line">		pass:&lt;input type=&quot;passowrd&quot; name=&quot;pass&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">		code: &lt;input type=&quot;text&quot; name=&quot;code&quot; onkeyup=&quot;if(this.value!=this.value.toUpperCase()) this.value=this.value.toUpperCase()&quot;&gt; &lt;img src=&quot;code.php&quot; onclick=&quot;this.src=&apos;code.php?&apos;+Math.random()&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">		&lt;input type=&quot;submit&quot; name=&quot;sub&quot; value=&quot;login&quot;&gt;&lt;br&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/处理/" rel="tag">#处理</a>
+          
+            <a href="/tags/图像/" rel="tag">#图像</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/10/PHP听课笔记-39-日期和时间管理实例（日历）/" rel="next" title="PHP听课笔记-39-日期和时间管理实例（日历）">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-39-日期和时间管理实例（日历）
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/10/PHP听课笔记-41-图像处理方式汇总/" rel="prev" title="PHP听课笔记-41-图像处理方式汇总">
+                PHP听课笔记-41-图像处理方式汇总 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#画图"><span class="nav-number">1.</span> <span class="nav-text">画图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装GD库"><span class="nav-number">1.1.</span> <span class="nav-text">安装GD库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建画布"><span class="nav-number">1.2.</span> <span class="nav-text">创建画布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绘制图像"><span class="nav-number">1.3.</span> <span class="nav-text">绘制图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出图像及保存"><span class="nav-number">1.4.</span> <span class="nav-text">输出图像及保存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#释放资源"><span class="nav-number">1.5.</span> <span class="nav-text">释放资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理原有图像"><span class="nav-number">1.6.</span> <span class="nav-text">处理原有图像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实例代码"><span class="nav-number">1.7.</span> <span class="nav-text">实例代码</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#验证码实例"><span class="nav-number">2.</span> <span class="nav-text">验证码实例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#验证码源码"><span class="nav-number">2.1.</span> <span class="nav-text">验证码源码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#code-php"><span class="nav-number">2.2.</span> <span class="nav-text">code.php</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#login-php"><span class="nav-number">2.3.</span> <span class="nav-text">login.php</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
