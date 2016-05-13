@@ -1,0 +1,728 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,内置函数," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="在MySQL中的内置函数。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-45-SQL内置函数">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/12/PHP听课笔记-45-SQL内置函数/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="在MySQL中的内置函数。">
+<meta property="og:updated_time" content="2016-05-12T04:38:17.702Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-45-SQL内置函数">
+<meta name="twitter:description" content="在MySQL中的内置函数。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-45-SQL内置函数 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-45-SQL内置函数
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-12T10:43:23+08:00" content="2016-05-12">
+              2016-05-12
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>在MySQL中的内置函数。</p>
+<a id="more"></a>
+<p>MySQL中的内置系统函数</p>
+<pre><code>用在SELECCT语句， 能及子句 where order by having 中 UPDATE DELETE， 
+
+函数中可以将字段名作为变量来用，变量的值就是这个列对应的每一行记录
+</code></pre><h3 id="一、字符串函数"><a href="#一、字符串函数" class="headerlink" title="一、字符串函数"></a>一、字符串函数</h3><pre><code>php中用的函数，MySQl中大部也提供
+
+1 . CONCAT(S1,S2....SN): 把传入的参数连接成一个字符串
+2.  INSERT(str, x, y, insert): 将字符串X位置开始，y个字符串长度替换为字符串insert
+3. LOWER(str) UPPER(str): 将字符串转为小或或大写
+4. LEFT(str, x) RIGHT(str, x): 分别返回最左边的X字符，和最右边的X个字符，如果第二个参数为NULL则什么也不返回
+5. LPAD(str, n, pad), RPAD(str,n,pad): 用字符串pad对str最左边和最友边进行填充，直到长度为n个字符长度
+
+6. TRIM（str） LTRIM(str) Rtrim(str): 去掉字符串两边，左边和右边字符串的空格
+7. replace(str, a,b)：用字符串b替换字符串str中的所有出现的字符串a
+8. strcmp(s1, s2):如果S1比S2小，返回-1， 如果S1比S2大则返回1， 如果S1==S2 0
+9. substring(str, x, y): 返回字符串中的第x位置起y个字符串长度的字符。
+</code></pre><h3 id="二、数值函数"><a href="#二、数值函数" class="headerlink" title="二、数值函数"></a>二、数值函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ABS(x)：返回X的绝对值</span><br><span class="line">ceil(x): 返回大于X的最小整数  2.1 2.5 2.9  3</span><br><span class="line">floor(x): 返回小于X的最大整数  2.1 2.5 2.9 2</span><br><span class="line">mod(x, y): 返回x/y的模</span><br><span class="line">rand() 0-1之间</span><br><span class="line">round(x,y): 返回参数X的四舍五入的有y位小数的值</span><br><span class="line">truncate(x,y):返回数字x截断为y位小数的结果</span><br></pre></td></tr></table></figure>
+<h3 id="三、日期函数"><a href="#三、日期函数" class="headerlink" title="三、日期函数"></a>三、日期函数</h3><pre><code>当用PHP的时间戳来完成
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">curdate()</span><br><span class="line">curtime()</span><br><span class="line">now()</span><br><span class="line">unix_timestamp(date)</span><br><span class="line">from_unixtime</span><br><span class="line">week()</span><br><span class="line">year()</span><br><span class="line">hour()</span><br><span class="line">minute()</span><br><span class="line">.....</span><br></pre></td></tr></table></figure>
+<h3 id="四、流程控制函数"><a href="#四、流程控制函数" class="headerlink" title="四、流程控制函数"></a>四、流程控制函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if(value, t f)</span><br><span class="line">ifnull(value1, value2)</span><br><span class="line">case when [value1] then[result1]...else[default]end</span><br><span class="line"></span><br><span class="line">case when ...then</span><br></pre></td></tr></table></figure>
+<h3 id="五、其它函数"><a href="#五、其它函数" class="headerlink" title="五、其它函数"></a>五、其它函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">	database()</span><br><span class="line">	version()</span><br><span class="line">	user()</span><br><span class="line">	inet_aton(ip)</span><br><span class="line">	inet_ntoa()</span><br><span class="line">	password()</span><br><span class="line">	md5()</span><br><span class="line">```	</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">### E.G.:</span><br></pre></td></tr></table></figure>
+<p>—concat—<br>select concat <name,"age is",age=""> from users;</name,"age></p>
+<p>—insert—<br>select insert&lt;”abcdefg”,2,3,’heloo’&gt;; //ahelooefg<br>select insert<name,3,2,'00'> from users;</name,3,2,'00'></p>
+<p>—lower/upper—<br>select lower&lt;”HELLO”&gt;,upper&lt;”hello”&gt;;<br>select * from users where upper<name>=’AAA’; //这样就可以不区分大小写的查找了</name></p>
+<p>—left/right—<br>select left&lt;”abcdefg”,3&gt;,right&lt;”abcdefg”,3&gt;,left&lt;”abcdefg”,null&gt;; // abc  efg null</p>
+<p>—lpad/rpad—<br>select name,lpad<name,3,"#">,rpad<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#110;&#x61;&#x6d;&#101;&#x2c;&#x33;&#44;&#34;&#x40;&#x22;">&#110;&#x61;&#x6d;&#101;&#x2c;&#x33;&#44;&#34;&#x40;&#x22;</a> from users; // ###aaa  aaa@@@</name,3,"#"></p>
+<p>—trim/rtrim/ltrim—<br>select trim&lt;”   abc   “&gt;; //abc</p>
+<p>—replace—<br>select replace&lt;”sdfsdfoaisdfsa”,”d”,”x”&gt;; //把d都替换成x</p>
+<p>—strcmp—<br>select strcmp&lt;”a”,”b”&gt;,strcmp&lt;”b”,”a”&gt;,strcmp&lt;”a”,”a”&gt;; // -1 1 0 </p>
+<p>—substring—<br>select substring&lt;”abcdefg”,3,2&gt;; //cd</p>
+<p>—ABS—<br>select abs<10>,abs&lt;-10&gt;; // 10 ,10<br>select abs<name> from users;</name></10></p>
+<p>—ceil/floor—<br>select ceil<2.1>; //3<br>select floor<2.9>; //2</2.9></2.1></p>
+<p>—mod—<br>select mod<10,4>; //2  </10,4></p>
+<p>—rand—<br>select rand&lt;&gt;; //0-1的随机数</p>
+<p>—round—<br>select round<1.12321,2>; //1.12</1.12321,2></p>
+<p>—truncate—<br>select truncate<1.235,2>,round<1.235,2>; //1.23  1.24</1.235,2></1.235,2></p>
+<p>—curdate—<br>select curdate&lt;&gt;; //当前日期<br>select curtime&lt;&gt;; //当前时间<br>select now&lt;&gt;; //都有<br>select unix_timestamp<now<>&gt;; //转换成时间戳<br>select from_unixtime<1293412333>;//转换回来<br>select week<now<>&gt;,year<now<>&gt;,hour<curtime<>&gt;,minute<curtime<>&gt;;<br>select monthname<now<>&gt;; //月份的名字<br>select date_format<now<>,”%Y-%m-%d %H:%i:%s”&gt;; //日期的格式化</now<></now<></curtime<></curtime<></now<></now<></1293412333></now<></p>
+<p>—流程控制—<br>create table salary<id int,salary="" decimal<9,2="">&gt;;<br>insert into salary values<1,1000>;<br>insert into salary values<2,2000>;<br>insert into salary values<3,3000>;<br>insert into salary values<4,4000>;<br>insert into salary values<5,5000>;<br>insert into salary values<6,null>;</6,null></5,5000></4,4000></3,3000></2,2000></1,1000></id></p>
+<p>select id,salary,if<salary>3000,’high’,’low’&gt; from salary;<br>select id,salary,ifnull<salary,0> from salary; //如果是空，返回0，不是空返回原值<br>select case when salary&lt;=3000 then ‘low’ else ‘high’ end from salary;</salary,0></salary></p>
+<p>—database/version/user/inet_aton(ip)/inet_ntoa/password/md5—<br>select database&lt;&gt;;<br>select version&lt;&gt;;<br>select user&lt;&gt;;<br>select inet_aton&lt;’192.168.1.1’&gt;; //3232235777 网络字节顺序，利于比较<br>select inet_ntoa<3232235777>; //192.168.1.1<br>select password&lt;’123456’&gt;; //加密123456，产生41位加密,是给MySQL本身用户用的。<br>select md5&lt;’123456’&gt;; //给用户密码的加密<br>select * from mysql.user \G; 看mysql中用户的密码加密</3232235777></p>
+<p>```</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/内置函数/" rel="tag">#内置函数</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/11/PHP听课笔记-44-SQL语句/" rel="next" title="PHP听课笔记-44-SQL语句">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-44-SQL语句
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/12/PHP听课笔记-46-PHP中使用MySQL/" rel="prev" title="PHP听课笔记-46-PHP中使用MySQL">
+                PHP听课笔记-46-PHP中使用MySQL <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、字符串函数"><span class="nav-number">1.</span> <span class="nav-text">一、字符串函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、数值函数"><span class="nav-number">2.</span> <span class="nav-text">二、数值函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、日期函数"><span class="nav-number">3.</span> <span class="nav-text">三、日期函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、流程控制函数"><span class="nav-number">4.</span> <span class="nav-text">四、流程控制函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、其它函数"><span class="nav-number">5.</span> <span class="nav-text">五、其它函数</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

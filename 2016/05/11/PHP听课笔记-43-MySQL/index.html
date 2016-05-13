@@ -1,0 +1,954 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,MySQL," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="了解MySQL数据库管理系统，内容如下：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-43-MySQL">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/11/PHP听课笔记-43-MySQL/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="了解MySQL数据库管理系统，内容如下：">
+<meta property="og:updated_time" content="2016-05-11T08:04:42.476Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-43-MySQL">
+<meta name="twitter:description" content="了解MySQL数据库管理系统，内容如下：">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-43-MySQL | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-43-MySQL
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-11T09:58:11+08:00" content="2016-05-11">
+              2016-05-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>了解MySQL数据库管理系统，内容如下：</p>
+<a id="more"></a>
+<h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><h3 id="一、基于数据库的PHP项目"><a href="#一、基于数据库的PHP项目" class="headerlink" title="一、基于数据库的PHP项目"></a>一、基于数据库的PHP项目</h3><pre><code>目前动态网站都是基于数据库，将网站内容使用数据库管理系统去管理
+
+用户， 栏目， 图片， 文章， 评论都存储在数据库中
+</code></pre><blockquote>
+<p>XSCMS<br>users<br>clumn<br>pic<br>articles<br>commtents</p>
+</blockquote>
+<h3 id="二、为什么要选择使用MySQL（概述）"><a href="#二、为什么要选择使用MySQL（概述）" class="headerlink" title="二、为什么要选择使用MySQL（概述）"></a>二、为什么要选择使用MySQL（概述）</h3><pre><code>Oracle DB2 SQL Server ..... 
+
+PHP中要选择使用MySQL,均开源免费。
+</code></pre><h3 id="三、MySQL的架构"><a href="#三、MySQL的架构" class="headerlink" title="三、MySQL的架构"></a>三、MySQL的架构</h3><pre><code>c/s  client / server 
+
+MySQL DBMS 
+
+客户端     服务器 -- 数据库---数据表--（记录， 字段）
+</code></pre><h3 id="四、PHP程序员主要学习那些数据库的操作"><a href="#四、PHP程序员主要学习那些数据库的操作" class="headerlink" title="四、PHP程序员主要学习那些数据库的操作"></a>四、PHP程序员主要学习那些数据库的操作</h3><pre><code> DBA
+
+ 程序员
+
+ 一、为你的项目设计表
+
+二、使用SQL语句 （SQL编程）
+
+都可以使用工具完成
+</code></pre><h3 id="五、MySQL的安装和启动过程"><a href="#五、MySQL的安装和启动过程" class="headerlink" title="五、MySQL的安装和启动过程"></a>五、MySQL的安装和启动过程</h3><pre><code>Linux安装
+Window安装
+
+和PHP整合
+</code></pre><h3 id="六、MySQL的目录结构"><a href="#六、MySQL的目录结构" class="headerlink" title="六、MySQL的目录结构"></a>六、MySQL的目录结构</h3><pre><code>my.ini  bin/  data/
+</code></pre><h3 id="七、了解数据库的SQL语句操作"><a href="#七、了解数据库的SQL语句操作" class="headerlink" title="七、了解数据库的SQL语句操作"></a>七、了解数据库的SQL语句操作</h3> <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">  	SQL (Structured Query Language)</span><br><span class="line">按照功能分为：</span><br><span class="line">  	DDL  定义功能和管理数据对象</span><br><span class="line">  		create database 库名</span><br><span class="line">		create table [库名.]表名  use 库名</span><br><span class="line"></span><br><span class="line">		drop database 库名</span><br><span class="line">		drop table 表名</span><br><span class="line">  	DML</span><br><span class="line">  		insert into users(id, name) values(&apos;1&apos;, &apos;zhangsan&apos;);</span><br><span class="line">  		update users set name=&apos;aa&apos;, age=&apos;10&apos; where id=&apos;1&apos;;</span><br><span class="line">  		delete from 表名 where id=&apos;2&apos;;</span><br><span class="line"></span><br><span class="line">  	DQL</span><br><span class="line">  		select from 表名;</span><br><span class="line"></span><br><span class="line">  	DCL</span><br><span class="line"></span><br><span class="line">  	\s看状态</span><br><span class="line">  	show databases 看所有库</span><br><span class="line">  	show tables 看所有表</span><br><span class="line">  	desc 看表结构</span><br><span class="line">  	show variables配置文件中的变量</span><br></pre></td></tr></table></figure>
+<pre><code>1. 执行SQL语句，连接到数据库服务器
+
+
+2. 创建数据库
+
+3. 选择一个库做为默认的数据库
+
+ 帮助的使用
+</code></pre><h2 id="创建数据表"><a href="#创建数据表" class="headerlink" title="创建数据表"></a>创建数据表</h2><h3 id="一、什么是数据表"><a href="#一、什么是数据表" class="headerlink" title="一、什么是数据表"></a>一、什么是数据表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show database 查看数据库</span><br><span class="line">use demo 使用demo数据库</span><br></pre></td></tr></table></figure>
+<h3 id="二、创建数据表的SQL语句模型"><a href="#二、创建数据表的SQL语句模型" class="headerlink" title="二、创建数据表的SQL语句模型"></a>二、创建数据表的SQL语句模型</h3><pre><code>DDL 数据对象创建语句
+
+CREATE TABLE [IF NOT EXISTS] 表名称(
+  字段名1 列类型 [属性] [索引]
+  字段名2 列类型 [属性] [索引]
+  ...
+  字段名n 列类型 [属性] [索引]
+) [表类型] [表字符集];
+
+表名称和字段名 需要我们自己定义名称
+
+users
+articles
+
+SQL是不区分大小写的， 但是表就是一个文件名， Windows不区分大小写，Linux区分大小写
+1. 一定要有意义（英文或英文组合和多个单词的缩写）
+2.自己定的名称最好都小写
+3. SQL 语句都大写
+</code></pre><h4 id="E-G"><a href="#E-G" class="headerlink" title="E.G.:"></a>E.G.:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE IF NOT EXISTS users&lt;</span><br><span class="line">id INT,</span><br><span class="line">name CHAR&lt;40&gt;</span><br><span class="line">&gt;;</span><br></pre></td></tr></table></figure>
+<h3 id="三、数据值和列类型"><a href="#三、数据值和列类型" class="headerlink" title="三、数据值和列类型"></a>三、数据值和列类型</h3><pre><code>细分都是按空间大小来区分的
+
+可以存下就可以
+
+  1、数值型
+      整型（整数）
+        非常小的整型     1字节    -128--127      0-- 255（无符号）            TINYINT
+        较小的整型       2字节    -32768--32767  0---65535                    SMALLINT
+        中等大小的整型   3字节                   0---16777215                 MEDIUMINT
+        标准的整数型     4字节                   -2147483648--- 2147483647    INT
+        大整数型         8字节                                      BIGINT            
+      浮点型（小数） 可表示含有小数的数值
+          float(M,D)            4字节
+          double(M,D)           8字节
+          定点数  以字符串形式存放，可以更精确的保存数据。
+          decimal(M, D)        M+2字节 
+</code></pre><h4 id="E-G-1"><a href="#E-G-1" class="headerlink" title="E.G.:"></a>E.G.:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create table tab1&lt;one double&lt;8,1&gt;,two decimal&lt;8,1&gt;&gt;;</span><br><span class="line">desc tab1;</span><br><span class="line">insert into tab1&lt;one,two&gt; values&lt;12.3 12.3&gt;;</span><br><span class="line">select * from tab1; //没有问题</span><br><span class="line">insert into tab1&lt;one,two&gt; values&lt;12.38 12.38&gt;;</span><br><span class="line">select * from tab1; // 浮点数会出现一些误差</span><br></pre></td></tr></table></figure>
+<pre><code>2、字符型
+    “mysql” &apos;mysql&apos;  \
+     char(m)              255  固定长度
+     varchar(m)           255  可变长度
+
+
+    占用字节：
+     char(4)           varchar(4)   __处理速度来说，char比varchar快得多。__
+     &apos;&apos;       4           &apos;&apos;       1字节
+     &apos;ab&apos;     4           &apos;ab&apos;     3字节
+     &apos;abcd&apos;   4           &apos;abcd&apos;   5字节 //会比字符多一个字节
+     &apos;abcdefg&apos;4           &apos;abcdefg&apos;5字节
+
+
+
+    保存较大数据的时候，用text和blob：
+     text  文本数据  （文章）  2   16- 1   
+
+         MEDIUMTEXT
+         LONGTEXT 
+     blob  二进制数据 （相片）
+         MEDIUMBLOB
+         LONGBLOB  
+
+
+
+    枚举和集合类型：
+
+    ENUM  枚举  1或2字节，类似于数组。
+
+    ENUM(&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;)  ---  最多65535个成员, 一次只能有一个值
+
+    SET   集合  1，2，3，4，8字节    --- 64       一次可以用多个集合中的值，中间使用”,“分开
+</code></pre><h4 id="E-G-2"><a href="#E-G-2" class="headerlink" title="E.G.:"></a>E.G.:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create table tab2&lt;name char&lt;10&gt;,name2 varchar&lt;10&gt;&gt;;</span><br><span class="line">insert into tab2&lt;&apos;abababababab&apos;,&apos;abababababab&apos;&gt;;</span><br><span class="line">select * from tab2; //发现超过10个都会最多保留10个。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table tab3&lt;one enum&lt;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&gt;,two set&lt;&apos;a&apos;,&apos;b&apos;,&apos;c&apos;&gt;&gt;;</span><br><span class="line">insert into tab3&lt;&apos;a&apos;,&apos;b&apos;&gt;;</span><br><span class="line">insert into tab3&lt;&apos;w&apos;,&apos;w&apos;&gt;;</span><br><span class="line">insert into tab3&lt;&apos;a,b&apos;,&apos;a,b&apos;&gt;;</span><br><span class="line">select * from tab3; //是可以的,但是插入一组w是不行的。因为只能存指定的字符。&lt;a,b&gt;只有集合可以显示。枚举一次只能一个。</span><br></pre></td></tr></table></figure>
+<pre><code>3、日期型
+
+    DATE          YYYY-MM-DD
+    TIME          hh:mm:ss
+    DATETIME      YYYY-MM-DD hh:mm:ss
+    TIMESTAMP     YYYYMMDDhhmmss  
+    YEAR          YYYY
+
+    创建表时最好不要使用这些中的时间格式（PHP中时间戳 1970-1-1 0:0:0）是一整数
+
+    考虑到需要进行时间计算，推荐用整数保存时间  time()，用int保存。
+</code></pre><h4 id="E-G-3"><a href="#E-G-3" class="headerlink" title="E.G.:"></a>E.G.:</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">create table tab4&lt;one date,two time,three datetime,four timestamp,five year&gt;;</span><br><span class="line">desc tab4;</span><br><span class="line">insert tab4&lt;one&gt; values&lt;&quot;2016-05-11&quot;&gt;; //&quot;-&quot;用不用都可以。</span><br><span class="line">select * from tab4;</span><br></pre></td></tr></table></figure>
+<h3 id="四、数据字段属性"><a href="#四、数据字段属性" class="headerlink" title="四、数据字段属性"></a>四、数据字段属性</h3><pre><code>  1. unsigned 可以让空间增加一倍  -128-127   0-255
+
+     只能用在数值型字段，如果不需要负数值，就用unsigned修饰。
+
+  2. zerofill 
+
+     只能用在数值型字段， 前导0 ，不足的位数用0补齐。
+
+     该字段自动应用UNSIGNED
+
+   3. AUTO_INCREMENT
+     只能是整数， 数据每增加一条就会自动增1， 字段的值不充许重复
+
+     NULL 0 留空
+
+     每个表都最好有一个ID字段，设置为自动增长， auto_increment
+
+  4. NULL 和 NOT NULL
+
+      默认是空
+
+      NULL 值 
+
+      将来将这个表的数据转为PHP程序的数据时， 整数列有NULL  转成0吗  字符串NULL PHP &apos;&apos;  0.00
+
+  建议： 在创建表时每个字段都不要插入NULL
+
+
+not null
+
+5 default --和NOT NULL配合用
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE users(</span><br><span class="line">	id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,</span><br><span class="line">	name VARCHAR(30) NOT NULL DEFAULT &apos;&apos;,</span><br><span class="line">	height DOUBLE(10,2) NOT NULL DEFAULT 0.00,</span><br><span class="line">	age INT NOT NULL DEFAULT 0,</span><br><span class="line">	sex CHAR(4) NOT NULL DEFAULT &apos;男&apos;</span><br><span class="line">	);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create table t1&lt;id int auto_increment,name char&lt;10&gt;&gt;; //这样是错误的，因为auto_increment不能重复</span><br><span class="line">create table t1&lt;id int auto_increment primay key,name char&lt;10&gt;&gt;;//解决办法：加索引。</span><br></pre></td></tr></table></figure>
+<p>序号挨个增加，但是前边删除之后再添加的话，序号是从最大的数字开始增加。</p>
+<h3 id="五、创建索引"><a href="#五、创建索引" class="headerlink" title="五、创建索引"></a>五、创建索引</h3><pre><code>1. 主键索引
+    主要作用是确定数据库表里一条特定数据记录的位置
+
+    最好为每一张数据表定义一个主键，是为了让此列没有重复值，加快查询速度。
+
+    一个表只能指定一个主键
+
+    主键的值不能为空
+
+
+2. 唯一索引 --不是为了提高速度，而是为了避免重复。
+    都可以防止创建重复的值
+
+    每个表都可以有多个唯一索引
+
+    unique
+
+
+
+3. 常规索引 --快速的定位记录
+
+    最重要的技术
+
+    提升数据库的性能
+
+    11111111111
+    22222222222
+    3333333333333
+    44444444444444
+    55555555555
+    。。。
+    101010100101011
+
+    索引顺序  
+
+  可以提高查找的速度， 减慢数据列上插入，删除， 修改
+
+  可以单独使用，也可在创建表时创建，因为索引和表一样是独立的数据对象
+
+  index 和key 是同义词，用哪个都可以。
+
+  多列都可以，
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">create index ind1 on users&lt;name,age&gt;;</span><br><span class="line">desc users;  //会看到在users表中的name和age字段加上了索引。</span><br><span class="line">drop index ind1 on users; //不用再写name和age，因为系统已经知道你的索引了。</span><br></pre></td></tr></table></figure>
+<pre><code>4. 全文索引 --不使用匹配模式的情况下搜索关键词或索引。
+
+    fulltext类型索引， MyISAM 表类型使用， 只有在varchar char text文本字符串上使用
+
+    也可以多个数据列使用，会把所有关键词列成一份清单。
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">create table books(</span><br><span class="line">	id int,</span><br><span class="line">	bookname varchar(30),</span><br><span class="line">	price double,</span><br><span class="line">	detail text not null,</span><br><span class="line">	fulltext(detail, bookname),</span><br><span class="line">	index ind(price),</span><br><span class="line">	primay key(id));  //加主键的另一个方式，在id创建好了之后，直接输入这行也可以。</span><br><span class="line"></span><br><span class="line">	select from books where bookname like &apos;%php%&apos;;</span><br><span class="line"></span><br><span class="line">	select bookname, price from books where MATCH(detail) AGAINST(&apos;php&apos;);</span><br><span class="line"></span><br><span class="line">select match(detail) against(&apos;php&apos;) from books;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h3 id="六、数据表类型及存储位置"><a href="#六、数据表类型及存储位置" class="headerlink" title="六、数据表类型及存储位置"></a>六、数据表类型及存储位置</h3><pre><code>MySQL和大多数数据库不同， MySQL有一个存储引擎概念。
+
+MySQL可以针对不同的存储引擎需求可以选择最优的存储引擎
+
+引擎 数据表类型
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show engine  可以看到支持的引擎。一共12个</span><br></pre></td></tr></table></figure>
+<pre><code>我们只学12中的MyISAM 和 InnoDB两个
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">create table () type InnoDB;</span><br><span class="line">create table () engine InnoDB;都可以指定</span><br></pre></td></tr></table></figure>
+<pre><code>MyISAM 表类型是默认的
+
+__选择MyISAM还是选择InnoDB__
+
+注意： 在一个MySQL库中可以（创建表时）指定不同表类型
+</code></pre><h4 id="MyISAM-表类型"><a href="#MyISAM-表类型" class="headerlink" title="MyISAM 表类型"></a>MyISAM 表类型</h4><pre><code>成熟稳定、易于管理。是表格锁定的机制。强调快速读取操作
+
+缺点：
+1.要经常使用OPTIMIZE TABLE 表名，此命令用于恢复更新机制所浪费的空间。碎片整理。
+2.有些功能不支持
+</code></pre><h4 id="InnoDB-表类型"><a href="#InnoDB-表类型" class="headerlink" title="InnoDB 表类型"></a>InnoDB 表类型</h4><pre><code>    支持一些MyISAM所不支技功能
+
+    缺点：占用空间大
+
+功能        MyISAM               InnoDB
+
+事务处理        不支持                 支持   
+数据行锁定      不支持               支持
+外键约束        不支持               支持
+表空间占用    相对小               相对大 最大2倍
+全文索引        支持                 不支持
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create database xxx;</span><br><span class="line">use xxx;</span><br><span class="line">create table t1&lt;id int&gt; engine =InnoDB;  //t1就一个文件 .frm</span><br><span class="line">create table t2&lt;id int&gt; type =MyISAM;</span><br><span class="line">create table t3&lt;id int&gt;;  //会看到目录下t2,t3库有三个文件，.frm存储表结构 .MYD存储数据 .MYI保存索引</span><br></pre></td></tr></table></figure>
+<h3 id="七、MySQL默认字符集"><a href="#七、MySQL默认字符集" class="headerlink" title="七、MySQL默认字符集"></a>七、MySQL默认字符集</h3><p>需要计算机不仅要做科学运算，还要处理文字信息，因此要将文字编码。<br>      ACSII<br>      ISO-8859-1/latin1<br>      gb2312-80  不推荐使用<br>      gb13000    不推荐使用<br>      GBK        可以用<br>      GB18030    数据支持还比较少见</p>
+<pre><code>UTF -32
+USC -2
+UTF-16
+UTF-8 1--4  强烈推荐
+
+GBK 2字节 UTF8 3字节
+
+name varchar(12)  6个汉字  GBK
+name varchar(12)  4个汉字  UTF-8
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show character set;  能看到支持的所有字符集</span><br><span class="line">desc information_schema.character_sets; 可以看到相对字符集的校对字符集</span><br></pre></td></tr></table></figure>
+<pre><code>MySQL服务器， 数据库， 数据表， 字段
+
+
+数据库中的UTF-8   utf8
+
+ MySQL的字符集包括
+
+     1.字符集： 是用来定义MySQL存储字符串的方式   36个
+
+     2.校对规则：是对规则定义了比较字符串的方式 70个
+
+    一对多的关系： 1 个字集可以对应多个校对规则 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create databse b1 default character set gbk collate gbk_chinese_ci; 创建数据库，字符集选用gbk,</span><br><span class="line">校对字符集选用chinesee，且ci指定了不区分大小写。</span><br><span class="line"></span><br><span class="line">create table tb1&lt;id int&gt; type=InnoDB default character set gbk collate gbk_chinese_ci;</span><br><span class="line">创建表也可以设置默认字符集</span><br></pre></td></tr></table></figure>
+<pre><code>客户端与服务器交互时
+
+character_set_client 客户端字符集
+character_set_connection 连接字符集
+character_set_results 返回结果字符集
+
+set names 字符集  同时修改以上三个的值
+</code></pre><h3 id="八、修改表"><a href="#八、修改表" class="headerlink" title="八、修改表"></a>八、修改表</h3><pre><code>Alter table 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">alter table t1 add age int unsigned not null default &apos;0&apos;; 直接加</span><br><span class="line">alter table t1 add sex varchar&lt;10&gt; not null after id; 在id之后加</span><br><span class="line">alter table t1 add sex varchar&lt;10&gt; not null first; 在id之前加上了</span><br><span class="line">alter table t1 modify sex char&lt;3&gt;; 修改sex类型为char&lt;3&gt;  modify用来改类型</span><br><span class="line">alter table t1 change name username varchar&lt;10&gt;; 将name改成username。用change改属性名</span><br><span class="line">alter table t1 rename as users; 用rename as 直接修改整个表名</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/MySQL/" rel="tag">#MySQL</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/11/PHP听课笔记-42-图像处理类的实现/" rel="next" title="PHP听课笔记-42-图像处理类的实现">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-42-图像处理类的实现
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/11/PHP听课笔记-44-SQL语句/" rel="prev" title="PHP听课笔记-44-SQL语句">
+                PHP听课笔记-44-SQL语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概述"><span class="nav-number">1.</span> <span class="nav-text">概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、基于数据库的PHP项目"><span class="nav-number">1.1.</span> <span class="nav-text">一、基于数据库的PHP项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、为什么要选择使用MySQL（概述）"><span class="nav-number">1.2.</span> <span class="nav-text">二、为什么要选择使用MySQL（概述）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、MySQL的架构"><span class="nav-number">1.3.</span> <span class="nav-text">三、MySQL的架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、PHP程序员主要学习那些数据库的操作"><span class="nav-number">1.4.</span> <span class="nav-text">四、PHP程序员主要学习那些数据库的操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、MySQL的安装和启动过程"><span class="nav-number">1.5.</span> <span class="nav-text">五、MySQL的安装和启动过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、MySQL的目录结构"><span class="nav-number">1.6.</span> <span class="nav-text">六、MySQL的目录结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、了解数据库的SQL语句操作"><span class="nav-number">1.7.</span> <span class="nav-text">七、了解数据库的SQL语句操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据表"><span class="nav-number">2.</span> <span class="nav-text">创建数据表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、什么是数据表"><span class="nav-number">2.1.</span> <span class="nav-text">一、什么是数据表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、创建数据表的SQL语句模型"><span class="nav-number">2.2.</span> <span class="nav-text">二、创建数据表的SQL语句模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#E-G"><span class="nav-number">2.2.1.</span> <span class="nav-text">E.G.:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、数据值和列类型"><span class="nav-number">2.3.</span> <span class="nav-text">三、数据值和列类型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#E-G-1"><span class="nav-number">2.3.1.</span> <span class="nav-text">E.G.:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-G-2"><span class="nav-number">2.3.2.</span> <span class="nav-text">E.G.:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#E-G-3"><span class="nav-number">2.3.3.</span> <span class="nav-text">E.G.:</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、数据字段属性"><span class="nav-number">2.4.</span> <span class="nav-text">四、数据字段属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、创建索引"><span class="nav-number">2.5.</span> <span class="nav-text">五、创建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、数据表类型及存储位置"><span class="nav-number">2.6.</span> <span class="nav-text">六、数据表类型及存储位置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#MyISAM-表类型"><span class="nav-number">2.6.1.</span> <span class="nav-text">MyISAM 表类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#InnoDB-表类型"><span class="nav-number">2.6.2.</span> <span class="nav-text">InnoDB 表类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、MySQL默认字符集"><span class="nav-number">2.7.</span> <span class="nav-text">七、MySQL默认字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、修改表"><span class="nav-number">2.8.</span> <span class="nav-text">八、修改表</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

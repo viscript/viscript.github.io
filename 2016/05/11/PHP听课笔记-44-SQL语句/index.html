@@ -1,0 +1,751 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,SQL语句," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="★重点  SQL语句">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-44-SQL语句">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/11/PHP听课笔记-44-SQL语句/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="★重点  SQL语句">
+<meta property="og:updated_time" content="2016-05-12T02:42:47.938Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-44-SQL语句">
+<meta name="twitter:description" content="★重点  SQL语句">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-44-SQL语句 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-44-SQL语句
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-11T16:07:42+08:00" content="2016-05-11">
+              2016-05-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>★重点  SQL语句</p>
+<a id="more"></a>
+<h3 id="SQL种类"><a href="#SQL种类" class="headerlink" title="SQL种类"></a>SQL种类</h3><blockquote>
+<p>DDL<br>DML<br>DQL<br>DCL</p>
+</blockquote>
+<p>数据定义语言（DDL）： CREATE  DROP    ALTER<br>    用于定义和管理数据对象（库，表，索引，视图），包括数据库、数据表等。例如：CREATE、DROP、ALTER等语句。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> INSERT UPDATE DELETE </span><br><span class="line">``` </span><br><span class="line">数据操作语言（DML）： 和表中的数据记录</span><br><span class="line">	用于操作数据库对象中所包含的数据。例如：INSERT、UPDATE、DELETE语句。</span><br></pre></td></tr></table></figure></p>
+<p>SELECT  60%<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">数据查询语言（DQL） ：</span><br><span class="line">	用于查询数据库对象中所包含的数据，能够进行单表查询、连接查询、嵌套查询，以及集合查询等各种复杂程度不同的数据库查询，并将数据返回到客户机中显示。例如：SELECT语句。 </span><br><span class="line"></span><br><span class="line">数据控制语言（DCL）：</span><br><span class="line">	是用来管理数据库的语言，包含管理权限及数据更改。例如：GRANT、REVOKE、COMMIT、ROLLBACK等语句。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">对于程序员来说</span><br><span class="line"></span><br><span class="line">	创建表（为项目设计表）</span><br><span class="line"></span><br><span class="line">	增，删，改、查</span><br><span class="line"></span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">###	插入表数据insert</span><br></pre></td></tr></table></figure></p>
+<pre><code>insert into 表名([字段列表]) values(值列表)，（值列表2），（值列表3）
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">	特点：</span><br><span class="line">		1. 如果在表名后没有给出字段列表，则值列表必须列出所有字段的值，必须按表中默认的顺序插入</span><br><span class="line">		2. 所有需要写字段名的地方都不加单引号或双引号，但所有值建议都要以字符形式使用</span><br><span class="line">		3. 建议在插入数据时，最好给出字段列表，则值要和字段列表对象即可，可以不按表中字段的顺序</span><br><span class="line"></span><br><span class="line">修改语法：</span><br></pre></td></tr></table></figure>
+<pre><code>update 表名 set 字段=‘值’［，字段2=值2 ［，/。。。］］[条件]  条件是确定要更改的记录，可以通过条件指定一条也可指定多条
+
+delete from 表名 [条件]
+
+    where 
+
+select 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">都可以使用 各种运算符号（可以把字段当作一个变量）</span><br><span class="line"></span><br><span class="line">只要你想更新、删除、查找，只要写对条件就能准确找到要管理的一条或多条语句</span><br></pre></td></tr></table></figure>
+<pre><code>SELECT [ALL | DISTINCT]
+    {*|table.*|[table.]field1[as alias1][,[table.]field2[as alias2]][.....]}
+FROM   表名［］，表2
+
+[WHERE...] --条件
+
+[GROUP BY....] --按什么分组查询
+
+[HAVING...]  --分组条件
+
+[ORDER BY ...] --排序方式
+
+[LIMIT count] --取多少个
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">使用SELECT查询语言，目的就可以可以按你的想法将数据查出来，将结果返回给你</span><br><span class="line"></span><br><span class="line">1. 字段 要列出要查询的字段</span><br><span class="line"></span><br><span class="line">2. 可以为每个字段起个别名  后面会用到（关键字，多表查询） 表也可起别名（多表查询）</span><br><span class="line"></span><br><span class="line">3. 使用distinct作用整个查询列表，取消重复的数据，只返一个， 而不是单独的一列</span><br><span class="line"></span><br><span class="line">4. 在SQL语句中使用表达式的列 （算术运行符号，可以使用条件，逻辑运算符号）</span><br><span class="line"></span><br><span class="line">5. WEHERE 可以在SELECT UPDATE DELETE</span><br><span class="line"></span><br><span class="line">逻辑运算符号（多个条件组合）</span><br></pre></td></tr></table></figure>
+<pre><code>&amp;&amp;   ||  !
+AND  OR  NOT 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">比较运算符号</span><br></pre></td></tr></table></figure>
+<pre><code>= 和程序中的 ==不一样
+&lt;=&gt; 和=作用一相，但可以用于NULL比较
+!= &lt;&gt;
+&lt;
+&lt;=
+&gt;
+&gt;=
+IS NULL
+IS NOT NULL
+BETWEEN AND
+NOT BETWEEN AND
+LIKE                         _（任意一个字符）和%（0个或多个任意字符） 两个通配符号
+NOT LIKE 
+IN
+REGEXP RLIKE
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">	6.多表查询（连接查询）</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	7.嵌套查询 子查询</span><br><span class="line"></span><br><span class="line">	8. order by 字段 [asc正序] desc倒序</span><br><span class="line">	</span><br><span class="line">	9. limit count</span><br><span class="line"></span><br><span class="line">	group  by  字段</span><br><span class="line"></span><br><span class="line">	count()</span><br><span class="line">	sum()</span><br><span class="line">	avg()</span><br><span class="line">	max()</span><br><span class="line">	min()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">直接新建一个创建表语句的sql文件。</span><br><span class="line">### e.g.:</span><br></pre></td></tr></table></figure>
+<p>—DDL—</p>
+<p>create table cats(<br>    id int not null auto_increment,<br>    pid int not null default ‘0’,<br>    name varchar(60) not null default ‘’,<br>    desn text not null default ‘’,<br>    primary key(id),<br>    index name(name,pid)<br>);</p>
+<p>create table products(<br>    id int not null auto_increment,<br>    cid int not null default ‘0’,<br>    name varchar(60) not null default ‘’,<br>    price double(7,2) not null default ‘0.00’,<br>    num int not null default ‘0’,<br>    desn text,<br>    ptime int not null default ‘0’,<br>    primary key(id),<br>    key pname(name, price)<br>);</p>
+<p>—DML—</p>
+<p>insert into<br>products(cid, name, price, num, desn, ptime)<br>values(1, ‘javajava’, ‘34.5’, ‘10’, ‘good’, ‘2132131321’),<br>(1, ‘javatwo’, ‘414.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(2, ‘javaone’, ‘441.56’, ‘50’, ‘very good’, ‘123213213321’),<br>(2, ‘j2seaaa’, ‘144.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(3, ‘j2messs’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(3, ‘fdsa’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(3, ‘ewewq’, ‘84.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(4, ‘kjlk’, ‘244.56’, ‘8’, ‘very good’, ‘123213213321’),<br>(4, ‘lojkfds’, ‘44.56’, ‘30’, ‘veryod’, ‘123213213321’),<br>(4, ‘jklfds’, ‘944.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(4, ‘fdsfds’, ‘4444.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(5, ‘fdsfds’, ‘544.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(5, ‘jwer’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(5, ‘jfdsa’, ‘44.56’, ‘90’, ‘very good’, ‘123213213321’),<br>(5, ‘javatwado’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(5, ‘jkjavatwo’, ‘4324.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(5, ‘jadvatwo’, ‘454.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(6, ‘javsdatwo’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(6, ‘jawqvatwo’, ‘454.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(6, ‘jacxzvatwo’, ‘4.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(6, ‘javadsatwo’, ‘44.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(6, ‘javdsaatwo’, ‘494.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(7, ‘jadsavatwo’, ‘48.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(7, ‘jawrewvatwo’, ‘324.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(8, ‘javdasatwo’, ‘4432.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(8, ‘jawqeqvatwo’, ‘434.56’, ‘30’, ‘very good’, ‘123213213321’),<br>(8, ‘jadewqewqvatwo’, ‘442.56’, ‘30’, ‘very good’, ‘123213213321’)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 命令实例汇总</span><br></pre></td></tr></table></figure>
+<pre><code>---更新---
+</code></pre><p>update cats set pid=’3’ where id&gt;=5 &amp;&amp; id &lt;=6;  更新pid等于3,id范围是5到6</p>
+<pre><code>---删除---
+</code></pre><p>delete from cats; 清空表了就 –&gt;用截断更好：<br>truncate cats; 清空表效率更高</p>
+<p>delete from cats where id&gt;8; 大于8的删除</p>
+<pre><code>---查询---
+</code></pre><p>select price,name from tab1;<br>select price as bookprice,name as bookname from tab1; //将bookprice作为别名<br>select price bookprice from tab1; //不需要加as.而且表也可以别名<br>select distinct price name from tab1;  //两个列没有完全重复的<br>select distinct price from tab1; //本列不重复<br>select 1+1; //运算符<br>update tab1 set num=num+1 where id=1; //将id=1的num+1<br>select name,price,price<em>0.8 dzprice from tab1; //将price打八折，然后别名dzprice<br>select name,price,price</em>0.8 from tab1 where id&gt;4 &amp;&amp; id<15; select="" *="" from="" tab1="" where="" price="" <100="" and="">50;<br>select <em> from tab1 where desn is null; //不能用desn=null查，因为null是一种值<br>select </em> from tab1 where desn &lt;=&gt; null; //和等号作用一样，但是可以用于null查询比较<br>select <em> from tab1 where id between 10 and 20;  //id在10到20之间<br>select 8 from tab1 where id not between 10 and 20; //不在10-20<br>select </em> from tab1 where id in<5,10,15,20,25>; //只拿<id>里的<br>update tab1 set num=1 where id in<5,10>;<br>delete from tab1 where id in<5,10>; //删除5，10<br>select <em> from tab1 where name like ‘<strong>__</strong>‘ ;//6个下划线，查看name有6个字符额行<br>select </em> from tab1 where name like ‘php___’;<br>select <em> from tab1 where name like ‘%php%’; //精确查询最好别用like，用等号<br>select name from tab1,tab2; //如果name是两个表共有的，会出错。<br>select tab1.name from tab1,tab2;//上条的解决方案。指定表名<br>select tab1.name,tab2.name from tab1,tab2;<br>select t1.name 1name,t2.name 2name from tab1 t1,tab2,t2;  //分别对表和元素分别别名<br>select t1.name 1name,t2.name 2name from tab1 t1,tab2,t2 where t1.id=t2.id; //将t2的id关联到了t1的id，解决了笛卡尔乘积的问题。<br>select a.id aid,a.name aname,b.id bid,b.name bname,from tab1 a,tab1 b where b.pid=a.id; //将一个表看成两个表，当有id和xid的时候，连接查询，避免出现笛卡尔乘积。<br>select </em> from tab1 where cid in<select id="" from="" tab1="" where="" name="" like="" 'j%'=""> ; //嵌套查询</select></5,10></5,10></id></5,10,15,20,25></15;></p>
+<p>select <em> from tab1 order by id desc;<br>select </em> from tab1 limit 5 order by id desc;<br>select * from tab1 where id&gt;15 order by id asc limit 0,1; 从0取，取1个。用于id不连续，取下一个id的内容。asc正序，取上一个ID用倒序desc</p>
+<p>select count&lt;<em>&gt; from tab1;<br>select cid,count&lt;</em>&gt;,price,sum<price> from tab2 group by cid; //按照cid分组。<br>select cid,count&lt;*&gt;,price,sum<price> from tab2 group by cid having avg<price>&gt;500; //cid分组，并且价格平均值大于500的。having是group by后出现的修饰</price></price></price></p>
+<p>```</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/SQL语句/" rel="tag">#SQL语句</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/11/PHP听课笔记-43-MySQL/" rel="next" title="PHP听课笔记-43-MySQL">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-43-MySQL
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/12/PHP听课笔记-45-SQL内置函数/" rel="prev" title="PHP听课笔记-45-SQL内置函数">
+                PHP听课笔记-45-SQL内置函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL种类"><span class="nav-number">1.</span> <span class="nav-text">SQL种类</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>

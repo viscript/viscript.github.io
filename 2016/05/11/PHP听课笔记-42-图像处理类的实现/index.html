@@ -1,0 +1,693 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="PHP,类," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/tri.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="定制图像处理的类。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP听课笔记-42-图像处理类的实现">
+<meta property="og:url" content="http://www.ariesin.com/2016/05/11/PHP听课笔记-42-图像处理类的实现/index.html">
+<meta property="og:site_name" content="Ariesin">
+<meta property="og:description" content="定制图像处理的类。">
+<meta property="og:updated_time" content="2016-05-11T01:55:53.457Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP听课笔记-42-图像处理类的实现">
+<meta name="twitter:description" content="定制图像处理的类。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> PHP听课笔记-42-图像处理类的实现 | Ariesin </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Ariesin</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                PHP听课笔记-42-图像处理类的实现
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-11T08:51:47+08:00" content="2016-05-11">
+              2016-05-11
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>定制图像处理的类。</p>
+<a id="more"></a>
+<h3 id="类的实现"><a href="#类的实现" class="headerlink" title="类的实现"></a>类的实现</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">   include &quot;image.class.php&quot;;</span><br><span class="line"></span><br><span class="line">	$image=new Image(&quot;./images/&quot;);</span><br><span class="line">	//对图片进行缩放</span><br><span class="line">/*	echo $image-&gt;thumb(&quot;map.gif&quot;, 500, 500, &quot;th5_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;thumb(&quot;map.gif&quot;, 400, 400, &quot;th4_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;thumb(&quot;map.gif&quot;, 300, 300, &quot;th3_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;thumb(&quot;map.gif&quot;, 200, 200, &quot;th2_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;thumb(&quot;map.gif&quot;, 100, 100, &quot;th1_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line"> */</span><br><span class="line">	//对图片进行加水印</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 0, &quot;wa0_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 1, &quot;wa1_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 2, &quot;wa2_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 3, &quot;wa3_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 4, &quot;wa4_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 5, &quot;wa5_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 6, &quot;wa6_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 7, &quot;wa7_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 8, &quot;wa8_&quot;).&quot;&lt;br&gt;&quot;;</span><br><span class="line">	echo $image-&gt;waterMark(&quot;map.gif&quot;, &quot;gaolf.gif&quot;, 9, &quot;wa9_&quot;).&quot;&lt;br&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<h3 id="image-class-php"><a href="#image-class-php" class="headerlink" title="image.class.php"></a>image.class.php</h3><p>function中的构造方法、thumb、waterMark是主体，其他所有方法都是对其进行补充。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	class Image &#123;</span><br><span class="line">		private $path;</span><br><span class="line">		//构造方法用来对图片所在位置进行初使化</span><br><span class="line">		function __construct($path=&quot;./&quot;)&#123;    //默认是当前目录</span><br><span class="line">			$this-&gt;path=rtrim($path, &quot;/&quot;).&quot;/&quot;; //删除右边的/，然后再添加一个/。用户不管有没有，最后都有。</span><br><span class="line">		&#125;</span><br><span class="line">		/* 对图片进行缩放</span><br><span class="line">		 *</span><br><span class="line">		 * 参数$name: 是需要处理的图片名称</span><br><span class="line">		 * 参数$width:是缩放后的宽度</span><br><span class="line">		 * 参数$height:是缩放后的高度</span><br><span class="line">		 * 参数$qz: 是新图片的名称前缀</span><br><span class="line">		 * 返回值:就是缩放后的图片名称，失败则返回false</span><br><span class="line">		 *</span><br><span class="line">		 */</span><br><span class="line">		function thumb($name, $width, $height, $qz=&quot;th_&quot;)&#123;</span><br><span class="line">			//获取图片信息</span><br><span class="line">			$imgInfo=$this-&gt;getInfo($name); //图片的宽度，高度，类型</span><br><span class="line">			//获取图片资源, 各种类型的图片都可以创建资源 jpg, gif, png</span><br><span class="line">			$srcImg=$this-&gt;getImg($name, $imgInfo);</span><br><span class="line">			//获取计算图片等比例之后的大小, $size[&quot;width&quot;], $size[&quot;height&quot;]</span><br><span class="line">			$size=$this-&gt;getNewSize($name, $width, $height, $imgInfo);</span><br><span class="line">			//获取新的图片资源, 处理一下gif透明背景</span><br><span class="line">			$newImg=$this-&gt;kidOfImage($srcImg, $size, $imgInfo);</span><br><span class="line">			//另存为一个新的图片，返回新的缩放后的图片名称	</span><br><span class="line">			return $this-&gt;createNewImage($newImg, $qz.$name, $imgInfo);	</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function createNewImage($newImg, $newName, $imgInfo)&#123;</span><br><span class="line">			switch($imgInfo[&quot;type&quot;])&#123;</span><br><span class="line">				case 1://gif</span><br><span class="line">					$result=imageGif($newImg, $this-&gt;path.$newName);</span><br><span class="line">					break;</span><br><span class="line">				case 2://jpg</span><br><span class="line">					$result=imageJPEG($newImg, $this-&gt;path.$newName);</span><br><span class="line">					break;</span><br><span class="line">				case 3://png</span><br><span class="line">					$return=imagepng($newImg, $this-&gt;path.$newName);</span><br><span class="line">					break;</span><br><span class="line">			&#125;</span><br><span class="line">			imagedestroy($newImg);</span><br><span class="line">			return $newName;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function kidOfImage($srcImg, $size, $imgInfo)&#123;</span><br><span class="line">			$newImg=imagecreatetruecolor($size[&quot;width&quot;], $size[&quot;height&quot;]);</span><br><span class="line">			</span><br><span class="line">			$otsc=imagecolortransparent($srcImg);</span><br><span class="line"></span><br><span class="line">			if($otsc &gt;=0 &amp;&amp; $otsc &lt;= imagecolorstotal($srcImg))&#123;</span><br><span class="line">				$tran=imagecolorsforindex($srcImg, $otsc);</span><br><span class="line"></span><br><span class="line">				$newt=imagecolorallocate($newImg, $tran[&quot;red&quot;], $tran[&quot;green&quot;], $tran[&quot;blue&quot;]);</span><br><span class="line"></span><br><span class="line">				imagefill($newImg, 0, 0, $newt);</span><br><span class="line"></span><br><span class="line">				imagecolortransparent($newImg, $newt);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			imagecopyresized($newImg, $srcImg, 0, 0, 0, 0, $size[&quot;width&quot;], $size[&quot;height&quot;], $imgInfo[&quot;width&quot;], $imgInfo[&quot;height&quot;]);</span><br><span class="line"></span><br><span class="line">			imagedestroy($srcImg);</span><br><span class="line"></span><br><span class="line">			return $newImg;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function getNewSize($name, $width, $height, $imgInfo)&#123;</span><br><span class="line">			$size[&quot;width&quot;]=$imgInfo[&quot;width&quot;];</span><br><span class="line">			$size[&quot;height&quot;]=$imgInfo[&quot;height&quot;];</span><br><span class="line"></span><br><span class="line">			//缩放的宽度如果比原图小才重新设置宽度</span><br><span class="line">			if($width &lt; $imgInfo[&quot;width&quot;])&#123;</span><br><span class="line">				$size[&quot;width&quot;]=$width;</span><br><span class="line">			&#125;</span><br><span class="line">			//缩放的高度如果比原图小才重新设置高度</span><br><span class="line">			if($height &lt; $imgInfo[&quot;height&quot;])&#123;</span><br><span class="line">				$size[&quot;height&quot;]=$height;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			//图片等比例缩放的算法</span><br><span class="line">			if($imgInfo[&quot;width&quot;]*$size[&quot;width&quot;] &gt; $imgInfo[&quot;height&quot;] * $size[&quot;height&quot;])&#123;</span><br><span class="line">				$size[&quot;height&quot;]=round($imgInfo[&quot;height&quot;]*$size[&quot;width&quot;]/$imgInfo[&quot;width&quot;]);</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				$size[&quot;width&quot;]=round($imgInfo[&quot;width&quot;]*$size[&quot;height&quot;]/$imgInfo[&quot;height&quot;]);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			return $size;</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function getInfo($name)&#123;</span><br><span class="line">			$data=getImageSize($this-&gt;path.$name);</span><br><span class="line"></span><br><span class="line">			$imageInfo[&quot;width&quot;]=$data[0]; //将索引数组转变成关联数组。</span><br><span class="line">			$imageInfo[&quot;height&quot;]=$data[1];</span><br><span class="line">			$imageInfo[&quot;type&quot;]=$data[2];</span><br><span class="line"></span><br><span class="line">			return $imageInfo;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function getImg($name, $imgInfo)&#123;</span><br><span class="line">			$srcPic=$this-&gt;path.$name;</span><br><span class="line"></span><br><span class="line">			switch($imgInfo[&quot;type&quot;])&#123;</span><br><span class="line">				case 1: //gif</span><br><span class="line">					$img=imagecreatefromgif($srcPic);</span><br><span class="line">					break;</span><br><span class="line">				case 2: //jpg</span><br><span class="line">					$img=imageCreatefromjpeg($srcPic);</span><br><span class="line">					break;</span><br><span class="line">				case 3: //png</span><br><span class="line">					$img=imageCreatefrompng($srcPic);</span><br><span class="line">					break;</span><br><span class="line">				default:</span><br><span class="line">					return false;</span><br><span class="line">				</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return $img;</span><br><span class="line">		&#125;</span><br><span class="line">		/* 功能：为图片加水印图片</span><br><span class="line">		 * 参数$groundName: 背景图片，即需要加水印的图片</span><br><span class="line">		 * 参数$waterName: 水钱图片</span><br><span class="line">		 * 参数#WaterPost：水印位置， 10种状态， </span><br><span class="line">		 *  0为随机位置</span><br><span class="line">		 *</span><br><span class="line">		 *  1. 为顶端居左  2. 为顶端居中  3 为顶端居右</span><br><span class="line">		 *  4  为中部居左  5. 为中部居中  6 为中部居右</span><br><span class="line">		 *  7 . 为底端居左 8. 为底端居中， 9. 为底端居右</span><br><span class="line">		 *</span><br><span class="line">		 * 参数$qz : 是加水印后的图片名称前缀</span><br><span class="line">		 * 返回值：就是处理后图片的名称</span><br><span class="line">		 *</span><br><span class="line">		 */</span><br><span class="line">		function waterMark($groundName, $waterName, $waterPos=0, $qz=&quot;wa_&quot;)&#123;</span><br><span class="line">		</span><br><span class="line">			if(file_exists($this-&gt;path.$groundName) &amp;&amp; file_exists($this-&gt;path.$waterName))&#123;</span><br><span class="line">				$groundInfo=$this-&gt;getInfo($groundName);</span><br><span class="line">				$waterInfo=$this-&gt;getInfo($waterName);</span><br><span class="line">				//水印的位置</span><br><span class="line">				if(!$pos=$this-&gt;position($groundInfo, $waterInfo, $waterPos))&#123;</span><br><span class="line">					echo &quot;水印不应该比背景图片小！&quot;;</span><br><span class="line">					return;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				$groundImg=$this-&gt;getImg($groundName, $groundInfo);</span><br><span class="line">				$waterImg=$this-&gt;getImg($waterName, $waterInfo);</span><br><span class="line"></span><br><span class="line">				$groundImg=$this-&gt;copyImage($groundImg, $waterImg, $pos, $waterInfo);</span><br><span class="line"></span><br><span class="line">				return $this-&gt;createNewImage($groundImg, $qz.$groundName, $groundInfo);</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				echo &quot;图片或水印图片不存在&quot;;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		private function copyImage($groundImg, $waterImg, $pos, $waterInfo)&#123;</span><br><span class="line">			imagecopy($groundImg, $waterImg, $pos[&quot;posX&quot;], $pos[&quot;posY&quot;], 0, 0, $waterInfo[&quot;width&quot;], $waterInfo[&quot;height&quot;]);</span><br><span class="line">			imagedestroy($waterImg);</span><br><span class="line"></span><br><span class="line">			return $groundImg;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		private function position($groundInfo, $waterInfo, $waterPos)&#123;</span><br><span class="line">			//需要背景比水印图片大</span><br><span class="line">			if(($groundInfo[&quot;width&quot;]&lt; $waterInfo[&quot;width&quot;]) ||($groundInfo[&quot;height&quot;] &lt; $waterInfo[&quot;height&quot;]))&#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			switch($waterPos)&#123;</span><br><span class="line">				case 1:</span><br><span class="line">					$posX=0;</span><br><span class="line">					$posY=0;</span><br><span class="line">					break;</span><br><span class="line">				case 2:</span><br><span class="line">					$posX=($groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;])/2;</span><br><span class="line">					$posY=0;</span><br><span class="line">					break;</span><br><span class="line">				case 3:</span><br><span class="line">					$posX=$groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;];</span><br><span class="line">					$posY=0;</span><br><span class="line">					break;</span><br><span class="line">				case 4:</span><br><span class="line">					$posX=0;</span><br><span class="line">					$posY=($groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;]) /2;</span><br><span class="line">					break;</span><br><span class="line">				case 5:</span><br><span class="line">					$posX=($groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;])/2;</span><br><span class="line">					$posY=($groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;]) /2;</span><br><span class="line">					break;</span><br><span class="line">				case 6:</span><br><span class="line">					$posX=$groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;];</span><br><span class="line">					$posY=($groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;]) /2;</span><br><span class="line">					break;</span><br><span class="line">				case 7:</span><br><span class="line">					$posX=0;</span><br><span class="line">					$posY=$groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;];</span><br><span class="line">					break;</span><br><span class="line">				case 8:</span><br><span class="line">					$posX=($groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;])/2;</span><br><span class="line">					$posY=$groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;];</span><br><span class="line">					break;</span><br><span class="line">				case 9:</span><br><span class="line">					$posX=$groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;];</span><br><span class="line">					$posY=$groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;];</span><br><span class="line">					break;</span><br><span class="line">				case 0:</span><br><span class="line">				default:</span><br><span class="line">					$posX=rand(0, ($groundInfo[&quot;width&quot;]-$waterInfo[&quot;width&quot;]));</span><br><span class="line">					$posY=rand(0, ($groundInfo[&quot;height&quot;]-$waterInfo[&quot;height&quot;]));</span><br><span class="line">					break;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return array(&quot;posX&quot;=&gt;$posX, &quot;posY&quot;=&gt;$posY);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>file.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form action=&quot;upload.php&quot; method=&quot;post&quot; enctype=&quot;multipart/form-data&quot;&gt;</span><br><span class="line">	pic: &lt;input type=&quot;file&quot; name=&quot;pic&quot;&gt;&lt;br&gt;</span><br><span class="line"></span><br><span class="line">	&lt;input type=&quot;submit&quot; name=&quot;sub&quot; value=&quot;uploadpicture&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure></p>
+<p>upload.php<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">	include &quot;FileUpload.class.php&quot;;</span><br><span class="line">	include &quot;image.class.php&quot;;</span><br><span class="line"></span><br><span class="line">	$up=new FileUpload(array(&quot;filepath&quot;=&gt;&quot;./images/&quot;, &quot;allowtype&quot;=&gt;array(&quot;gif&quot;, &quot;jpg&quot;, &quot;png&quot;)));</span><br><span class="line"></span><br><span class="line">	if($up-&gt;uploadFile(&quot;pic&quot;))&#123;</span><br><span class="line">		$filename=$up-&gt;getNewFileName();</span><br><span class="line"></span><br><span class="line">		$img=new Image(&quot;./images/&quot;);</span><br><span class="line"></span><br><span class="line">		$th_filename=$img-&gt;thumb($filename, 300, 300, &quot;th_&quot;);</span><br><span class="line"></span><br><span class="line">		$img-&gt;waterMark($th_filename, &quot;gaolf.gif&quot;, 5, &quot;wa_&quot;);</span><br><span class="line">		$img-&gt;waterMark($filename, &quot;gaolf.gif&quot;, 0, &quot;&quot;);</span><br><span class="line">	&#125;else&#123;</span><br><span class="line">		echo $up-&gt;getErrorMsg();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></p>
+<p>FileUpload.class.php</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line">       /* 该用于文件上传</span><br><span class="line">	* 有4个公有方法可以在对象外部调用：</span><br><span class="line">	* __construct()构造方法用于初使化成员属性</span><br><span class="line">	* uploadFile()方法用于上传文件</span><br><span class="line">	* getNewFileName()方法用于获取上传成功后的文件名称</span><br><span class="line">	* getErrorMsg()方法用于上传失败后获取错误提示信息</span><br><span class="line">	* 其它属性和方法都被本类封装，不可以在对象外部调用</span><br><span class="line">	*/</span><br><span class="line">	class FileUpload &#123;	</span><br><span class="line">		private $filepath; 	// 上传文件的目的路径</span><br><span class="line">		private $allowtype = array(&apos;jpg&apos;,&apos;gif&apos;,&apos;png&apos;); //充许上传文件的类型,使用小字母</span><br><span class="line">		private $maxsize = 1000000;  //允许文件上传的最大长度1m</span><br><span class="line">		private $israndname = true;   //是否随机重命名 false为不随机</span><br><span class="line">		private $originName; 	//源文件名</span><br><span class="line">		private $tmpFileName;   //临时文件名</span><br><span class="line">		private $fileType; 	//文件类型(文件后缀)</span><br><span class="line">		private $fileSize; 	//文件大小</span><br><span class="line">		private $newFileName; 	//新文件名</span><br><span class="line">		private $errorNum = 0; //错误号</span><br><span class="line">		private $errorMess=&quot;&quot;;  //错误报告消息</span><br><span class="line">		/* 构造方法：为成员属性初使化</span><br><span class="line">		 * 参数$options:为一个数组，数组下标为成员员属性名称字符串</span><br><span class="line">		 * 本类需要初使化的属性有 filepath, allowtype, maxsize,israndname四个属性，其中filepath为必须设置的属性</span><br><span class="line">		 * 使用的格式为 new FileUpload(array(&apos;filepath&apos;=&gt;&apos;./uploads&apos;, &apos;maxsize&apos;=&gt;10000000)) 的格式</span><br><span class="line">		 */</span><br><span class="line">		function __construct($options=array()) &#123;</span><br><span class="line">			foreach ($options as $key=&gt;$val) &#123;</span><br><span class="line">				$key=strtolower($key);   //在为成员属性设置值时，不区分大小写</span><br><span class="line">				if (!in_array($key,get_class_vars(get_class($this)))) </span><br><span class="line">					continue;</span><br><span class="line">				$this-&gt;setOption($key, $val);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/* 调用该方法上传文件</span><br><span class="line">		 * 参数: 上传文件的表单名称 例如：&lt;input type=&quot;file&quot; name=&quot;myfile&quot;&gt; 参数则为myfile</span><br><span class="line">		 * 返回值: 如果上传成功返回数字0,如果上传失败则返回小于0的数，如：-1、-2、-3、-4、-5中的一个 </span><br><span class="line">		 */</span><br><span class="line">		</span><br><span class="line">		function uploadFile($fileField) &#123;</span><br><span class="line">			$return=true;</span><br><span class="line">			if(!$this-&gt;checkFilePath()) &#123;//检查文件路径</span><br><span class="line">				$this-&gt;errorMess=$this-&gt;getError();</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			$name=$_FILES[$fileField][&apos;name&apos;];</span><br><span class="line">			$tmp_name=$_FILES[$fileField][&apos;tmp_name&apos;];</span><br><span class="line">			$size=$_FILES[$fileField][&apos;size&apos;];</span><br><span class="line">			$error=$_FILES[$fileField][&apos;error&apos;];</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">			if(is_Array($name))&#123;  //如果是多个文件上传则$file[&quot;name&quot;]会是一个数组</span><br><span class="line">				$errors=array();</span><br><span class="line">				for($i = 0; $i &lt; count($name); $i++)&#123; </span><br><span class="line">					if($this-&gt;setFiles($name[$i],$tmp_name[$i],$size[$i],$error[$i] )) &#123;//设置文件信息</span><br><span class="line">						if(!$this-&gt;checkFileSize() || !$this-&gt;checkFileType())&#123;</span><br><span class="line">							$errors[]=$this-&gt;getError();</span><br><span class="line">							$return=false;	</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						$errors[]=$this-&gt;getError();</span><br><span class="line">						$return=false;</span><br><span class="line">					&#125;</span><br><span class="line"></span><br><span class="line">					if(!$return)  // 如果有问题，则重新初使化属性</span><br><span class="line">						$this-&gt;setFiles();</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">				if($return)&#123;</span><br><span class="line">					$fileNames=array();   //存放所有上传后文件名的变量数组</span><br><span class="line">		</span><br><span class="line">					for($i = 0; $i &lt; count($name);  $i++)&#123; </span><br><span class="line">						if($this-&gt;setFiles($name[$i],$tmp_name[$i],$size[$i],$error[$i] )) &#123;//设置文件信息</span><br><span class="line">							$this-&gt;setNewFileName(); //设置新文件名</span><br><span class="line">							if(!$this-&gt;copyFile())&#123;</span><br><span class="line">								$errors[]=$this-&gt;getError();</span><br><span class="line">								$return=false;</span><br><span class="line">							&#125;</span><br><span class="line">							$fileNames[]=$this-&gt;newFileName;</span><br><span class="line">						&#125;</span><br><span class="line">											</span><br><span class="line">					&#125;</span><br><span class="line">					$this-&gt;newFileName=$fileNames;</span><br><span class="line">					</span><br><span class="line">				&#125;</span><br><span class="line">				$this-&gt;errorMess=$errors;</span><br><span class="line">				return $return;</span><br><span class="line">				</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				if($this-&gt;setFiles($name,$tmp_name,$size,$error)) &#123;//设置文件信息</span><br><span class="line">					if($this-&gt;checkFileSize() &amp;&amp; $this-&gt;checkFileType())&#123;	</span><br><span class="line">						$this-&gt;setNewFileName(); //设置新文件名</span><br><span class="line">						if($this-&gt;copyFile())&#123; //上传文件   返回0为成功， 小于0都为错误</span><br><span class="line">							return true;</span><br><span class="line">						&#125;else&#123;</span><br><span class="line">							echo &apos;3333333333333&apos;;</span><br><span class="line">							$return=false;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;else&#123;</span><br><span class="line">						$return=false;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					$return=false;	</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				if(!$return)</span><br><span class="line">					$this-&gt;errorMess=$this-&gt;getError();</span><br><span class="line"></span><br><span class="line">				return $return;</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		/* 获取上传后的文件名称</span><br><span class="line">		 * 没有参数</span><br><span class="line">		 * 返回值：上传后，新文件的名称</span><br><span class="line">		 */</span><br><span class="line">		public function getNewFileName()&#123;</span><br><span class="line">			return $this-&gt;newFileName;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		public function getErrorMsg()&#123;</span><br><span class="line">			return $this-&gt;errorMess;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		/* 上传失败后，调用该方法则返回，上传出错信息</span><br><span class="line">		 * 没有参数</span><br><span class="line">		 * 返回值：返回上传文件出错的信息提示</span><br><span class="line">		 */</span><br><span class="line">		private function getError() &#123;</span><br><span class="line">			$str = &quot;上传文件&lt;font color=&apos;red&apos;&gt;&#123;$this-&gt;originName&#125;&lt;/font&gt;时出错 : &quot;;</span><br><span class="line">			switch ($this-&gt;errorNum) &#123;</span><br><span class="line">				case 4: $str .= &quot;没有文件被上传&quot;; break;</span><br><span class="line">				case 3: $str .= &quot;文件只有部分被上传&quot;; break;</span><br><span class="line">				case 2: $str .= &quot;上传文件的大小超过了 HTML 表单中 MAX_FILE_SIZE 选项指定的值&quot;; break;</span><br><span class="line">				case 1: $str .= &quot;上传的文件超过了 php.ini 中 upload_max_filesize 选项限制的值&quot;; break;</span><br><span class="line">				case -1: $str .= &quot;未允许类型&quot;; break;</span><br><span class="line">				case -2: $str .= &quot;文件过大,上传的文件不能超过&#123;$this-&gt;maxsize&#125;个字节&quot;; break;</span><br><span class="line">				case -3: $str .= &quot;上传失败&quot;; break;</span><br><span class="line">				case -4: $str .= &quot;建立存放上传文件目录失败，请重新指定上传目录&quot;; break;</span><br><span class="line">				case -5: $str .= &quot;必须指定上传文件的路径&quot;; break;</span><br><span class="line">				default: $str .= &quot;未知错误&quot;;</span><br><span class="line">			&#125;</span><br><span class="line">			return $str.&apos;&lt;br&gt;&apos;;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		</span><br><span class="line">		//设置和$_FILES有关的内容</span><br><span class="line">		private function setFiles($name=&quot;&quot;, $tmp_name=&quot;&quot;, $size=0, $error=0) &#123;</span><br><span class="line">			$this-&gt;setOption(&apos;errorNum&apos;, $error);</span><br><span class="line">			if($error)</span><br><span class="line">				return false;</span><br><span class="line">			$this-&gt;setOption(&apos;originName&apos;, $name);</span><br><span class="line">			$this-&gt;setOption(&apos;tmpFileName&apos;,$tmp_name);</span><br><span class="line">			$aryStr = explode(&quot;.&quot;, $name);</span><br><span class="line">			$this-&gt;setOption(&apos;fileType&apos;, strtolower($aryStr[count($aryStr)-1]));</span><br><span class="line">			$this-&gt;setOption(&apos;fileSize&apos;, $size);</span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">    </span><br><span class="line">		//为单个成员属性设置值</span><br><span class="line">		private function setOption($key, $val) &#123;</span><br><span class="line">			$this-&gt;$key = $val;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//设置上传后的文件名称</span><br><span class="line">		private function setNewFileName() &#123;</span><br><span class="line">			if ($this-&gt;israndname) &#123;</span><br><span class="line">				$this-&gt;setOption(&apos;newFileName&apos;, $this-&gt;proRandName());	</span><br><span class="line">			&#125; else&#123; </span><br><span class="line">				$this-&gt;setOption(&apos;newFileName&apos;, $this-&gt;originName);</span><br><span class="line">			&#125; </span><br><span class="line">		&#125;</span><br><span class="line"> 		</span><br><span class="line">		//检查上传的文件是否是合法的类型</span><br><span class="line">		private function checkFileType() &#123;</span><br><span class="line">			if (in_array(strtolower($this-&gt;fileType), $this-&gt;allowtype)) &#123;</span><br><span class="line">				return true;</span><br><span class="line">			&#125;else &#123;</span><br><span class="line">				$this-&gt;setOption(&apos;errorNum&apos;, -1);</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">    		//检查上传的文件是否是允许的大小</span><br><span class="line">		private function checkFileSize() &#123;</span><br><span class="line">			if ($this-&gt;fileSize &gt; $this-&gt;maxsize) &#123;</span><br><span class="line">				$this-&gt;setOption(&apos;errorNum&apos;, -2);</span><br><span class="line">				return false;</span><br><span class="line">			&#125;else&#123;</span><br><span class="line">				return true;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//检查是否有存放上传文件的目录</span><br><span class="line">		private function checkFilePath() &#123;</span><br><span class="line">			if(empty($this-&gt;filepath))&#123;</span><br><span class="line">				$this-&gt;setOption(&apos;errorNum&apos;, -5);</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">			if (!file_exists($this-&gt;filepath) || !is_writable($this-&gt;filepath)) &#123;</span><br><span class="line">				if (!@mkdir($this-&gt;filepath, 0755)) &#123;</span><br><span class="line">					$this-&gt;setOption(&apos;errorNum&apos;, -4);</span><br><span class="line">					return false;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			return true;</span><br><span class="line">		&#125;</span><br><span class="line">		//设置随机文件名</span><br><span class="line">		private function proRandName() &#123;		</span><br><span class="line">			$fileName=date(&apos;YmdHis&apos;).&quot;_&quot;.rand(100,999);   //获取随机文件名	</span><br><span class="line">			return $fileName.&apos;.&apos;.$this-&gt;fileType;    //返回文件名加原扩展名</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line"></span><br><span class="line">		//复制上传文件到指定的位置</span><br><span class="line">		private function copyFile() &#123;</span><br><span class="line">			if(!$this-&gt;errorNum) &#123;</span><br><span class="line">				$filepath = rtrim($this-&gt;filepath, &apos;/&apos;).&apos;/&apos;;</span><br><span class="line">				$filepath .= $this-&gt;newFileName;</span><br><span class="line">				if (@move_uploaded_file($this-&gt;tmpFileName, $filepath)) &#123;</span><br><span class="line">					return true;</span><br><span class="line">				&#125;else&#123;</span><br><span class="line">					$this-&gt;setOption(&apos;errorNum&apos;, -3);</span><br><span class="line">					return false;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				return false;</span><br><span class="line">			&#125;</span><br><span class="line">		</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag">#PHP</a>
+          
+            <a href="/tags/类/" rel="tag">#类</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/10/PHP听课笔记-41-图像处理方式汇总/" rel="next" title="PHP听课笔记-41-图像处理方式汇总">
+                <i class="fa fa-chevron-left"></i> PHP听课笔记-41-图像处理方式汇总
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/05/11/PHP听课笔记-43-MySQL/" rel="prev" title="PHP听课笔记-43-MySQL">
+                PHP听课笔记-43-MySQL <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="MengNan Li" />
+          <p class="site-author-name" itemprop="name">MengNan Li</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">70</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">86</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#类的实现"><span class="nav-number">1.</span> <span class="nav-text">类的实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#image-class-php"><span class="nav-number">2.</span> <span class="nav-text">image.class.php</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">MengNan Li</span>
+</div>
+
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.motion.complete', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      var $indicator = $(indicator);
+      var opacity = action === 'show' ? 1 : 0;
+      $indicator.velocity ?
+        $indicator.velocity('stop').velocity({
+          opacity: opacity
+        }, { duration: 100 }) :
+        $indicator.stop().animate({
+          opacity: opacity
+        }, 100);
+    }
+
+  });
+</script>
+
+<script type="text/javascript" id="sidebar.nav">
+  $(document).ready(function () {
+    var html = $('html');
+    var TAB_ANIMATE_DURATION = 200;
+    var hasVelocity = $.isFunction(html.velocity);
+
+    $('.sidebar-nav li').on('click', function () {
+      var item = $(this);
+      var activeTabClassName = 'sidebar-nav-active';
+      var activePanelClassName = 'sidebar-panel-active';
+      if (item.hasClass(activeTabClassName)) {
+        return;
+      }
+
+      var currentTarget = $('.' + activePanelClassName);
+      var target = $('.' + item.data('target'));
+
+      hasVelocity ?
+        currentTarget.velocity('transition.slideUpOut', TAB_ANIMATE_DURATION, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', TAB_ANIMATE_DURATION)
+            .addClass(activePanelClassName);
+        }) :
+        currentTarget.animate({ opacity: 0 }, TAB_ANIMATE_DURATION, function () {
+          currentTarget.hide();
+          target
+            .stop()
+            .css({'opacity': 0, 'display': 'block'})
+            .animate({ opacity: 1 }, TAB_ANIMATE_DURATION, function () {
+              currentTarget.removeClass(activePanelClassName);
+              target.addClass(activePanelClassName);
+            });
+        });
+
+      item.siblings().removeClass(activeTabClassName);
+      item.addClass(activeTabClassName);
+    });
+
+    $('.post-toc a').on('click', function (e) {
+      e.preventDefault();
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
+      var offset = $(targetSelector).offset().top;
+      hasVelocity ?
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        }) :
+        $('html, body').stop().animate({
+          scrollTop: offset
+        }, 500);
+    });
+
+    // Expand sidebar on post detail page by default, when post has a toc.
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
+      }
+    };
+  });
+</script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+  
+  
+  
+
+  
+
+
+</body>
+</html>
